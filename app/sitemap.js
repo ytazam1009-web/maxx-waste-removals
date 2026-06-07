@@ -3,28 +3,36 @@ export default function sitemap() {
     process.env.NEXT_PUBLIC_SITE_URL ||
     "https://maxxwasteremovals.co.uk";
 
-  const lastModified = new Date();
-
   return [
     {
       url: `${baseUrl}`,
-      lastModified,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 1.0,
     },
     {
       url: `${baseUrl}/leicester`,
-      lastModified,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/coventry`,
-      lastModified,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/birmingham`,
-      lastModified,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/contact`,
-      lastModified,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
     },
   ];
 }

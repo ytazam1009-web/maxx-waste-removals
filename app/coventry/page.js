@@ -10,37 +10,35 @@ import CTASection from "@/components/home/CTASection";
 import Footer from "@/components/layout/Footer";
 import InternalLinks from "@/components/seo/InternalLinks";
 import FAQSchema from "@/components/seo/FAQSchema";
+import LocalBusinessSchema from "@/components/seo/LocalBusinessSchema";
 
 export const metadata = {
   title:
-    "Waste Removal Coventry | House Clearance & Rubbish Removal Coventry | Maxx Waste Removals",
+    "Waste Removal Coventry | House Clearance, Rubbish Removal & Furniture Disposal | Maxx Waste Removals",
 
   description:
-    "Professional waste removal services in Coventry. House clearance, rubbish removal, garden clearance, junk removal, furniture disposal, office clearance, and same-day waste collection services across Coventry and nearby areas.",
+    "Reliable waste removal services in Coventry including house clearance, sofa removal, garden waste clearance, office clearance, mattress removal and same-day rubbish collection across Coventry and nearby areas.",
 
   keywords: [
     "waste removal Coventry",
     "rubbish clearance Coventry",
     "house clearance Coventry",
-    "garden clearance Coventry",
+    "garden waste removal Coventry",
+    "sofa removal Coventry",
+    "mattress removal Coventry",
+    "office clearance Coventry",
     "junk removal Coventry",
     "same day waste removal Coventry",
-    "cheap waste removal Coventry",
-    "same day rubbish removal Coventry",
     "licensed waste carrier Coventry",
     "affordable rubbish clearance Coventry",
-    "professional waste removal services Coventry",
     "waste collection Coventry",
     "waste disposal Coventry",
-    "house clearance Coventry",
-    "sofa removal Coventry",
-    "mattress removal Coventry"
   ],
 
   openGraph: {
     title: "Waste Removal Coventry | Maxx Waste Removals",
     description:
-      "Fast and affordable waste removal, rubbish clearance, and house clearance services in Coventry.",
+      "Fast and affordable waste removal in Coventry including house clearance, sofa removal, and garden waste clearance services.",
     url: "https://maxxwasteremovals.co.uk/coventry",
     siteName: "Maxx Waste Removals",
     type: "website",
@@ -55,7 +53,6 @@ export const metadata = {
 export default function CoventryPage() {
   return (
     <main className="min-h-screen">
-
       <Navbar />
 
       <HeroSection
@@ -64,18 +61,34 @@ export default function CoventryPage() {
       />
 
       <TrustBar />
-      <ServicesGrid />
-      <AreasSection />
+
+      <section id="services">
+        <ServicesGrid />
+      </section>
+
+      <section id="areas">
+        <AreasSection />
+      </section>
+
       <WhyChooseUs />
-      <Testimonials />
-      <QuoteForm />
+
+      <section id="reviews">
+        <Testimonials />
+      </section>
+
+      <section id="contact">
+        <QuoteForm />
+      </section>
+
       <CTASection />
+
       <InternalLinks />
 
       <FAQSchema city="Coventry" />
 
-      <Footer />
+      <LocalBusinessSchema />
 
+      <Footer />
     </main>
   );
 }

@@ -6,6 +6,9 @@ export default function robots() {
         allow: "/",
       },
     ],
+
     sitemap: "https://maxxwasteremovals.co.uk/sitemap.xml",
+
+    host: "https://maxxwasteremovals.co.uk",
   };
 }

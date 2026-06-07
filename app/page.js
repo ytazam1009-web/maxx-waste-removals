@@ -9,6 +9,8 @@ import CTASection from "@/components/home/CTASection";
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/navigation/Navbar";
 import InternalLinks from "@/components/seo/InternalLinks";
+import FAQSchema from "@/components/seo/FAQSchema";
+import LocalBusinessSchema from "@/components/seo/LocalBusinessSchema";
 
 export const metadata = {
   title:
@@ -21,10 +23,20 @@ export const metadata = {
 export default function HomePage() {
   return (
     <main>
-
       <Navbar />
 
-      {/* HERO (FIXED PROPS SO IT DOES NOT BREAK IMAGE SYSTEM) */}
+      {/* HERO SEO HEADER */}
+      <section className="max-w-6xl mx-auto px-6 pt-10">
+        <h1 className="text-4xl font-bold text-white">
+          Waste Removal Leicester, Coventry & Birmingham
+        </h1>
+
+        <p className="mt-4 text-gray-300">
+          Professional waste removal, house clearance, garden waste removal,
+          sofa removal, and office clearance services across the Midlands with fast same-day collection.
+        </p>
+      </section>
+
       <HeroSection
         city="Midlands"
         heroImage="/images/hero/waste-removal-truck.webp"
@@ -32,22 +44,33 @@ export default function HomePage() {
 
       <TrustBar />
 
-      <ServicesGrid />
+      <section id="services">
+        <ServicesGrid />
+      </section>
 
-      <AreasSection />
+      <section id="areas">
+        <AreasSection />
+      </section>
 
       <WhyChooseUs />
 
-      <Testimonials />
+      <section id="reviews">
+        <Testimonials />
+      </section>
 
-      <QuoteForm />
+      <section id="contact">
+        <QuoteForm />
+      </section>
 
       <CTASection />
 
       <InternalLinks />
 
-      <Footer />
+      {/* SEO SCHEMAS */}
+      <FAQSchema city="Midlands" />
+      <LocalBusinessSchema />
 
+      <Footer />
     </main>
   );
-} 
+}

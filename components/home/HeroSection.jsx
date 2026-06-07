@@ -21,6 +21,18 @@ export default function HeroSection({
     <Section>
       <Container>
 
+        {/* SEO HEADER BLOCK (IMPORTANT FOR RANKING) */}
+        <div className="mb-10 text-center lg:text-left">
+          <h1 className="text-4xl font-extrabold leading-tight text-white md:text-6xl">
+            Waste Removal {city}
+          </h1>
+
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-gray-300 mx-auto lg:mx-0">
+            Professional waste removal, house clearance, garden waste disposal,
+            sofa removal, and rubbish collection services with same-day availability and eco-friendly disposal.
+          </p>
+        </div>
+
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
 
           {/* LEFT CONTENT */}
@@ -30,14 +42,6 @@ export default function HeroSection({
               <div className="mb-6 inline-flex items-center rounded-full border border-yellow-400/30 bg-yellow-400/10 px-4 py-2 text-sm font-medium text-yellow-400">
                 Same Day Waste Collection Available
               </div>
-
-              <h1 className="max-w-2xl text-4xl font-extrabold leading-tight text-white md:text-6xl">
-                Waste Removal {city}
-              </h1>
-
-              <p className="mt-6 max-w-xl text-lg leading-relaxed text-gray-300">
-                Professional waste removal, house clearance, garden waste disposal, and rubbish collection services with fast response times and eco-friendly disposal.
-              </p>
 
               <div className="mt-8 flex flex-wrap gap-4">
 
@@ -87,15 +91,16 @@ export default function HeroSection({
 
               <div className="absolute inset-0 rounded-3xl bg-yellow-400/20 blur-3xl" />
 
-              <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm">
+              <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5">
 
                 <Image
                   src={heroImage}
-                  alt={`Waste removal service in ${city}`}
+                  alt={`Waste removal services in ${city}`}
                   width={800}
                   height={600}
-                  className="h-full w-full object-cover"
                   priority
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="h-full w-full object-cover"
                 />
 
               </div>

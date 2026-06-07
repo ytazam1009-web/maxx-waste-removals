@@ -2,94 +2,212 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import Image from "next/image";
+import { Menu, X, Phone } from "lucide-react";
 
 import Container from "@/components/layout/Container";
-import PrimaryButton from "@/components/ui/PrimaryButton";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header
-      className="
-      sticky
-      top-0
-      z-50
-      border-b
-      border-white/10
-      bg-[#07152f]/90
-      backdrop-blur-lg
-    "
-    >
-      <Container>
-        <div className="flex items-center justify-between py-5">
-          <Link
-            href="/"
-            className="text-xl md:text-2xl font-extrabold text-white"
-          >
-            MAXX Waste Removals
-          </Link>
+    <>
+      <header
+        className="
+          fixed
+          top-0
+          left-0
+          w-full
+          z-50
+          bg-[#07152f]/95
+          backdrop-blur-md
+          border-b
+          border-white/10
+        "
+      >
+        <Container>
+          <div className="flex items-center justify-between py-3">
 
-          {/* Desktop Nav */}
+            {/* LOGO */}
+            <Link
+              href="/"
+              className="flex items-center gap-4 flex-shrink-0"
+            >
+              {/* FIXED LOGO (NO WARNING + RESPONSIVE) */}
+              <div className="relative w-[120px] md:w-[170px] h-[60px]">
+                <Image
+                  src="/logos/logo.png"
+                  alt="MAXX Waste Removals"
+                  fill
+                  priority
+                  className="object-contain"
+                />
+              </div>
 
-          <nav className="hidden md:flex items-center gap-8 text-gray-300">
+              <div className="hidden sm:flex flex-col leading-none">
+                <span className="text-2xl md:text-3xl font-black text-white">
+                  MAXX
+                </span>
 
-            <Link href="/">Home</Link>
+                <span className="text-[#f6be00] uppercase tracking-[3px] text-xs md:text-sm font-bold mt-1">
+                  Waste Removals
+                </span>
+              </div>
+            </Link>
 
-            <Link href="/leicester">Leicester</Link>
+            {/* DESKTOP NAV */}
+            <nav className="hidden lg:flex items-center gap-10 text-white font-medium">
 
-            <Link href="/coventry">Coventry</Link>
+              <a href="/" className="hover:text-[#f6be00] transition">
+                Home
+              </a>
 
-            <Link href="/birmingham">Birmingham</Link>
+              <a href="#services" className="hover:text-[#f6be00] transition">
+                Services
+              </a>
 
-          </nav>
+              <a href="#areas" className="hover:text-[#f6be00] transition">
+                Areas
+              </a>
 
-          <div className="hidden md:block">
-            <PrimaryButton href="/contact">
-              Free Quote
-            </PrimaryButton>
-          </div>
+              <a href="#reviews" className="hover:text-[#f6be00] transition">
+                Reviews
+              </a>
 
-          {/* Mobile Menu Button */}
+              <a href="#contact" className="hover:text-[#f6be00] transition">
+                Contact
+              </a>
 
-          <button
-            className="md:hidden"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
-        </div>
+            </nav>
 
-        {/* Mobile Menu */}
+            {/* RIGHT SIDE */}
+            <div className="flex items-center gap-3">
 
-        {isOpen && (
-          <div
-            className="
-            md:hidden
-            border-t
-            border-white/10
-            py-6
-          "
-          >
-            <div className="flex flex-col gap-5">
-
-              <Link href="/">Home</Link>
-
-              <Link href="/leicester">Leicester</Link>
-
-              <Link href="/coventry">Coventry</Link>
-
-              <Link href="/birmingham">Birmingham</Link>
-
-              <PrimaryButton href="/contact">
+              <a
+                href="#contact"
+                className="
+                  hidden
+                  lg:flex
+                  items-center
+                  bg-white
+                  text-[#07152f]
+                  font-bold
+                  px-5
+                  py-3
+                  rounded-full
+                  hover:scale-105
+                  transition
+                "
+              >
                 Free Quote
-              </PrimaryButton>
+              </a>
+
+              <a
+                href="tel:+447348481092"
+                className="
+                  hidden
+                  lg:flex
+                  items-center
+                  gap-2
+                  bg-[#f6be00]
+                  text-black
+                  font-bold
+                  px-5
+                  py-3
+                  rounded-full
+                  hover:scale-105
+                  transition
+                "
+              >
+                <Phone size={18} />
+                Call Now
+              </a>
+
+              {/* MOBILE MENU BUTTON */}
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="lg:hidden text-white"
+              >
+                {isOpen ? <X size={30} /> : <Menu size={30} />}
+              </button>
 
             </div>
+
           </div>
-        )}
-      </Container>
-    </header>
+        </Container>
+      </header>
+
+      {/* MOBILE MENU */}
+      {isOpen && (
+        <div
+          className="
+            fixed
+            top-[84px]
+            left-0
+            w-full
+            bg-[#07152f]
+            z-40
+            border-t
+            border-white/10
+            lg:hidden
+          "
+        >
+          <div className="flex flex-col p-8 gap-6 text-white text-lg font-medium">
+
+            <a href="/" onClick={() => setIsOpen(false)}>
+              Home
+            </a>
+
+            <a href="#services" onClick={() => setIsOpen(false)}>
+              Services
+            </a>
+
+            <a href="#areas" onClick={() => setIsOpen(false)}>
+              Areas
+            </a>
+
+            <a href="#reviews" onClick={() => setIsOpen(false)}>
+              Reviews
+            </a>
+
+            <a href="#contact" onClick={() => setIsOpen(false)}>
+              Contact
+            </a>
+
+            <a
+              href="#contact"
+              onClick={() => setIsOpen(false)}
+              className="
+                bg-white
+                text-[#07152f]
+                font-bold
+                py-3
+                px-5
+                rounded-full
+                text-center
+              "
+            >
+              Free Quote
+            </a>
+
+            <a
+              href="tel:+447348481092"
+              className="
+                bg-[#f6be00]
+                text-black
+                font-bold
+                py-3
+                px-5
+                rounded-full
+                text-center
+              "
+            >
+              Call Now
+            </a>
+
+          </div>
+        </div>
+      )}
+    </>
   );
 }

@@ -7,6 +7,7 @@
   --yellow: #f6be00;
 }
 
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -24,15 +25,34 @@ body {
   color: white;
 }
 
+/* MEDIA */
 img {
   max-width: 100%;
   height: auto;
+  display: block;
 }
 
+/* LINKS */
 a {
   text-decoration: none;
+  color: inherit;
 }
 
+/* BUTTONS */
 button {
   cursor: pointer;
+}
+
+/* SEO + ACCESSIBILITY IMPROVEMENTS */
+h1, h2, h3, h4 {
+  line-height: 1.2;
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* REMOVE FOCUS ISSUES */
+input, textarea, select, button {
+  outline: none;
 }

@@ -10,37 +10,35 @@ import CTASection from "@/components/home/CTASection";
 import Footer from "@/components/layout/Footer";
 import InternalLinks from "@/components/seo/InternalLinks";
 import FAQSchema from "@/components/seo/FAQSchema";
+import LocalBusinessSchema from "@/components/seo/LocalBusinessSchema";
 
 export const metadata = {
   title:
-    "Waste Removal Birmingham | House Clearance & Rubbish Removal Birmingham | Maxx Waste Removals",
+    "Waste Removal Birmingham | House Clearance, Rubbish Removal & Same Day Collection | Maxx Waste Removals",
 
   description:
-    "Professional waste removal services in Birmingham. House clearance, rubbish removal, garden clearance, junk removal, furniture disposal, office clearance, and same-day waste collection services across Birmingham and surrounding areas.",
+    "Fast and reliable waste removal in Birmingham including house clearance, sofa removal, garden waste clearance, office clearance, mattress removal and same-day rubbish collection services across Birmingham and nearby areas.",
 
   keywords: [
     "waste removal Birmingham",
     "rubbish clearance Birmingham",
     "house clearance Birmingham",
-    "garden clearance Birmingham",
+    "garden waste removal Birmingham",
+    "sofa removal Birmingham",
+    "mattress removal Birmingham",
+    "office clearance Birmingham",
     "junk removal Birmingham",
     "same day waste removal Birmingham",
-    "cheap waste removal Birmingham",
-    "same day rubbish removal Birmingham",
     "licensed waste carrier Birmingham",
     "affordable rubbish clearance Birmingham",
-    "professional waste removal services Birmingham",
     "waste collection Birmingham",
     "waste disposal Birmingham",
-    "house clearance Birmingham",
-    "sofa removal Birmingham",
-    "mattress removal Birmingham"
   ],
 
   openGraph: {
     title: "Waste Removal Birmingham | Maxx Waste Removals",
     description:
-      "Fast and affordable waste removal, rubbish clearance, and house clearance services in Birmingham.",
+      "Affordable same-day waste removal in Birmingham including house clearance, furniture removal and garden waste clearance services.",
     url: "https://maxxwasteremovals.co.uk/birmingham",
     siteName: "Maxx Waste Removals",
     type: "website",
@@ -55,7 +53,6 @@ export const metadata = {
 export default function BirminghamPage() {
   return (
     <main className="min-h-screen">
-
       <Navbar />
 
       <HeroSection
@@ -64,18 +61,34 @@ export default function BirminghamPage() {
       />
 
       <TrustBar />
-      <ServicesGrid />
-      <AreasSection />
+
+      <section id="services">
+        <ServicesGrid />
+      </section>
+
+      <section id="areas">
+        <AreasSection />
+      </section>
+
       <WhyChooseUs />
-      <Testimonials />
-      <QuoteForm />
+
+      <section id="reviews">
+        <Testimonials />
+      </section>
+
+      <section id="contact">
+        <QuoteForm />
+      </section>
+
       <CTASection />
+
       <InternalLinks />
 
       <FAQSchema city="Birmingham" />
 
-      <Footer />
+      <LocalBusinessSchema />
 
+      <Footer />
     </main>
   );
 }

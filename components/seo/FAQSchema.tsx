@@ -1,46 +1,39 @@
-export default function FAQSchema({ city = "the Midlands" }) {
+export default function FAQSchema({ city = "Midlands" }) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+
     mainEntity: [
       {
         "@type": "Question",
-        name: "What areas do you cover?",
+        name: `What waste removal services do you offer in ${city}?`,
         acceptedAnswer: {
           "@type": "Answer",
-          text: `We provide waste removal services across ${city} and surrounding areas.`,
+          text: `We provide professional waste removal in ${city}, including house clearance, sofa removal, garden waste clearance, office clearance, mattress disposal, and builders waste removal.`,
         },
       },
       {
         "@type": "Question",
-        name: "Do you offer same-day waste collection?",
+        name: `Do you offer same-day waste removal in ${city}?`,
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes, same-day rubbish removal is available depending on availability.",
+          text: `Yes, we offer same-day waste removal and rubbish clearance services in ${city} depending on availability.`,
         },
       },
       {
         "@type": "Question",
-        name: "What types of waste do you remove?",
+        name: `Are you a licensed waste carrier in ${city}?`,
         acceptedAnswer: {
           "@type": "Answer",
-          text: "We remove household waste, garden waste, builders waste, furniture, mattresses, office waste and more.",
+          text: `Yes, Maxx Waste Removals is fully licensed and insured to carry and dispose of waste legally in ${city} and surrounding areas.`,
         },
       },
       {
         "@type": "Question",
-        name: "Are you a licensed waste carrier?",
+        name: `What types of waste do you collect in ${city}?`,
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes, MAXX Waste Removals operates as a fully licensed waste carrier.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Do you recycle waste?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Yes, we recycle as much waste as possible and dispose of waste responsibly.",
+          text: `We collect household waste, furniture, garden waste, electrical appliances, office waste, and construction debris in ${city}.`,
         },
       },
     ],

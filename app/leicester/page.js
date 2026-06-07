@@ -10,34 +10,35 @@ import CTASection from "@/components/home/CTASection";
 import Footer from "@/components/layout/Footer";
 import InternalLinks from "@/components/seo/InternalLinks";
 import FAQSchema from "@/components/seo/FAQSchema";
+import LocalBusinessSchema from "@/components/seo/LocalBusinessSchema";
 
 export const metadata = {
   title:
-    "Waste Removal Leicester | House Clearance & Rubbish Removal Leicester | Maxx Waste Removals",
+    "Waste Removal Leicester | House Clearance, Rubbish Removal & Sofa Removal | Maxx Waste Removals",
 
   description:
-    "Professional waste removal services in Leicester. House clearance, rubbish removal, garden clearance, junk removal, mattress removal, sofa disposal, office clearance and same-day waste collection.",
+    "Professional waste removal in Leicester including house clearance, sofa removal, garden waste clearance, office clearance, mattress removal and same-day rubbish collection services.",
 
   keywords: [
     "waste removal Leicester",
     "rubbish clearance Leicester",
     "house clearance Leicester",
-    "garden clearance Leicester",
+    "garden waste removal Leicester",
+    "sofa removal Leicester",
+    "mattress removal Leicester",
+    "office clearance Leicester",
     "junk removal Leicester",
     "same day waste removal Leicester",
     "licensed waste carrier Leicester",
     "affordable rubbish clearance Leicester",
     "waste collection Leicester",
     "waste disposal Leicester",
-    "house clearance Leicester",
-    "sofa removal Leicester",
-    "mattress removal Leicester"
   ],
 
   openGraph: {
     title: "Waste Removal Leicester | Maxx Waste Removals",
     description:
-      "Fast and affordable waste removal, rubbish clearance, and house clearance services in Leicester.",
+      "Fast, affordable and licensed waste removal in Leicester including house clearance, sofa removal and garden waste clearance.",
     url: "https://maxxwasteremovals.co.uk/leicester",
     siteName: "Maxx Waste Removals",
     type: "website",
@@ -52,7 +53,6 @@ export const metadata = {
 export default function LeicesterPage() {
   return (
     <main className="min-h-screen">
-
       <Navbar />
 
       <HeroSection
@@ -61,18 +61,34 @@ export default function LeicesterPage() {
       />
 
       <TrustBar />
-      <ServicesGrid />
-      <AreasSection />
+
+      <section id="services">
+        <ServicesGrid />
+      </section>
+
+      <section id="areas">
+        <AreasSection />
+      </section>
+
       <WhyChooseUs />
-      <Testimonials />
-      <QuoteForm />
+
+      <section id="reviews">
+        <Testimonials />
+      </section>
+
+      <section id="contact">
+        <QuoteForm />
+      </section>
+
       <CTASection />
+
       <InternalLinks />
 
       <FAQSchema city="Leicester" />
 
-      <Footer />
+      <LocalBusinessSchema />
 
+      <Footer />
     </main>
   );
 }
