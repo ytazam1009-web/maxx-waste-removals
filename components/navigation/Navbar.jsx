@@ -26,15 +26,13 @@ export default function Navbar() {
         "
       >
         <Container>
-          <div className="flex items-center justify-between py-3">
-
+          <div className="flex items-center justify-between py-2">
             {/* LOGO */}
             <Link
-              href="/"
-              className="flex items-center gap-4 flex-shrink-0"
-            >
-              {/* FIXED LOGO (NO WARNING + RESPONSIVE) */}
-              <div className="relative w-[120px] md:w-[170px] h-[60px]">
+  href="/"
+  className="flex items-center gap-4 flex-shrink-0 -ml-8 md:-ml-12"
+>
+              <div className="relative w-[270px] md:w-[380px] h-[135px]">
                 <Image
                   src="/logos/logo.png"
                   alt="MAXX Waste Removals"
@@ -57,7 +55,6 @@ export default function Navbar() {
 
             {/* DESKTOP NAV */}
             <nav className="hidden lg:flex items-center gap-10 text-white font-medium">
-
               <a href="/" className="hover:text-[#f6be00] transition">
                 Home
               </a>
@@ -77,12 +74,10 @@ export default function Navbar() {
               <a href="#contact" className="hover:text-[#f6be00] transition">
                 Contact
               </a>
-
             </nav>
 
             {/* RIGHT SIDE */}
             <div className="flex items-center gap-3">
-
               <a
                 href="#contact"
                 className="
@@ -130,9 +125,7 @@ export default function Navbar() {
               >
                 {isOpen ? <X size={30} /> : <Menu size={30} />}
               </button>
-
             </div>
-
           </div>
         </Container>
       </header>
@@ -153,45 +146,60 @@ export default function Navbar() {
           "
         >
           <div className="flex flex-col p-8 gap-6 text-white text-lg font-medium">
+            {/* MOBILE BRANDING */}
+            <div className="flex flex-col items-center mb-4">
+              <span className="text-3xl font-black text-white">
+                MAXX
+              </span>
 
-            <a href="/" onClick={() => setIsOpen(false)}>
+              <span className="text-[#f6be00] uppercase tracking-[3px] text-sm font-bold mt-1">
+                Waste Removals
+              </span>
+            </div>
+
+            <a
+              href="/"
+              onClick={() => setIsOpen(false)}
+              className="hover:text-[#f6be00] transition"
+            >
               Home
             </a>
 
-            <a href="#services" onClick={() => setIsOpen(false)}>
+            <a
+              href="#services"
+              onClick={() => setIsOpen(false)}
+              className="hover:text-[#f6be00] transition"
+            >
               Services
             </a>
 
-            <a href="#areas" onClick={() => setIsOpen(false)}>
+            <a
+              href="#areas"
+              onClick={() => setIsOpen(false)}
+              className="hover:text-[#f6be00] transition"
+            >
               Areas
             </a>
 
-            <a href="#reviews" onClick={() => setIsOpen(false)}>
+            <a
+              href="#reviews"
+              onClick={() => setIsOpen(false)}
+              className="hover:text-[#f6be00] transition"
+            >
               Reviews
             </a>
 
-            <a href="#contact" onClick={() => setIsOpen(false)}>
+            <a
+              href="#contact"
+              onClick={() => setIsOpen(false)}
+              className="hover:text-[#f6be00] transition"
+            >
               Contact
             </a>
 
             <a
               href="#contact"
               onClick={() => setIsOpen(false)}
-              className="
-                bg-white
-                text-[#07152f]
-                font-bold
-                py-3
-                px-5
-                rounded-full
-                text-center
-              "
-            >
-              Free Quote
-            </a>
-
-            <a
-              href="tel:+447348481092"
               className="
                 bg-[#f6be00]
                 text-black
@@ -200,11 +208,30 @@ export default function Navbar() {
                 px-5
                 rounded-full
                 text-center
+                hover:scale-105
+                transition
+              "
+            >
+              Free Quote
+            </a>
+
+            <a
+              href="tel:+447348481092"
+              onClick={() => setIsOpen(false)}
+              className="
+                bg-[#f6be00]
+                text-black
+                font-bold
+                py-3
+                px-5
+                rounded-full
+                text-center
+                hover:scale-105
+                transition
               "
             >
               Call Now
             </a>
-
           </div>
         </div>
       )}

@@ -11,26 +11,28 @@ export const metadata = {
   metadataBase: new URL("https://maxxwasteremovals.co.uk"),
 
   title:
-    "Maxx Waste Removals | Waste Removal, Rubbish Clearance & House Clearance Midlands",
+    "Maxx Waste Removals | Waste Removal, Rubbish Clearance & House Clearance in Coventry, Leicester & Birmingham",
 
   description:
-    "Maxx Waste Removals provides fast, affordable, and professional waste removal services across Coventry, Leicester, Birmingham, and the Midlands.",
+    "Fast, affordable and professional waste removal, rubbish clearance and house clearance services across Coventry, Leicester, Birmingham and the Midlands. Same-day collection available.",
 
   keywords: [
-    "waste removal",
-    "rubbish removal",
-    "junk removal",
-    "house clearance",
-    "garden clearance",
-    "waste collection",
-    "waste disposal",
-    "waste removal Coventry",
-    "waste removal Leicester",
-    "waste removal Birmingham",
+    "waste removal UK",
+    "rubbish removal Coventry",
+    "junk removal Leicester",
+    "house clearance Birmingham",
+    "garden waste removal",
+    "waste collection Midlands",
+    "same day waste removal",
+    "Maxx Waste Removals"
   ],
 
   authors: [{ name: "Maxx Waste Removals" }],
   creator: "Maxx Waste Removals",
+
+  alternates: {
+    canonical: "https://maxxwasteremovals.co.uk",
+  },
 
   robots: {
     index: true,
@@ -38,24 +40,37 @@ export const metadata = {
     googleBot: {
       index: true,
       follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
     },
   },
 
   openGraph: {
-    title: "Maxx Waste Removals | Waste Removal Midlands",
+    title:
+      "Maxx Waste Removals | Waste Removal & House Clearance Midlands",
     description:
-      "Professional waste removal services across Coventry, Leicester and Birmingham.",
+      "Fast and affordable waste removal services across Coventry, Leicester, Birmingham and the Midlands.",
     url: "https://maxxwasteremovals.co.uk",
     siteName: "Maxx Waste Removals",
     locale: "en_GB",
     type: "website",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Maxx Waste Removals",
+      },
+    ],
   },
 
   twitter: {
     card: "summary_large_image",
     title: "Maxx Waste Removals",
     description:
-      "Fast and professional waste removal services across the Midlands.",
+      "Fast waste removal services across Coventry, Leicester & Birmingham.",
+    images: ["/og-image.jpg"],
   },
 };
 
