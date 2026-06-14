@@ -12,9 +12,9 @@ export async function POST(req) {
     const city = body?.city || "Midlands";
     const message = body?.message || "";
 
-    // Using Resend to send a professionally formatted email
     await resend.emails.send({
-      from: "MAXX Waste <onboarding@resend.dev>", 
+      // FIXED: Now using your real professional email address!
+      from: "MAXX Waste <info@maxxwasteremovals.co.uk>", 
       to: "info@maxxwasteremovals.co.uk",
       reply_to: email,
       subject: `New Waste Removal Quote Request - ${city}`,
