@@ -1,5 +1,4 @@
 "use client";
-
 import Image from "next/image";
 import FadeUp from "@/components/ui/FadeUp";
 import { Phone, Send } from "lucide-react";
@@ -22,29 +21,36 @@ export default function HeroSection({
             alt={`Waste removal in ${city}`}
             fill
             priority
+            sizes="(max-width: 1024px) 100vw, 68vw"
             className="object-cover opacity-100 rounded-[2.5rem] md:rounded-[4rem]" 
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#07152f] via-[#07152f] to-transparent lg:via-[#07152f]/30 rounded-[2.5rem] md:rounded-[4rem]" />
         </div>
       </div>
 
-      {/* THE RELAX BADGE */}
-      <div className="absolute top-32 right-8 md:right-16 z-20 hidden lg:block">
+      {/* THE RELAX BADGE - FIXED FOR MOBILE */}
+      <div className="absolute top-28 right-4 md:top-32 md:right-16 z-20">
         <FadeUp delay={0.8}>
-          <div className="relative w-40 h-40 md:w-56 md:h-56 group">
-            <div className="absolute inset-0 bg-[#f6be00]/30 blur-[60px] rounded-full scale-125 opacity-50" />
-            <div className="relative w-full h-full rounded-full border-4 md:border-8 border-white/20 shadow-2xl overflow-hidden transition-all duration-700 group-hover:scale-110">
-              <Image src="/images/relax.webp" alt="Relax" fill className="object-cover" />
+          <div className="relative w-28 h-28 md:w-56 md:h-56 group">
+            <div className="absolute inset-0 bg-[#f6be00]/30 blur-[40px] md:blur-[60px] rounded-full scale-125 opacity-50" />
+            <div className="relative w-full h-full rounded-full border-2 md:border-8 border-white/20 shadow-2xl overflow-hidden transition-all duration-700 group-hover:scale-110">
+              <Image 
+                src="/images/relax.webp" 
+                alt="Relax" 
+                fill 
+                sizes="(max-width: 768px) 112px, 224px"
+                className="object-cover" 
+              />
             </div>
           </div>
         </FadeUp>
       </div>
 
-      {/* CONTENT - Fixed "Free Quote" button to scroll to #contact */}
+      {/* CONTENT */}
       <div className="relative z-10 w-full pt-44 md:pt-40 pb-20 px-6 md:px-12 lg:px-20">
         <div className="max-w-4xl">
           <FadeUp>
-            <div className="mb-6 md:mb-8 inline-flex items-center rounded-full border-2 border-[#f6be00] bg-[#f6be00]/10 px-6 py-2 text-xs md:text-sm font-black text-[#f6be00] uppercase tracking-widest shadow-lg">
+            <div className="mb-6 md:mb-8 inline-flex items-center rounded-full border-2 border-[#f6be00] bg-[#f6be00]/10 px-6 py-2 text-[10px] md:text-sm font-black text-[#f6be00] uppercase tracking-widest shadow-lg">
               Same Day Waste Collection Available
             </div>
 

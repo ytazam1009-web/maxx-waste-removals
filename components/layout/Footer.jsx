@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 import { Phone, Mail, MapPin, Clock, Share2 } from "lucide-react";
@@ -7,6 +8,19 @@ import WasteCarrierBadge from "../common/WasteCarrierBadge";
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
+  const handleShare = () => {
+    if (typeof window !== "undefined" && navigator.share) {
+      navigator.share({
+        title: 'MAXX Waste Removals',
+        text: 'Professional waste removal and rubbish collection services.',
+        url: window.location.href,
+      }).catch((error) => console.log('Error sharing', error));
+    } else if (typeof window !== "undefined") {
+      navigator.clipboard.writeText(window.location.href);
+      alert("Link copied to clipboard!");
+    }
+  };
+
   return (
     <footer className="bg-[#07152f] text-white pt-20 pb-10 border-t border-white/5">
       <Container>
@@ -14,35 +28,37 @@ export default function Footer() {
           
           {/* BRANDING SECTION */}
           <div className="flex flex-col gap-6">
-            <Link href="/" className="flex items-center gap-3 group">
-              <div className="relative w-[60px] h-[60px]">
+            <Link href="/" className="flex items-center group">
+              <div className="relative w-[200px] h-[60px]">
                 <Image
                   src="/logos/logo.webp"
                   alt="MAXX Waste Removals"
                   fill
-                  className="object-contain transition-transform group-hover:scale-110"
+                  sizes="200px"
+                  className="object-contain transition-transform group-hover:scale-105"
                 />
-              </div>
-              <div className="flex flex-col leading-tight">
-                <span className="text-2xl font-black tracking-tight">MAXX</span>
-                <span className="text-[#f6be00] uppercase tracking-[2px] text-[10px] font-bold">
-                  Waste Removals
-                </span>
               </div>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed">
               Your trusted local partner for professional waste removal and clearance services across the Midlands. Fully licensed, insured, and eco-friendly.
             </p>
-            <div className="flex gap-4">
-              <div className="p-3 bg-white/5 rounded-xl border border-white/10 text-gray-400 hover:text-[#f6be00] hover:border-[#f6be00] transition-all cursor-pointer">
-                <Share2 size={20} />
-              </div>
+            <div className="flex flex-col gap-3">
+              <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Share our website:</p>
+              <button 
+                onClick={handleShare}
+                className="flex items-center gap-3 w-fit p-3 bg-white/5 rounded-xl border border-white/10 text-gray-400 hover:text-[#f6be00] hover:border-[#f6be00] transition-all group"
+              >
+                <div className="w-8 h-8 bg-[#f6be00]/10 rounded-lg flex items-center justify-center group-hover:bg-[#f6be00]/20 transition-colors">
+                  <Share2 size={16} className="text-[#f6be00]" />
+                </div>
+                <span className="text-xs font-bold uppercase tracking-wider">Send to a Friend</span>
+              </button>
             </div>
           </div>
 
           {/* SERVICES SECTION */}
           <div>
-            <h4 className="text-lg font-bold mb-8 relative inline-block">
+            <h4 className="text-lg font-bold mb-8 relative inline-block text-[#f6be00]">
               Our Services
               <span className="absolute -bottom-2 left-0 w-8 h-1 bg-[#f6be00] rounded-full"></span>
             </h4>
@@ -57,7 +73,7 @@ export default function Footer() {
 
           {/* AREAS SECTION */}
           <div>
-            <h4 className="text-lg font-bold mb-8 relative inline-block">
+            <h4 className="text-lg font-bold mb-8 relative inline-block text-[#f6be00]">
               Service Areas
               <span className="absolute -bottom-2 left-0 w-8 h-1 bg-[#f6be00] rounded-full"></span>
             </h4>
@@ -74,7 +90,7 @@ export default function Footer() {
 
           {/* CONTACT SECTION */}
           <div>
-            <h4 className="text-lg font-bold mb-8 relative inline-block">
+            <h4 className="text-lg font-bold mb-8 relative inline-block text-[#f6be00]">
               Contact Us
               <span className="absolute -bottom-2 left-0 w-8 h-1 bg-[#f6be00] rounded-full"></span>
             </h4>
