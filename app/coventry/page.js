@@ -50,13 +50,15 @@ export const metadata = {
   },
 };
 
-export default function CoventryPage() {
+export default function CoventryPage( ) {
   return (
     <main className="min-h-screen">
-      <Navbar />
+      {/* Passing the local Coventry number to all components */}
+      <Navbar phoneNumber="02475102901" />
 
       <HeroSection
         city="Coventry"
+        phoneNumber="02475102901"
         heroImage="/images/coventry.webp"
       />
 
@@ -80,7 +82,7 @@ export default function CoventryPage() {
         <QuoteForm />
       </section>
 
-      <CTASection />
+      <CTASection phoneNumber="02475102901" />
 
       <InternalLinks />
 

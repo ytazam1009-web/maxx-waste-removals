@@ -13,32 +13,19 @@ import FAQSchema from "@/components/seo/FAQSchema";
 import LocalBusinessSchema from "@/components/seo/LocalBusinessSchema";
 
 export const metadata = {
-  title:
-    "Maxx Waste Removals | Waste Removal Leicester, Coventry & Birmingham",
-
-  description:
-    "Professional waste removal services across Leicester, Coventry, and Birmingham. House clearance, rubbish removal, garden clearance, junk removal, furniture disposal, office clearance and same-day waste collection.",
+  title: "Maxx Waste Removals | Waste Removal Leicester, Coventry & Birmingham",
+  description: "Professional waste removal services across Leicester, Coventry, and Birmingham. Same-day collection for house, garden, and office clearance.",
 };
 
 export default function HomePage() {
   return (
     <main>
-      <Navbar />
+      <Navbar phoneNumber="02475102901" />
 
-      {/* HERO SEO HEADER */}
-      <section className="max-w-6xl mx-auto px-6 pt-10">
-        <h1 className="text-4xl font-bold text-white">
-          Waste Removal Leicester, Coventry & Birmingham
-        </h1>
-
-        <p className="mt-4 text-gray-300">
-          Professional waste removal, house clearance, garden waste removal,
-          sofa removal, and office clearance services across the Midlands with fast same-day collection.
-        </p>
-      </section>
-
+      {/* Hero Section now contains the H1 and main description internally */}
       <HeroSection
         city="Midlands"
+        phoneNumber="02475102901"
         heroImage="/images/hero/waste-removal-truck.webp"
       />
 
@@ -62,11 +49,10 @@ export default function HomePage() {
         <QuoteForm />
       </section>
 
-      <CTASection />
+      <CTASection phoneNumber="02475102901" />
 
       <InternalLinks />
 
-      {/* SEO SCHEMAS */}
       <FAQSchema city="Midlands" />
       <LocalBusinessSchema />
 

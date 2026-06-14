@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import LocalBusinessSchema from "@/components/seo/LocalBusinessSchema";
 
 const inter = Inter({
@@ -24,11 +25,24 @@ export const metadata = {
     "garden waste removal",
     "waste collection Midlands",
     "same day waste removal",
-    "Maxx Waste Removals"
+    "Maxx Waste Removals",
   ],
 
   authors: [{ name: "Maxx Waste Removals" }],
   creator: "Maxx Waste Removals",
+
+  verification: {
+    google: "PASTE_YOUR_CODE_HERE",
+  },
+
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
 
   alternates: {
     canonical: "https://maxxwasteremovals.co.uk",
@@ -47,8 +61,7 @@ export const metadata = {
   },
 
   openGraph: {
-    title:
-      "Maxx Waste Removals | Waste Removal & House Clearance Midlands",
+    title: "Maxx Waste Removals | Waste Removal & House Clearance Midlands",
     description:
       "Fast and affordable waste removal services across Coventry, Leicester, Birmingham and the Midlands.",
     url: "https://maxxwasteremovals.co.uk",
@@ -83,6 +96,23 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
+
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-DCGNB9PB8V"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-DCGNB9PB8V');
+          `}
+        </Script>
+
         <LocalBusinessSchema />
         {children}
       </body>

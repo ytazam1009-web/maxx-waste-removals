@@ -1,118 +1,138 @@
+"use client";
+
 import Container from "@/components/layout/Container";
 import Section from "@/components/layout/Section";
+import { Phone, Calendar } from "lucide-react";
 
-import PrimaryButton from "@/components/ui/PrimaryButton";
+export default function CTASection({ phoneNumber = "02475102901" }) {
+  const telLink = `tel:${phoneNumber.replace(/\s+/g, "")}`;
 
-export default function CTASection() {
   return (
     <Section>
-
       <Container>
-
         <div className="
           relative
           overflow-hidden
-          rounded-3xl
-          border
-          border-white/10
-          bg-yellow-400
+          rounded-[2.5rem]
+          bg-[#f6be00]
           px-8
-          py-16
+          py-20
           text-center
           md:px-16
+          shadow-[0_20px_50px_rgba(246,190,0,0.2)]
         ">
-
+          {/* Decorative Circles */}
           <div className="
             absolute
-            -top-10
-            -right-10
-            h-40
-            w-40
+            -top-20
+            -right-20
+            h-64
+            w-64
             rounded-full
-            bg-white/10
+            bg-white/20
+            blur-3xl
           " />
-
           <div className="
             absolute
-            -bottom-10
-            -left-10
-            h-40
-            w-40
+            -bottom-20
+            -left-20
+            h-64
+            w-64
             rounded-full
-            bg-white/10
+            bg-black/5
+            blur-2xl
           " />
 
           <div className="relative z-10">
-
             <h2 className="
               text-4xl
-              font-extrabold
+              font-black
               leading-tight
-              text-black
-              md:text-5xl
+              text-[#07152f]
+              md:text-6xl
+              tracking-tight
             ">
-
-              Need Fast Waste Removal Services?
-
+              Ready to Clear the <span className="underline decoration-white/40">Clutter?</span>
             </h2>
 
             <p className="
               mx-auto
-              mt-6
+              mt-8
               max-w-2xl
-              text-lg
+              text-xl
+              font-bold
               leading-relaxed
-              text-black/80
+              text-[#07152f]/80
             ">
-
-              Contact Maxx Waste Removals today for fast,
-              affordable, and professional rubbish collection
-              services across Leicester, Coventry, and Birmingham.
-
+              Join hundreds of happy customers across the Midlands. 
+              Get your free, no-obligation quote today and enjoy a cleaner space by tonight!
             </p>
 
             <div className="
-              mt-10
+              mt-12
               flex
-              flex-wrap
+              flex-col
+              sm:flex-row
               justify-center
-              gap-4
+              items-center
+              gap-6
             ">
-
-              <PrimaryButton href="/contact">
-                Get Free Quote
-              </PrimaryButton>
-
               <a
-                href="tel:+441234567890"
+                href="#contact"
                 className="
-                  inline-flex
-                  items-center
-                  justify-center
-                  rounded-2xl
-                  border
-                  border-black/20
-                  px-8
-                  py-4
-                  font-bold
-                  text-black
-                  transition
-                  hover:bg-black/5
+                  w-full sm:w-auto
+                  flex items-center justify-center gap-3
+                  bg-[#07152f]
+                  text-white
+                  px-10
+                  py-5
+                  rounded-full
+                  font-black
+                  text-lg
+                  uppercase
+                  tracking-widest
+                  shadow-2xl
+                  hover:scale-105
+                  transition-all
+                  duration-300
                 "
               >
-
-                Call Now
-
+                <Calendar size={20} />
+                Get Free Quote
               </a>
 
+              <a
+                href={telLink}
+                className="
+                  w-full sm:w-auto
+                  flex items-center justify-center gap-3
+                  bg-white/20
+                  border-2
+                  border-[#07152f]/10
+                  text-[#07152f]
+                  px-10
+                  py-5
+                  rounded-full
+                  font-black
+                  text-lg
+                  uppercase
+                  tracking-widest
+                  hover:bg-white
+                  transition-all
+                  duration-300
+                "
+              >
+                <Phone size={20} fill="currentColor" />
+                {phoneNumber}
+              </a>
             </div>
 
+            <p className="mt-8 text-[#07152f]/60 text-sm font-bold uppercase tracking-tighter">
+              ★ Fully Licensed & Insured Waste Carriers ★
+            </p>
           </div>
-
         </div>
-
       </Container>
-
     </Section>
   );
 }

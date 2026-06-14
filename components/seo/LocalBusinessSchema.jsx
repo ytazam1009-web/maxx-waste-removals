@@ -1,58 +1,67 @@
 export default function LocalBusinessSchema() {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    name: "Maxx Waste Removals",
-    url: "https://maxxwasteremovals.co.uk",
-    image: "https://maxxwasteremovals.co.uk/logo.png",
-    description:
-      "Professional waste removal, rubbish clearance, and house clearance services across Leicester, Coventry, Birmingham, and the Midlands.",
-    
-    telephone: "+44 7348 481092",
-
-    areaServed: [
-      {
-        "@type": "City",
-        name: "Leicester",
-      },
-      {
-        "@type": "City",
-        name: "Coventry",
-      },
-      {
-        "@type": "City",
-        name: "Birmingham",
-      },
-      {
-        "@type": "AdministrativeArea",
-        name: "Midlands",
-      },
-    ],
-
-    serviceType: [
-      "Waste Removal",
-      "Rubbish Clearance",
-      "House Clearance",
-      "Garden Waste Removal",
-      "Office Clearance",
-      "Furniture Disposal",
-      "Same Day Waste Collection",
-    ],
-
-    address: {
+    "@type": "WasteManagementBusiness",
+    "name": "Maxx Waste Removals",
+    "image": "https://maxxwasteremovals.co.uk/logos/logo.png",
+    "@id": "https://maxxwasteremovals.co.uk",
+    "url": "https://maxxwasteremovals.co.uk",
+    "telephone": "02475102901",
+    "priceRange": "££",
+    "address": {
       "@type": "PostalAddress",
-      addressCountry: "GB",
+      "streetAddress": "Midlands Area",
+      "addressLocality": "Coventry",
+      "addressRegion": "West Midlands",
+      "postalCode": "CV1",
+      "addressCountry": "GB"
     },
-
-    priceRange: "££",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 52.4068,
+      "longitude": -1.5197
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "00:00",
+      "closes": "23:59"
+    },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Coventry",
+        "telephone": "02475102901"
+      },
+      {
+        "@type": "City",
+        "name": "Leicester",
+        "telephone": "01163600853"
+      },
+      {
+        "@type": "City",
+        "name": "Birmingham",
+        "telephone": "01218126425"
+      }
+    ],
+    "sameAs": [
+      "https://www.facebook.com/maxxwasteremovals",
+      "https://www.instagram.com/maxxwasteremovals"
+    ]
   };
 
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{
-        __html: JSON.stringify(schema),
-      }}
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema ) }}
     />
   );
 }

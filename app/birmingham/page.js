@@ -50,13 +50,15 @@ export const metadata = {
   },
 };
 
-export default function BirminghamPage() {
+export default function BirminghamPage( ) {
   return (
     <main className="min-h-screen">
-      <Navbar />
+      {/* Passing the local Birmingham number to all components */}
+      <Navbar phoneNumber="01218126425" />
 
       <HeroSection
         city="Birmingham"
+        phoneNumber="01218126425"
         heroImage="/images/birmingham.webp"
       />
 
@@ -80,7 +82,7 @@ export default function BirminghamPage() {
         <QuoteForm />
       </section>
 
-      <CTASection />
+      <CTASection phoneNumber="01218126425" />
 
       <InternalLinks />
 

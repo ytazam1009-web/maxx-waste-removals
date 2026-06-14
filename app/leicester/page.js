@@ -50,13 +50,15 @@ export const metadata = {
   },
 };
 
-export default function LeicesterPage() {
+export default function LeicesterPage( ) {
   return (
     <main className="min-h-screen">
-      <Navbar />
+      {/* Passing the local Leicester number to all components */}
+      <Navbar phoneNumber="01163600853" />
 
       <HeroSection
         city="Leicester"
+        phoneNumber="01163600853"
         heroImage="/images/leicester-waste-removal.webp"
       />
 
@@ -80,7 +82,7 @@ export default function LeicesterPage() {
         <QuoteForm />
       </section>
 
-      <CTASection />
+      <CTASection phoneNumber="01163600853" />
 
       <InternalLinks />
 

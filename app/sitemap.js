@@ -3,10 +3,19 @@ export default function sitemap() {
     process.env.NEXT_PUBLIC_SITE_URL ||
     "https://maxxwasteremovals.co.uk";
 
-  return [
+  const services = [
+    'builders-waste',
+    'garden-waste',
+    'house-clearance',
+    'mattress-removal',
+    'office-clearance',
+    'sofa-removal'
+  ];
+
+  const mainPages = [
     {
       url: `${baseUrl}`,
-      lastModified: new Date(),
+      lastModified: new Date( ),
       changeFrequency: "weekly",
       priority: 1.0,
     },
@@ -29,10 +38,25 @@ export default function sitemap() {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/services`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/contact`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
     },
   ];
+
+  const servicePages = services.map((service) => ({
+    url: `${baseUrl}/services/${service}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: 0.8,
+  }));
+
+  return [...mainPages, ...servicePages];
 }
