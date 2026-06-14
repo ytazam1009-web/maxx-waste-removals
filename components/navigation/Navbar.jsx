@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, Phone, Calendar } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 
 import Container from "@/components/layout/Container";
 
@@ -30,13 +30,15 @@ export default function Navbar({ phoneNumber = "02475102901" }) {
         "
       >
         <Container>
-          <div className="flex items-center justify-between py-3">
-            {/* LOGO SECTION */}
+          {/* Reduced padding from py-3 to py-2 to make it more compact */}
+          <div className="flex items-center justify-between py-2">
+            
+            {/* LOGO SECTION - Resized for better fit */}
             <Link
               href="/"
               className="flex items-center gap-3 transition hover:opacity-90"
             >
-              <div className="relative w-[60px] h-[60px] md:w-[80px] md:h-[80px]">
+              <div className="relative w-[180px] md:w-[220px] h-[60px] md:h-[75px]">
                 <Image
                   src="/logos/logo.png"
                   alt="MAXX Waste Removals"
@@ -45,9 +47,8 @@ export default function Navbar({ phoneNumber = "02475102901" }) {
                   className="object-contain"
                 />
               </div>
-
-              <div className="flex flex-col leading-tight">
-                <span className="text-xl md:text-2xl font-black text-white tracking-tight">
+              <div className="hidden sm:flex flex-col leading-none">
+                <span className="text-xl md:text-2xl font-black text-white tracking-tighter">
                   MAXX
                 </span>
                 <span className="text-[#f6be00] uppercase tracking-[2px] text-[10px] md:text-xs font-bold">
@@ -56,84 +57,46 @@ export default function Navbar({ phoneNumber = "02475102901" }) {
               </div>
             </Link>
 
-            {/* DESKTOP NAV LINKS */}
-            <nav className="hidden lg:flex items-center gap-8 text-white/90 font-semibold text-sm uppercase tracking-wide">
-              <a href="/" className="hover:text-[#f6be00] transition-colors">
-                Home
-              </a>
-              <a href="#services" className="hover:text-[#f6be00] transition-colors">
-                Services
-              </a>
-              <a href="#areas" className="hover:text-[#f6be00] transition-colors">
-                Areas
-              </a>
-              <a href="#reviews" className="hover:text-[#f6be00] transition-colors">
-                Reviews
-              </a>
-              <a href="#contact" className="hover:text-[#f6be00] transition-colors">
-                Contact
-              </a>
+            {/* DESKTOP NAV */}
+            <nav className="hidden lg:flex items-center gap-8 text-white text-sm font-bold uppercase tracking-widest">
+              <a href="/" className="hover:text-[#f6be00] transition-colors">Home</a>
+              <a href="#services" className="hover:text-[#f6be00] transition-colors">Services</a>
+              <a href="#areas" className="hover:text-[#f6be00] transition-colors">Areas</a>
+              <a href="#reviews" className="hover:text-[#f6be00] transition-colors">Reviews</a>
+              <a href="#contact" className="hover:text-[#f6be00] transition-colors">Contact</a>
             </nav>
 
             {/* ACTION BUTTONS */}
             <div className="flex items-center gap-3">
               <a
-                href="#contact"
-                className="
-                  hidden
-                  sm:flex
-                  items-center
-                  gap-2
-                  bg-[#f6be00]
-                  text-[#07152f]
-                  font-extrabold
-                  px-6
-                  py-2.5
-                  rounded-full
-                  text-sm
-                  uppercase
-                  shadow-[0_4px_20px_rgba(246,190,0,0.3)]
-                  hover:bg-white
-                  hover:shadow-[0_4px_20px_rgba(255,255,255,0.2)]
-                  transition-all
-                  duration-300
-                "
-              >
-                <Calendar size={16} />
-                Free Quote
-              </a>
-
-              <a
                 href={telLink}
                 className="
-                  flex
+                  hidden
+                  md:flex
                   items-center
                   gap-2
                   bg-[#f6be00]
                   text-[#07152f]
-                  font-extrabold
-                  px-6
+                  font-black
+                  px-5
                   py-2.5
-                  rounded-full
+                  rounded-xl
                   text-sm
                   uppercase
-                  shadow-[0_4px_20px_rgba(246,190,0,0.3)]
-                  hover:bg-white
-                  hover:shadow-[0_4px_20px_rgba(255,255,255,0.2)]
+                  tracking-wider
+                  hover:scale-105
                   transition-all
-                  duration-300
+                  shadow-[0_4px_15px_rgba(246,190,0,0.3)]
                 "
               >
                 <Phone size={16} fill="currentColor" />
-                <span className="hidden md:inline">{phoneNumber}</span>
-                <span className="md:hidden text-xs">Call</span>
+                {phoneNumber}
               </a>
 
-              {/* MOBILE MENU TOGGLE */}
+              {/* MOBILE MENU BUTTON */}
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="lg:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors"
-                aria-label="Toggle Menu"
+                className="p-2 text-white hover:text-[#f6be00] transition-colors"
               >
                 {isOpen ? <X size={28} /> : <Menu size={28} />}
               </button>
@@ -142,48 +105,22 @@ export default function Navbar({ phoneNumber = "02475102901" }) {
         </Container>
       </header>
 
-      {/* MOBILE OVERLAY MENU */}
+      {/* MOBILE MENU - Adjusted top position to match new header height */}
       {isOpen && (
-        <div
-          className="
-            fixed
-            inset-0
-            top-[84px]
-            w-full
-            h-screen
-            bg-[#07152f]
-            z-40
-            lg:hidden
-            animate-in fade-in slide-in-from-top-4
-          "
-        >
-          <nav className="flex flex-col p-6 gap-4 text-white">
-            <div className="grid grid-cols-1 gap-3 mb-6">
-              <a
-                href="/"
-                onClick={() => setIsOpen(false)}
-                className="p-4 bg-white/5 rounded-xl hover:bg-[#f6be00] hover:text-[#07152f] transition-all font-bold uppercase tracking-widest text-center"
-              >
-                Home
-              </a>
-              <a
-                href="#services"
-                onClick={() => setIsOpen(false)}
-                className="p-4 bg-white/5 rounded-xl hover:bg-[#f6be00] hover:text-[#07152f] transition-all font-bold uppercase tracking-widest text-center"
-              >
-                Services
-              </a>
-              <a
-                href="#areas"
-                onClick={() => setIsOpen(false)}
-                className="p-4 bg-white/5 rounded-xl hover:bg-[#f6be00] hover:text-[#07152f] transition-all font-bold uppercase tracking-widest text-center"
-              >
-                Areas
-              </a>
+        <div className="fixed inset-0 z-40 lg:hidden">
+          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setIsOpen(false)} />
+          <nav className="absolute top-[80px] left-0 w-full bg-[#07152f] border-t border-white/10 p-8 flex flex-col gap-6 text-white">
+            <a href="/" onClick={() => setIsOpen(false)} className="text-xl font-bold border-b border-white/5 pb-2">Home</a>
+            <a href="#services" onClick={() => setIsOpen(false)} className="text-xl font-bold border-b border-white/5 pb-2">Services</a>
+            <a href="#areas" onClick={() => setIsOpen(false)} className="text-xl font-bold border-b border-white/5 pb-2">Areas</a>
+            <a href="#reviews" onClick={() => setIsOpen(false)} className="text-xl font-bold border-b border-white/5 pb-2">Reviews</a>
+            <a href="#contact" onClick={() => setIsOpen(false)} className="text-xl font-bold border-b border-white/5 pb-2">Contact</a>
+            
+            <div className="flex flex-col gap-4 pt-4">
               <a
                 href="#contact"
                 onClick={() => setIsOpen(false)}
-                className="p-4 bg-[#f6be00] text-[#07152f] rounded-xl font-black uppercase tracking-widest text-center shadow-lg"
+                className="p-4 bg-white text-[#07152f] rounded-xl font-black uppercase tracking-widest text-center shadow-lg"
               >
                 Get A Free Quote
               </a>
