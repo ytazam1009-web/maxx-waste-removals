@@ -28,17 +28,17 @@ export default function HeroSection({
         </div>
       </div>
 
-      {/* THE RELAX BADGE - FIXED FOR MOBILE */}
-      <div className="absolute top-28 right-4 md:top-32 md:right-16 z-20">
+      {/* THE RELAX BADGE - MOVED EVEN HIGHER */}
+      <div className="absolute top-12 right-4 md:top-32 md:right-16 z-20">
         <FadeUp delay={0.8}>
-          <div className="relative w-28 h-28 md:w-56 md:h-56 group">
-            <div className="absolute inset-0 bg-[#f6be00]/30 blur-[40px] md:blur-[60px] rounded-full scale-125 opacity-50" />
+          <div className="relative w-24 h-24 md:w-56 md:h-56 group">
+            <div className="absolute inset-0 bg-[#f6be00]/30 blur-[30px] md:blur-[60px] rounded-full scale-125 opacity-50" />
             <div className="relative w-full h-full rounded-full border-2 md:border-8 border-white/20 shadow-2xl overflow-hidden transition-all duration-700 group-hover:scale-110">
               <Image 
                 src="/images/relax.webp" 
                 alt="Relax" 
                 fill 
-                sizes="(max-width: 768px) 112px, 224px"
+                sizes="(max-width: 768px) 96px, 224px"
                 className="object-cover" 
               />
             </div>

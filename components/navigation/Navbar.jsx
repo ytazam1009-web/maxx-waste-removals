@@ -2,14 +2,17 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, ArrowLeft } from "lucide-react";
 import Container from "@/components/layout/Container";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
+
+  const isHome = pathname === "/";
 
   const getPhoneNumber = () => {
     if (pathname.includes("coventry")) return "02475102901";
@@ -31,10 +34,10 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "Services", href: "/services" },
-    { name: "Areas", href: "/areas" },
-    { name: "Reviews", href: "/reviews" },
-    { name: "Contact", href: "/contact" },
+    { name: "Services", href: isHome ? "#services" : "/services" },
+    { name: "Areas", href: isHome ? "#areas" : "/areas" },
+    { name: "Reviews", href: isHome ? "#reviews" : "/reviews" },
+    { name: "Contact", href: isHome ? "#contact" : "/contact" },
   ];
 
   return (
@@ -44,19 +47,33 @@ export default function Navbar() {
       }`}>
         <Container>
           <div className="flex items-center justify-between">
-            {/* LOGO */}
-            <Link href="/" className="flex items-center gap-4 flex-shrink-0">
-              <div className="relative w-[150px] h-[40px] md:w-[180px] md:h-[50px]">
-                <Image
-                  src="/logos/logo.webp"
-                  alt="MAXX Waste Removals"
-                  fill
-                  sizes="(max-width: 768px) 150px, 180px"
-                  className="object-contain"
-                  priority
-                />
-              </div>
-            </Link>
+            {/* LOGO & BRANDING */}
+            <div className="flex items-center gap-4">
+              {!isHome && (
+                <button 
+                  onClick={() => router.back()}
+                  className="p-2 bg-white/10 rounded-full text-white hover:bg-[#f6be00] hover:text-[#07152f] transition-colors"
+                >
+                  <ArrowLeft size={20} />
+                </button>
+              )}
+              <Link href="/" className="flex items-center gap-3 flex-shrink-0">
+                <div className="relative w-[120px] h-[40px] md:w-[180px] md:h-[50px]">
+                  <Image
+                    src="/logos/logo.webp"
+                    alt="MAXX Waste Removals"
+                    fill
+                    sizes="(max-width: 768px) 120px, 180px"
+                    className="object-contain"
+                    priority
+                  />
+                </div>
+                <div className="flex flex-col leading-none lg:hidden">
+                  <span className="text-xl font-black text-white tracking-tighter">MAXX</span>
+                  <span className="text-[8px] font-bold text-[#f6be00] uppercase tracking-widest">Waste Removals</span>
+                </div>
+              </Link>
+            </div>
 
             {/* DESKTOP NAV */}
             <nav className="hidden lg:flex items-center gap-10 text-white font-bold text-sm uppercase tracking-wider">
@@ -81,7 +98,6 @@ export default function Navbar() {
                 {phone}
               </a>
 
-              {/* MOBILE MENU BUTTON */}
               <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden text-white z-50">
                 {isOpen ? <X size={30} /> : <Menu size={30} />}
               </button>
@@ -90,11 +106,10 @@ export default function Navbar() {
         </Container>
       </header>
 
-      {/* MOBILE MENU - RESTORED ORIGINAL LOGIC */}
+      {/* MOBILE MENU */}
       {isOpen && (
         <div className="fixed top-[70px] left-0 w-full bg-[#07152f] z-40 border-t border-white/10 lg:hidden h-screen overflow-y-auto">
           <div className="flex flex-col p-8 gap-6 text-white text-lg font-medium">
-            {/* MOBILE BRANDING */}
             <div className="flex flex-col items-center mb-4">
               <span className="text-3xl font-black text-white">MAXX</span>
               <span className="text-[#f6be00] uppercase tracking-[3px] text-sm font-bold mt-1">Waste Removals</span>
