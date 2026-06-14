@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Phone, Mail, MapPin, Clock, Share2 } from "lucide-react";
 import Container from "./Container";
+import WasteCarrierBadge from "../common/WasteCarrierBadge";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -16,7 +17,7 @@ export default function Footer() {
             <Link href="/" className="flex items-center gap-3 group">
               <div className="relative w-[60px] h-[60px]">
                 <Image
-                  src="/logos/logo.png"
+                  src="/logos/logo.webp"
                   alt="MAXX Waste Removals"
                   fill
                   className="object-contain transition-transform group-hover:scale-110"
@@ -33,22 +34,17 @@ export default function Footer() {
               Your trusted local partner for professional waste removal and clearance services across the Midlands. Fully licensed, insured, and eco-friendly.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="p-2 bg-white/5 rounded-full hover:bg-[#f6be00] hover:text-[#07152f] transition-all">
+              <div className="p-3 bg-white/5 rounded-xl border border-white/10 text-gray-400 hover:text-[#f6be00] hover:border-[#f6be00] transition-all cursor-pointer">
                 <Share2 size={20} />
-              </a>
-              <a href="#" className="p-2 bg-white/5 rounded-full hover:bg-[#f6be00] hover:text-[#07152f] transition-all">
-                <Share2 size={20} />
-              </a>
-              <a href="#" className="p-2 bg-white/5 rounded-full hover:bg-[#f6be00] hover:text-[#07152f] transition-all">
-                <Share2 size={20} />
-              </a>
+              </div>
             </div>
           </div>
 
-          {/* SERVICES LINKS */}
+          {/* SERVICES SECTION */}
           <div>
-            <h4 className="text-[#f6be00] font-bold uppercase tracking-widest text-sm mb-8 border-b border-[#f6be00]/20 pb-2 inline-block">
+            <h4 className="text-lg font-bold mb-8 relative inline-block">
               Our Services
+              <span className="absolute -bottom-2 left-0 w-8 h-1 bg-[#f6be00] rounded-full"></span>
             </h4>
             <ul className="flex flex-col gap-4 text-gray-400 text-sm font-medium">
               <li><Link href="/services/house-clearance" className="hover:text-white transition-colors">House Clearance</Link></li>
@@ -59,57 +55,67 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* AREAS COVERED */}
+          {/* AREAS SECTION */}
           <div>
-            <h4 className="text-[#f6be00] font-bold uppercase tracking-widest text-sm mb-8 border-b border-[#f6be00]/20 pb-2 inline-block">
+            <h4 className="text-lg font-bold mb-8 relative inline-block">
               Service Areas
+              <span className="absolute -bottom-2 left-0 w-8 h-1 bg-[#f6be00] rounded-full"></span>
             </h4>
             <ul className="flex flex-col gap-4 text-gray-400 text-sm font-medium">
               <li><Link href="/leicester" className="hover:text-white transition-colors">Waste Removal Leicester</Link></li>
               <li><Link href="/coventry" className="hover:text-white transition-colors">Waste Removal Coventry</Link></li>
               <li><Link href="/birmingham" className="hover:text-white transition-colors">Waste Removal Birmingham</Link></li>
-              <li><span className="text-gray-500">Surrounding Midlands Areas</span></li>
+              <li className="flex items-center gap-2 italic opacity-60">
+                <MapPin size={14} />
+                Surrounding Midlands Areas
+              </li>
             </ul>
           </div>
 
-          {/* CONTACT INFO */}
+          {/* CONTACT SECTION */}
           <div>
-            <h4 className="text-[#f6be00] font-bold uppercase tracking-widest text-sm mb-8 border-b border-[#f6be00]/20 pb-2 inline-block">
+            <h4 className="text-lg font-bold mb-8 relative inline-block">
               Contact Us
+              <span className="absolute -bottom-2 left-0 w-8 h-1 bg-[#f6be00] rounded-full"></span>
             </h4>
-            <div className="flex flex-col gap-5 text-sm">
+            <div className="flex flex-col gap-6">
               <div className="flex flex-col gap-3">
-                <p className="text-xs font-bold text-gray-500 uppercase tracking-tighter">Local Branch Numbers:</p>
-                <a href="tel:02475102901" className="flex items-center gap-3 hover:text-[#f6be00] transition-colors group">
-                  <div className="p-2 bg-white/5 rounded-lg group-hover:bg-[#f6be00]/10">
-                    <Phone size={16} className="text-[#f6be00]" />
+                <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Local Branch Numbers:</p>
+                <a href="tel:02475102901" className="flex items-center gap-3 text-white hover:text-[#f6be00] transition-colors font-bold">
+                  <div className="w-8 h-8 bg-[#f6be00]/10 rounded-lg flex items-center justify-center">
+                    <Phone size={14} className="text-[#f6be00]" />
                   </div>
                   <span>Coventry: 02475 102901</span>
                 </a>
-                <a href="tel:01163600853" className="flex items-center gap-3 hover:text-[#f6be00] transition-colors group">
-                  <div className="p-2 bg-white/5 rounded-lg group-hover:bg-[#f6be00]/10">
-                    <Phone size={16} className="text-[#f6be00]" />
+                <a href="tel:01163600853" className="flex items-center gap-3 text-white hover:text-[#f6be00] transition-colors font-bold">
+                  <div className="w-8 h-8 bg-[#f6be00]/10 rounded-lg flex items-center justify-center">
+                    <Phone size={14} className="text-[#f6be00]" />
                   </div>
                   <span>Leicester: 01163 600853</span>
                 </a>
-                <a href="tel:01218126425" className="flex items-center gap-3 hover:text-[#f6be00] transition-colors group">
-                  <div className="p-2 bg-white/5 rounded-lg group-hover:bg-[#f6be00]/10">
-                    <Phone size={16} className="text-[#f6be00]" />
+                <a href="tel:01218126425" className="flex items-center gap-3 text-white hover:text-[#f6be00] transition-colors font-bold">
+                  <div className="w-8 h-8 bg-[#f6be00]/10 rounded-lg flex items-center justify-center">
+                    <Phone size={14} className="text-[#f6be00]" />
                   </div>
                   <span>Birmingham: 01218 126425</span>
                 </a>
               </div>
               
-              <div className="flex items-center gap-3 text-gray-400 pt-2">
+              <div className="flex items-center gap-3 text-gray-400 pt-2 border-t border-white/5">
                 <Mail size={16} className="text-[#f6be00]" />
-                <span>info@maxxwasteremovals.co.uk</span>
+                <span className="text-sm">info@maxxwasteremovals.co.uk</span>
               </div>
               <div className="flex items-center gap-3 text-gray-400">
                 <Clock size={16} className="text-[#f6be00]" />
-                <span>Open 24/7 for Bookings</span>
+                <span className="text-sm font-bold text-white">Open 24/7 for Bookings</span>
               </div>
             </div>
           </div>
+        </div>
+
+        {/* WASTE CARRIER BADGE */}
+        <div className="col-span-full flex justify-center mb-12">
+          <WasteCarrierBadge />
         </div>
 
         {/* BOTTOM BAR */}
@@ -122,5 +128,5 @@ export default function Footer() {
         </div>
       </Container>
     </footer>
-  );y
+  );
 }

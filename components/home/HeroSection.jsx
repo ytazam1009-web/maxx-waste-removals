@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import PrimaryButton from "@/components/ui/PrimaryButton";
 import FadeUp from "@/components/ui/FadeUp";
 import { Phone, Send } from "lucide-react";
 
@@ -15,7 +14,7 @@ export default function HeroSection({
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-[#07152f]">
       
-      {/* BACKGROUND IMAGE - Responsive Alignment */}
+      {/* BACKGROUND IMAGE */}
       <div className="absolute inset-0 z-0 flex justify-end">
         <div className="relative w-full lg:w-[68%] h-[94%] top-[3%] right-[3%]">
           <Image
@@ -29,7 +28,7 @@ export default function HeroSection({
         </div>
       </div>
 
-      {/* THE RELAX BADGE - Hidden on mobile to prevent blocking text */}
+      {/* THE RELAX BADGE */}
       <div className="absolute top-32 right-8 md:right-16 z-20 hidden lg:block">
         <FadeUp delay={0.8}>
           <div className="relative w-40 h-40 md:w-56 md:h-56 group">
@@ -41,7 +40,7 @@ export default function HeroSection({
         </FadeUp>
       </div>
 
-      {/* CONTENT - Responsive Left Alignment */}
+      {/* CONTENT - Fixed "Free Quote" button to scroll to #contact */}
       <div className="relative z-10 w-full pt-44 md:pt-40 pb-20 px-6 md:px-12 lg:px-20">
         <div className="max-w-4xl">
           <FadeUp>
@@ -49,7 +48,6 @@ export default function HeroSection({
               Same Day Waste Collection Available
             </div>
 
-            {/* RESPONSIVE HEADING: Fixed "Midlands" cut-off on mobile */}
             <h1 className="text-4xl font-black leading-tight text-white md:text-6xl lg:text-[5.5rem] uppercase tracking-tighter mb-8 md:mb-10">
               Waste Removal <br className="md:hidden" />
               <span className="text-[#f6be00]">{city}</span>
@@ -60,9 +58,8 @@ export default function HeroSection({
               and eco-friendly rubbish clearance.
             </p>
 
-            {/* RESPONSIVE BUTTONS: Stack on mobile, side-by-side on desktop */}
             <div className="mt-10 md:mt-16 flex flex-col md:flex-row items-stretch md:items-center gap-4 md:gap-6">
-              <a href="/contact" className="inline-flex items-center justify-center gap-3 rounded-2xl bg-white px-8 md:px-12 py-4 md:py-6 font-black text-[#07152f] text-lg md:text-xl transition hover:scale-105 shadow-2xl border-2 border-white">
+              <a href="#contact" className="inline-flex items-center justify-center gap-3 rounded-2xl bg-white px-8 md:px-12 py-4 md:py-6 font-black text-[#07152f] text-lg md:text-xl transition hover:scale-105 shadow-2xl border-2 border-white cursor-pointer">
                 <Send size={24} className="text-[#f6be00]" /> Free Quote
               </a>
 

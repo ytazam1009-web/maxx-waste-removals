@@ -3,7 +3,8 @@ export default function LocalBusinessSchema() {
     "@context": "https://schema.org",
     "@type": "WasteManagementBusiness",
     "name": "Maxx Waste Removals",
-    "image": "https://maxxwasteremovals.co.uk/logos/logo.png",
+    // UPDATED TO WEBP LOGO
+    "image": "https://maxxwasteremovals.co.uk/logos/logo.webp",
     "@id": "https://maxxwasteremovals.co.uk",
     "url": "https://maxxwasteremovals.co.uk",
     "telephone": "02475102901",
