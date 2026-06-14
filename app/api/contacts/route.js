@@ -14,13 +14,13 @@ export async function POST(req) {
 
     // Using Resend to send a professionally formatted email
     await resend.emails.send({
-      from: "MAXX Waste <onboarding@resend.dev>", // This is for testing. Once you verify your domain in Resend, change this to "info@maxxwasteremovals.co.uk"
+      from: "MAXX Waste <onboarding@resend.dev>", 
       to: "info@maxxwasteremovals.co.uk",
       reply_to: email,
       subject: `New Waste Removal Quote Request - ${city}`,
       html: `
         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f9; padding: 40px 20px;">
-          <div style="max-width: 600px; margin: auto; background-color: #ffffff; border-radius: 16px; overflow: hidden; shadow: 0 4px 12px rgba(0,0,0,0.1); border: 1px solid #e1e8ed;">
+          <div style="max-width: 600px; margin: auto; background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 1px solid #e1e8ed;">
             
             <!-- Header -->
             <div style="background-color: #07152f; padding: 30px; text-align: center;">

@@ -9,7 +9,7 @@ export default function QuoteForm({ city = "General" }) {
     name: "",
     phone: "",
     email: "",
-    city: city, // Automatically uses the city from the page
+    city: city,
     message: "",
   });
 
@@ -28,8 +28,8 @@ export default function QuoteForm({ city = "General" }) {
     setStatus(null);
 
     try {
-      // FIXED PATH: Matches your file location
-      const res = await fetch("/api/contacts/quote", {
+      // FIXED PATH: Now matches your folder name "contacts"
+      const res = await fetch("/api/contacts", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
