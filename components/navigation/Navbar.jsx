@@ -14,16 +14,16 @@ export default function Navbar({ phoneNumber = "02475102901" }) {
     <>
       <header className="fixed top-0 left-0 w-full z-50 bg-[#07152f]/95 backdrop-blur-md border-b border-white/10 shadow-xl">
         <Container>
-          <div className="flex items-center justify-between py-3 md:py-4">
+          <div className="flex items-center justify-between py-4">
             
-            {/* LOGO & COMPANY NAME */}
-            <Link href="/" className="flex items-center gap-3 md:gap-5 group">
-              <div className="relative w-[60px] md:w-[85px] h-[60px] md:h-[85px] transition-transform group-hover:scale-105">
+            {/* BIGGER LOGO & COMPANY NAME */}
+            <Link href="/" className="flex items-center gap-4 group">
+              <div className="relative w-[70px] md:w-[100px] h-[70px] md:h-[100px]">
                 <Image src="/logos/logo.png" alt="MAXX Logo" fill className="object-contain" />
               </div>
               <div className="flex flex-col leading-none">
-                <span className="text-xl md:text-3xl font-black text-white tracking-tighter">MAXX</span>
-                <span className="text-[10px] md:text-xs font-bold text-[#f6be00] uppercase tracking-[3px]">Waste Removals</span>
+                <span className="text-2xl md:text-4xl font-black text-white tracking-tighter">MAXX</span>
+                <span className="text-[11px] md:text-sm font-bold text-[#f6be00] uppercase tracking-[4px]">Waste Removals</span>
               </div>
             </Link>
 
@@ -48,7 +48,7 @@ export default function Navbar({ phoneNumber = "02475102901" }) {
 
             {/* MOBILE TOGGLE */}
             <button onClick={() => setIsOpen(!isOpen)} className="xl:hidden text-white p-2 bg-white/5 rounded-lg border border-white/10">
-              {isOpen ? <X size={28} /> : <Menu size={28} />}
+              {isOpen ? <X size={32} /> : <Menu size={32} />}
             </button>
           </div>
         </Container>

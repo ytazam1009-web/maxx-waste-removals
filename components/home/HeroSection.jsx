@@ -15,7 +15,7 @@ export default function HeroSection({
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-[#07152f]">
       
-      {/* BACKGROUND IMAGE - Balanced Alignment (3% gap from top and right) */}
+      {/* BACKGROUND IMAGE - Responsive Alignment */}
       <div className="absolute inset-0 z-0 flex justify-end">
         <div className="relative w-full lg:w-[68%] h-[94%] top-[3%] right-[3%]">
           <Image
@@ -29,8 +29,8 @@ export default function HeroSection({
         </div>
       </div>
 
-      {/* THE RELAX BADGE - Higher Placement (Top Corner) */}
-      <div className="absolute top-28 right-8 md:right-16 z-20 hidden lg:block">
+      {/* THE RELAX BADGE - Hidden on mobile to prevent blocking text */}
+      <div className="absolute top-32 right-8 md:right-16 z-20 hidden lg:block">
         <FadeUp delay={0.8}>
           <div className="relative w-40 h-40 md:w-56 md:h-56 group">
             <div className="absolute inset-0 bg-[#f6be00]/30 blur-[60px] rounded-full scale-125 opacity-50" />
@@ -41,33 +41,33 @@ export default function HeroSection({
         </FadeUp>
       </div>
 
-      {/* CONTENT - Professional Left Alignment */}
-      <div className="relative z-10 w-full pt-40 pb-20 px-6 md:px-12 lg:px-20">
+      {/* CONTENT - Responsive Left Alignment */}
+      <div className="relative z-10 w-full pt-44 md:pt-40 pb-20 px-6 md:px-12 lg:px-20">
         <div className="max-w-4xl">
           <FadeUp>
-            <div className="mb-6 md:mb-10 inline-flex items-center rounded-full border-2 border-[#f6be00] bg-[#f6be00]/10 px-6 py-2 text-xs md:text-sm font-black text-[#f6be00] uppercase tracking-widest shadow-lg">
+            <div className="mb-6 md:mb-8 inline-flex items-center rounded-full border-2 border-[#f6be00] bg-[#f6be00]/10 px-6 py-2 text-xs md:text-sm font-black text-[#f6be00] uppercase tracking-widest shadow-lg">
               Same Day Waste Collection Available
             </div>
 
-            <h1 className="text-5xl font-black leading-[0.85] text-white md:text-8xl lg:text-[9rem] uppercase tracking-tighter mb-8 md:mb-12">
-              Waste Removal   
-
+            {/* RESPONSIVE HEADING: Fixed "Midlands" cut-off on mobile */}
+            <h1 className="text-4xl font-black leading-tight text-white md:text-6xl lg:text-[5.5rem] uppercase tracking-tighter mb-8 md:mb-10">
+              Waste Removal <br className="md:hidden" />
               <span className="text-[#f6be00]">{city}</span>
             </h1>
 
-            <p className="mt-6 md:mt-10 max-w-2xl text-xl md:text-3xl leading-tight text-white font-bold drop-shadow-lg">
+            <p className="mt-4 md:mt-8 max-w-2xl text-lg md:text-2xl lg:text-3xl leading-tight text-white font-bold drop-shadow-lg">
               The Midlands' trusted choice for fast, affordable, <br className="hidden md:block" />
               and eco-friendly rubbish clearance.
             </p>
 
-            {/* IDENTICAL BUTTONS */}
-            <div className="mt-12 md:mt-16 flex flex-wrap items-center gap-5 md:gap-8">
-              <a href="/contact" className="inline-flex items-center justify-center gap-3 rounded-2xl bg-white px-10 md:px-14 py-5 md:py-7 font-black text-[#07152f] text-lg md:text-2xl transition hover:scale-105 shadow-2xl border-2 border-white">
-                <Send size={28} className="text-[#f6be00]" /> Free Quote
+            {/* RESPONSIVE BUTTONS: Stack on mobile, side-by-side on desktop */}
+            <div className="mt-10 md:mt-16 flex flex-col md:flex-row items-stretch md:items-center gap-4 md:gap-6">
+              <a href="/contact" className="inline-flex items-center justify-center gap-3 rounded-2xl bg-white px-8 md:px-12 py-4 md:py-6 font-black text-[#07152f] text-lg md:text-xl transition hover:scale-105 shadow-2xl border-2 border-white">
+                <Send size={24} className="text-[#f6be00]" /> Free Quote
               </a>
 
-              <a href={telLink} className="inline-flex items-center justify-center gap-3 rounded-2xl bg-[#f6be00] px-10 md:px-14 py-5 md:py-7 font-black text-[#07152f] text-lg md:text-2xl transition hover:scale-105 shadow-2xl border-2 border-[#f6be00]">
-                <Phone size={28} fill="currentColor" /> {phoneNumber}
+              <a href={telLink} className="inline-flex items-center justify-center gap-3 rounded-2xl bg-[#f6be00] px-8 md:px-12 py-4 md:py-6 font-black text-[#07152f] text-lg md:text-xl transition hover:scale-105 shadow-2xl border-2 border-[#f6be00]">
+                <Phone size={24} fill="currentColor" /> {phoneNumber}
               </a>
             </div>
           </FadeUp>
