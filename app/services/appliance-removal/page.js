@@ -7,10 +7,10 @@ import Navbar from "@/components/navigation/Navbar";
 import Footer from "@/components/layout/Footer";
 import FadeUp from "@/components/ui/FadeUp";
 
-export default function GardenWastePage() {
+export default function ApplianceRemovalPage() {
   const [isExpanded, setIsExpanded] = useState(false);
-  const title = "Garden Waste Removal";
-  const description = "Fast and eco-friendly garden waste removal services across the Midlands. We handle everything from green waste to old sheds and fencing, leaving your garden clear and tidy.";
+  const title = "Appliance Removal";
+  const description = "Professional disposal and recycling of old appliances including fridges, washing machines, and cookers across the Midlands. We handle the heavy lifting and ensure eco-friendly disposal.";
   const phone = "+44 7718 090183";
 
   return (
@@ -24,7 +24,7 @@ export default function GardenWastePage() {
             <div className="space-y-8 flex-1 relative z-10">
               <FadeUp>
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f6be00]/10 border border-[#f6be00]/20 text-[#f6be00] text-xs font-bold uppercase tracking-widest">
-                  Professional Service
+                  Specialist Service
                 </div>
                 <h1 className="text-5xl md:text-8xl font-black tracking-tighter uppercase leading-[0.9] mt-6">
                   {title}
@@ -67,8 +67,8 @@ export default function GardenWastePage() {
           {/* FEATURES BOX */}
           <div className="mt-24 grid md:grid-cols-2 gap-6">
             {[
-              "Green Waste Recycling",
-              "Shed & Fence Removal",
+              "Fridge & Freezer Disposal",
+              "WEEE Recycling Certified",
               "Fully Licensed & Insured",
               "Same Day Collection Available"
             ].map((feature) => (

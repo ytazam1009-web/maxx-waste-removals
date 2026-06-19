@@ -1,3 +1,4 @@
+// THIS IS THE MAIN HOME PAGE (app/page.js)
 import HeroSection from "@/components/home/HeroSection";
 import TrustBar from "@/components/home/TrustBar";
 import ServicesGrid from "@/components/home/ServicesGrid";
@@ -11,6 +12,7 @@ import Navbar from "@/components/navigation/Navbar";
 import InternalLinks from "@/components/seo/InternalLinks";
 import FAQSchema from "@/components/seo/FAQSchema";
 import LocalBusinessSchema from "@/components/seo/LocalBusinessSchema";
+import BackToTop from "@/components/common/BackToTop"; // ADDED THIS
 
 export const metadata = {
   title: "Maxx Waste Removals | Waste Removal Leicester, Coventry & Birmingham",
@@ -18,14 +20,15 @@ export const metadata = {
 };
 
 export default function HomePage() {
+  const mainPhone = "+44 7718 090183";
+
   return (
     <main>
-      <Navbar phoneNumber="02475102901" />
+      <Navbar />
 
-      {/* Hero Section now contains the H1 and main description internally */}
       <HeroSection
         city="Midlands"
-        phoneNumber="02475102901"
+        phoneNumber={mainPhone}
         heroImage="/images/hero/waste-removal-truck.webp"
       />
 
@@ -49,14 +52,15 @@ export default function HomePage() {
         <QuoteForm />
       </section>
 
-      <CTASection phoneNumber="02475102901" />
+      <CTASection phoneNumber={mainPhone} />
 
       <InternalLinks />
-
       <FAQSchema city="Midlands" />
       <LocalBusinessSchema />
-
       <Footer />
+      
+      {/* ADDED THE BUTTON HERE */}
+      <BackToTop />
     </main>
   );
 }

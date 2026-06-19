@@ -1,14 +1,21 @@
 "use client";
+import { useState } from "react";
 import Image from "next/image";
 import FadeUp from "@/components/ui/FadeUp";
 import { Phone, Send } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 export default function HeroSection({
   city = "Midlands",
   heroImage = "/images/hero/waste-removal-truck.webp",
-  phoneNumber = "02475102901"
+  phoneNumber = "+44 7718 090183" // Default mobile
 }) {
-  const telLink = `tel:${phoneNumber.replace(/\s+/g, "")}`;
+  const [isExpanded, setIsExpanded] = useState(false);
+  const pathname = usePathname();
+  
+  // LOGIC: Use mobile for home, preserve local numbers for city pages
+  const displayPhone = (pathname === "/" || pathname === "") ? "+44 7718 090183" : phoneNumber;
+  const telLink = `tel:${displayPhone.replace(/\s+/g, "")}`;
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-[#07152f]">
@@ -28,17 +35,26 @@ export default function HeroSection({
         </div>
       </div>
 
-      {/* THE RELAX BADGE - MOVED EVEN HIGHER */}
-      <div className="absolute top-12 right-4 md:top-32 md:right-16 z-20">
+      {/* THE RELAX BADGE - INTERACTIVE ZOOM */}
+      <div className="absolute top-16 right-4 md:top-32 md:right-16 z-30">
         <FadeUp delay={0.8}>
-          <div className="relative w-24 h-24 md:w-56 md:h-56 group">
-            <div className="absolute inset-0 bg-[#f6be00]/30 blur-[30px] md:blur-[60px] rounded-full scale-125 opacity-50" />
-            <div className="relative w-full h-full rounded-full border-2 md:border-8 border-white/20 shadow-2xl overflow-hidden transition-all duration-700 group-hover:scale-110">
+          <div 
+            onClick={() => setIsExpanded(!isExpanded)}
+            className={`relative transition-all duration-500 ease-out cursor-pointer
+              ${isExpanded ? 'scale-[1.8] md:scale-[1.5] z-50' : 'scale-100'}
+              lg:hover:scale-[1.8] active:scale-95
+            `}
+          >
+            <div className={`absolute inset-0 bg-[#f6be00]/30 rounded-full scale-125 transition-opacity duration-500
+              ${isExpanded ? 'opacity-80 blur-[40px]' : 'opacity-40 blur-[30px] md:blur-[60px]'}
+            `} />
+            
+            <div className="relative w-24 h-24 md:w-56 md:h-56 rounded-full border-2 md:border-8 border-white/20 shadow-2xl overflow-hidden ring-4 ring-white/10">
               <Image 
                 src="/images/relax.webp" 
                 alt="Relax" 
                 fill 
-                sizes="(max-width: 768px) 96px, 224px"
+                sizes="(max-width: 768px) 150px, 400px"
                 className="object-cover" 
               />
             </div>
@@ -54,10 +70,15 @@ export default function HeroSection({
               Same Day Waste Collection Available
             </div>
 
-            <h1 className="text-4xl font-black leading-tight text-white md:text-6xl lg:text-[5.5rem] uppercase tracking-tighter mb-8 md:mb-10">
+            <h1 className="text-4xl font-black leading-tight text-white md:text-6xl lg:text-[5.5rem] uppercase tracking-tighter mb-2 md:mb-4">
               Waste Removal <br className="md:hidden" />
               <span className="text-[#f6be00]">{city}</span>
             </h1>
+
+            {/* BRANDING SUBHEADING */}
+            <h2 className="text-xl md:text-3xl lg:text-4xl font-black text-white/90 uppercase tracking-tight mb-8 md:mb-10">
+              House & Office Clearance
+            </h2>
 
             <p className="mt-4 md:mt-8 max-w-2xl text-lg md:text-2xl lg:text-3xl leading-tight text-white font-bold drop-shadow-lg">
               The Midlands' trusted choice for fast, affordable, <br className="hidden md:block" />
@@ -70,7 +91,7 @@ export default function HeroSection({
               </a>
 
               <a href={telLink} className="inline-flex items-center justify-center gap-3 rounded-2xl bg-[#f6be00] px-8 md:px-12 py-4 md:py-6 font-black text-[#07152f] text-lg md:text-xl transition hover:scale-105 shadow-2xl border-2 border-[#f6be00]">
-                <Phone size={24} fill="currentColor" /> {phoneNumber}
+                <Phone size={24} fill="currentColor" /> {displayPhone}
               </a>
             </div>
           </FadeUp>

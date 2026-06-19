@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://maxxwasteremovals.co.uk"),
+  metadataBase: new URL("https://maxxwasteremovals.co.uk" ),
 
   title:
     "Maxx Waste Removals | Waste Removal, Rubbish Clearance & House Clearance in Coventry, Leicester & Birmingham",
@@ -92,9 +92,9 @@ export const viewport = {
   initialScale: 1,
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children } ) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <body className={`${inter.className} antialiased`}>
 
         {/* Google Analytics */}
@@ -106,7 +106,7 @@ export default function RootLayout({ children }) {
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
+            function gtag( ){dataLayer.push(arguments);}
             gtag('js', new Date());
 
             gtag('config', 'G-DCGNB9PB8V');
