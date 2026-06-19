@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://maxxwasteremovals.co.uk" ),
+  metadataBase: new URL("https://maxxwasteremovals.co.uk"  ),
 
   title:
     "Maxx Waste Removals | Waste Removal, Rubbish Clearance & House Clearance in Coventry, Leicester & Birmingham",
@@ -92,24 +92,38 @@ export const viewport = {
   initialScale: 1,
 };
 
-export default function RootLayout({ children } ) {
+export default function RootLayout({ children }  ) {
   return (
     <html lang="en" data-scroll-behavior="smooth">
       <body className={`${inter.className} antialiased`}>
 
-        {/* Google Analytics */}
+        {/* Google Analytics Base Script */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-DCGNB9PB8V"
           strategy="afterInteractive"
         />
 
+        {/* Google Analytics Configuration & Call Tracking */}
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag( ){dataLayer.push(arguments);}
-            gtag('js', new Date());
+            gtag(\'js\', new Date());
+            gtag(\'config\', \'G-DCGNB9PB8V\');
 
-            gtag('config', 'G-DCGNB9PB8V');
+            // AUTOMATIC CLICK-TO-CALL TRACKING
+            document.addEventListener(\'click\', function(e) {
+              const telLink = e.target.closest(\'a[href^="tel:"]\');
+              if (telLink) {
+                gtag(\'event\', \'generate_lead\', {
+                  \'event_category\': \'Contact\',
+                  \'event_label\': \'Phone Call\',
+                  \'value\': 1.0,
+                  \'phone_number\': telLink.getAttribute(\'href\')
+                });
+                console.log(\'Call lead tracked:\', telLink.getAttribute(\'href\'));
+              }
+            });
           `}
         </Script>
 
