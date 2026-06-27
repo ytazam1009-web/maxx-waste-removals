@@ -14,10 +14,10 @@ import LocalBusinessSchema from "@/components/seo/LocalBusinessSchema";
 
 export const metadata = {
   title:
-    "Waste Removal Birmingham | House Clearance, Rubbish Removal & Same Day Collection | Maxx Waste Removals",
+    "Waste Removal & House Clearance Birmingham | Same-Day Rubbish Collection | Maxx Waste Removals",
 
   description:
-    "Fast and reliable waste removal in Birmingham including house clearance, sofa removal, garden waste clearance, office clearance, mattress removal and same-day rubbish collection services across Birmingham and nearby areas.",
+    "Professional waste removal and house clearance in Birmingham. Same-day rubbish collection, garden waste disposal & office clearance. Licensed waste carrier, no upfront payment. Cheaper than skip hire!",
 
   keywords: [
     "waste removal Birmingham",
@@ -33,12 +33,18 @@ export const metadata = {
     "affordable rubbish clearance Birmingham",
     "waste collection Birmingham",
     "waste disposal Birmingham",
+    "man and van clearance Birmingham",
+    "professional waste removal Birmingham",
+    "responsible disposal Birmingham",
+    "bereavement clearance Birmingham",
+    "site clearance Birmingham",
+    "unwanted items removal Birmingham"
   ],
 
   openGraph: {
-    title: "Waste Removal Birmingham | Maxx Waste Removals",
+    title: "Waste Removal & House Clearance Birmingham | Maxx Waste Removals",
     description:
-      "Affordable same-day waste removal in Birmingham including house clearance, furniture removal and garden waste clearance services.",
+      "Affordable same-day waste removal in Birmingham including house clearance, furniture removal and garden waste clearance services. No upfront payment.",
     url: "https://maxxwasteremovals.co.uk/birmingham",
     siteName: "Maxx Waste Removals",
     type: "website",

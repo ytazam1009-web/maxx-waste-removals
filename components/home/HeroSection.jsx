@@ -25,7 +25,7 @@ export default function HeroSection({
         <div className="relative w-full lg:w-[68%] h-[94%] top-[3%] right-[3%]">
           <Image
             src={heroImage}
-            alt={`Waste removal in ${city}`}
+            alt={`Professional waste removal and house clearance in ${city}`}
             fill
             priority
             sizes="(max-width: 1024px) 100vw, 68vw"
@@ -71,18 +71,18 @@ export default function HeroSection({
             </div>
 
             <h1 className="text-4xl font-black leading-tight text-white md:text-6xl lg:text-[5.5rem] uppercase tracking-tighter mb-2 md:mb-4">
-              Waste Removal <br className="md:hidden" />
+              Professional Waste Removal <br className="md:hidden" />
               <span className="text-[#f6be00]">{city}</span>
             </h1>
 
             {/* BRANDING SUBHEADING */}
             <h2 className="text-xl md:text-3xl lg:text-4xl font-black text-white/90 uppercase tracking-tight mb-8 md:mb-10">
-              House & Office Clearance
+              House Clearance & Licensed Waste Carrier
             </h2>
 
             <p className="mt-4 md:mt-8 max-w-2xl text-lg md:text-2xl lg:text-3xl leading-tight text-white font-bold drop-shadow-lg">
               The Midlands' trusted choice for fast, affordable, <br className="hidden md:block" />
-              and eco-friendly rubbish clearance.
+              and eco-friendly rubbish clearance. Cheaper than skip hire!
             </p>
 
             <div className="mt-10 md:mt-16 flex flex-col md:flex-row items-stretch md:items-center gap-4 md:gap-6">

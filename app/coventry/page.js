@@ -14,10 +14,10 @@ import LocalBusinessSchema from "@/components/seo/LocalBusinessSchema";
 
 export const metadata = {
   title:
-    "Waste Removal Coventry | House Clearance, Rubbish Removal & Furniture Disposal | Maxx Waste Removals",
+    "Waste Removal & House Clearance Coventry | Same-Day Rubbish Collection | Maxx Waste Removals",
 
   description:
-    "Reliable waste removal services in Coventry including house clearance, sofa removal, garden waste clearance, office clearance, mattress removal and same-day rubbish collection across Coventry and nearby areas.",
+    "Expert waste removal and house clearance in Coventry. Same-day rubbish collection, garden waste disposal & office clearance. Licensed waste carrier, no upfront payment. Cheaper than a skip hire!",
 
   keywords: [
     "waste removal Coventry",
@@ -33,12 +33,18 @@ export const metadata = {
     "affordable rubbish clearance Coventry",
     "waste collection Coventry",
     "waste disposal Coventry",
+    "man and van clearance Coventry",
+    "professional waste removal Coventry",
+    "responsible disposal Coventry",
+    "bereavement clearance Coventry",
+    "site clearance Coventry",
+    "unwanted items removal Coventry"
   ],
 
   openGraph: {
-    title: "Waste Removal Coventry | Maxx Waste Removals",
+    title: "Waste Removal & House Clearance Coventry | Maxx Waste Removals",
     description:
-      "Fast and affordable waste removal in Coventry including house clearance, sofa removal, and garden waste clearance services.",
+      "Fast and affordable waste removal in Coventry including house clearance, sofa removal, and garden waste clearance services. Same-day collection available.",
     url: "https://maxxwasteremovals.co.uk/coventry",
     siteName: "Maxx Waste Removals",
     type: "website",

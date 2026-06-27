@@ -7,37 +7,37 @@ export default function ServicesGrid() {
   const services = [
     {
       title: "House Clearance",
-      description: "Complete house clearance services for probate, moving, or decluttering. We handle everything from furniture to carpets.",
+      description: "Complete house clearance services for probate, moving, or decluttering. Professional same-day collection available.",
       icon: <Home size={32} />,
       href: "/services/house-clearance",
     },
     {
-      title: "Furniture Removals", // CHANGED FROM "Sofa & Furniture Removal"
+      title: "Sofa & Furniture Removal",
       description: "Fast collection and eco-friendly disposal of sofas, armchairs, and all types of household furniture.",
       icon: <Sofa size={32} />,
       href: "/services/sofa-removal",
     },
     {
-      title: "Garden Waste",
+      title: "Garden Waste Removal",
       description: "Professional garden clearance including green waste, old sheds, fencing, and general garden rubbish.",
       icon: <TreePine size={32} />,
       href: "/services/garden-waste",
     },
     {
-      title: "Office Clearance",
+      title: "Office & Site Clearance",
       description: "Efficient commercial clearance for offices, warehouses, and retail spaces. Secure WEEE disposal included.",
       icon: <Briefcase size={32} />,
       href: "/services/office-clearance",
     },
     {
-      title: "Builders Waste",
-      description: "Removal of renovation debris, bricks, soil, and construction waste. A faster alternative to skip hire.",
+      title: "Builders Waste Removal",
+      description: "Removal of renovation debris, bricks, soil, and construction waste. A faster, licensed alternative to skip hire.",
       icon: <Construction size={32} />,
       href: "/services/builders-waste",
     },
     {
-      title: "Appliance Removal",
-      description: "Safe disposal of fridges, freezers, washing machines, and other large electrical appliances.",
+      title: "Appliance Disposal",
+      description: "Safe disposal of fridges, freezers, washing machines, and other large electrical appliances. 100% responsible recycling.",
       icon: <Refrigerator size={32} />,
       href: "/services/appliance-removal",
     },
@@ -52,13 +52,13 @@ export default function ServicesGrid() {
       <Container>
         <div className="text-center mb-16 space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f6be00]/10 border border-[#f6be00]/20 text-[#f6be00] text-xs font-bold uppercase tracking-widest">
-            What We Do
+            Professional Waste Solutions
           </div>
           <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase">
-            Our Professional <span className="text-[#f6be00]">Services</span>
+            Our Waste Removal <span className="text-[#f6be00]">Services</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto font-medium">
-            We provide a comprehensive range of waste removal solutions across the Midlands, 
+            We provide a comprehensive range of licensed waste removal solutions across the Midlands, 
             ensuring your space is cleared quickly, professionally, and responsibly.
           </p>
         </div>

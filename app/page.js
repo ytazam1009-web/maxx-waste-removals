@@ -12,11 +12,28 @@ import Navbar from "@/components/navigation/Navbar";
 import InternalLinks from "@/components/seo/InternalLinks";
 import FAQSchema from "@/components/seo/FAQSchema";
 import LocalBusinessSchema from "@/components/seo/LocalBusinessSchema";
-import BackToTop from "@/components/common/BackToTop"; // ADDED THIS
+import BackToTop from "@/components/common/BackToTop";
 
 export const metadata = {
-  title: "Maxx Waste Removals | Waste Removal Leicester, Coventry & Birmingham",
-  description: "Professional waste removal services across Leicester, Coventry, and Birmingham. Same-day collection for house, garden, and office clearance.",
+  title: "Maxx Waste Removals | Licensed Waste Removal & House Clearance Leicester, Coventry & Birmingham",
+  description: "Professional, same-day rubbish clearance across Leicester, Coventry, and Birmingham. Licensed waste carrier for house, garden, and office clearance. No upfront payment—cheaper than skip hire!",
+  keywords: [
+    "waste removal Midlands",
+    "rubbish clearance Leicester",
+    "house clearance Coventry",
+    "waste removal Birmingham",
+    "licensed waste carrier",
+    "same day rubbish collection",
+    "man and van waste removal",
+    "garden waste clearance",
+    "office clearance Midlands",
+    "affordable waste disposal",
+    "bereavement house clearance",
+    "commercial site clearance",
+    "furniture disposal",
+    "mattress removal",
+    "cheaper than skip hire"
+  ],
 };
 
 export default function HomePage() {
@@ -59,7 +76,6 @@ export default function HomePage() {
       <LocalBusinessSchema />
       <Footer />
       
-      {/* ADDED THE BUTTON HERE */}
       <BackToTop />
     </main>
   );

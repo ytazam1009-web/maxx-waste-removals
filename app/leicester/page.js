@@ -14,10 +14,10 @@ import LocalBusinessSchema from "@/components/seo/LocalBusinessSchema";
 
 export const metadata = {
   title:
-    "Waste Removal Leicester | House Clearance, Rubbish Removal & Sofa Removal | Maxx Waste Removals",
+    "Waste Removal & House Clearance Leicester | Same-Day Rubbish Collection | Maxx Waste Removals",
 
   description:
-    "Professional waste removal in Leicester including house clearance, sofa removal, garden waste clearance, office clearance, mattress removal and same-day rubbish collection services.",
+    "Expert waste removal and house clearance in Leicester. Same-day rubbish collection, garden waste disposal & office clearance. Licensed waste carrier, no upfront payment. Cheaper than skip hire!",
 
   keywords: [
     "waste removal Leicester",
@@ -33,12 +33,18 @@ export const metadata = {
     "affordable rubbish clearance Leicester",
     "waste collection Leicester",
     "waste disposal Leicester",
+    "man and van clearance Leicester",
+    "professional waste removal Leicester",
+    "responsible disposal Leicester",
+    "bereavement clearance Leicester",
+    "site clearance Leicester",
+    "unwanted items removal Leicester"
   ],
 
   openGraph: {
-    title: "Waste Removal Leicester | Maxx Waste Removals",
+    title: "Waste Removal & House Clearance Leicester | Maxx Waste Removals",
     description:
-      "Fast, affordable and licensed waste removal in Leicester including house clearance, sofa removal and garden waste clearance.",
+      "Fast, affordable and licensed waste removal in Leicester including house clearance, sofa removal and garden waste clearance. No upfront payment.",
     url: "https://maxxwasteremovals.co.uk/leicester",
     siteName: "Maxx Waste Removals",
     type: "website",
