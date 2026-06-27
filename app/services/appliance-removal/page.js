@@ -7,17 +7,10 @@ import Navbar from "@/components/navigation/Navbar";
 import Footer from "@/components/layout/Footer";
 import FadeUp from "@/components/ui/FadeUp";
 
-// SEO METADATA
-export const metadata = {
-  title: "Appliance Removal & Fridge Disposal Midlands | Maxx Waste Removals",
-  description: "Professional removal and recycling of fridges, freezers, washing machines, and cookers. Licensed WEEE disposal across Coventry, Leicester & Birmingham.",
-  keywords: ["appliance removal", "fridge disposal", "washing machine collection", "WEEE recycling", "freezer removal", "cooker disposal Midlands"]
-};
-
 export default function ApplianceRemovalPage() {
   const [isExpanded, setIsExpanded] = useState(false);
-  const title = "Appliance Removal & Disposal";
-  const description = "Professional disposal and recycling of old appliances including fridges, washing machines, cookers, and freezers across the Midlands. We handle the heavy lifting and ensure eco-friendly, WEEE certified disposal.";
+  const title = "Appliance Removal";
+  const description = "Professional disposal and recycling of old appliances including fridges, washing machines, and cookers across the Midlands. We handle the heavy lifting and ensure eco-friendly disposal.";
   const phone = "+44 7718 090183";
 
   return (
@@ -31,7 +24,7 @@ export default function ApplianceRemovalPage() {
             <div className="space-y-8 flex-1 relative z-10">
               <FadeUp>
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f6be00]/10 border border-[#f6be00]/20 text-[#f6be00] text-xs font-bold uppercase tracking-widest">
-                  Licensed WEEE Specialist
+                  Specialist Service
                 </div>
                 <h1 className="text-5xl md:text-8xl font-black tracking-tighter uppercase leading-[0.9] mt-6">
                   {title}
@@ -59,7 +52,7 @@ export default function ApplianceRemovalPage() {
                   <div className="relative w-56 h-56 md:w-[400px] md:h-[400px] rounded-full border-4 md:border-[16px] border-white/20 shadow-2xl overflow-hidden ring-8 ring-white/10">
                     <Image 
                       src="/images/relax.webp" 
-                      alt="Eco-friendly appliance recycling and disposal" 
+                      alt="Relax" 
                       fill 
                       priority
                       sizes="(max-width: 768px) 400px, 800px"
