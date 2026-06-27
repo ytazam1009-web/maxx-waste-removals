@@ -80,22 +80,23 @@ export default function CTASection({ phoneNumber = "02475102901" }) {
               <a
                 href="#contact"
                 className="
-                  w-full sm:w-auto
-                  flex items-center justify-center gap-3
-                  bg-[#07152f]
-                  text-white
-                  px-10
-                  py-5
-                  rounded-full
-                  font-black
-                  text-lg
-                  uppercase
-                  tracking-widest
-                  shadow-2xl
-                  hover:scale-105
-                  transition-all
-                  duration-300
-                "
+  w-full sm:w-auto
+  flex items-center justify-center gap-3
+  bg-[#07152f]
+  text-white
+  px-10
+  py-5
+  rounded-full
+  font-black
+  text-[0.675rem]
+  sm:text-lg
+  uppercase
+  tracking-wider
+  shadow-2xl
+  hover:scale-105
+  transition-all
+  duration-300
+"
               >
                 <Calendar size={20} />
                 Get Free Quote
@@ -114,9 +115,10 @@ export default function CTASection({ phoneNumber = "02475102901" }) {
                   py-5
                   rounded-full
                   font-black
-                  text-lg
+                  text-[0.675rem]
+                  sm:text-lg
                   uppercase
-                  tracking-widest
+                  tracking-wider
                   hover:bg-white
                   transition-all
                   duration-300
