@@ -3,11 +3,10 @@ export default function LocalBusinessSchema() {
     "@context": "https://schema.org",
     "@type": "WasteManagementBusiness",
     "name": "Maxx Waste Removals",
-    // UPDATED TO WEBP LOGO
     "image": "https://maxxwasteremovals.co.uk/logos/logo.webp",
     "@id": "https://maxxwasteremovals.co.uk",
     "url": "https://maxxwasteremovals.co.uk",
-    "telephone": "02475102901",
+    "telephone": "+44 7718 090183",
     "priceRange": "££",
     "address": {
       "@type": "PostalAddress",
@@ -62,7 +61,7 @@ export default function LocalBusinessSchema() {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema ) }}
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema  ) }}
     />
   );
 }

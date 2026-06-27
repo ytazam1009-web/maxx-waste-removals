@@ -22,7 +22,6 @@ export default function Footer() {
   };
 
   return (
-    // ADDED ID HERE FOR NAVBAR SCROLL
     <footer id="footer-contact" className="bg-[#07152f] text-white pt-20 pb-10 border-t border-white/5">
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
@@ -98,7 +97,6 @@ export default function Footer() {
             <div className="flex flex-col gap-6">
               <div className="flex flex-col gap-3">
                 <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Local Branch Numbers:</p>
-                {/* ADDED DIRECT MOBILE HERE */}
                 <a href="tel:+447718090183" className="flex items-center gap-3 text-white hover:text-[#f6be00] transition-colors font-bold">
                   <div className="w-8 h-8 bg-[#f6be00] rounded-lg flex items-center justify-center">
                     <Phone size={14} className="text-[#07152f]" fill="currentColor" />
