@@ -52,8 +52,8 @@ export const metadata = {
   },
 
   alternates: {
-    canonical: "/leicester",
-  },
+  canonical: "https://maxxwasteremovals.co.uk/leicester",
+}
 };
 
 export default function LeicesterPage( ) {
