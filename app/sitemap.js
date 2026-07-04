@@ -1,21 +1,21 @@
 export default function sitemap() {
   const baseUrl =
     process.env.NEXT_PUBLIC_SITE_URL ||
-    "https://maxxwasteremovals.co.uk";
+    "https://www.maxxwasteremovals.co.uk";
 
   const services = [
-    'builders-waste',
-    'garden-waste',
-    'house-clearance',
-    'appliance-removal',
-    'office-clearance',
-    'sofa-removal'
+    "builders-waste",
+    "garden-waste",
+    "house-clearance",
+    "appliance-removal",
+    "office-clearance",
+    "sofa-removal",
   ];
 
   const mainPages = [
     {
       url: `${baseUrl}`,
-      lastModified: new Date( ),
+      lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1.0,
     },
