@@ -7,7 +7,7 @@ export default function sitemap() {
     'builders-waste',
     'garden-waste',
     'house-clearance',
-    'mattress-removal',
+    'appliance-removal',
     'office-clearance',
     'sofa-removal'
   ];
