@@ -7,8 +7,8 @@ export default function robots() {
       },
     ],
 
-    sitemap: "https://maxxwasteremovals.co.uk/sitemap.xml",
+    sitemap: "https://www.maxxwasteremovals.co.uk/sitemap.xml",
 
-    host: "https://maxxwasteremovals.co.uk",
+    host: "https://www.maxxwasteremovals.co.uk",
   };
 }
