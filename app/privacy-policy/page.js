@@ -1,9 +1,21 @@
 export const metadata = {
   title: "Privacy Policy | Maxx Waste Removals",
+
   description:
     "Read the Privacy Policy for Maxx Waste Removals and learn how we collect, use and protect your personal information.",
+
+  openGraph: {
+    title: "Privacy Policy | Maxx Waste Removals",
+    description:
+      "Read the Privacy Policy for Maxx Waste Removals and learn how we collect, use and protect your personal information.",
+    url: "https://www.maxxwasteremovals.co.uk/privacy-policy",
+    siteName: "Maxx Waste Removals",
+    locale: "en_GB",
+    type: "website",
+  },
+
   alternates: {
-    canonical: "/privacy-policy",
+    canonical: "https://www.maxxwasteremovals.co.uk/privacy-policy",
   },
 };
 

@@ -7,14 +7,30 @@ import { CheckCircle2 } from "lucide-react";
 
 export const metadata = {
   title: "Our Waste Removal Services | Maxx Waste Removals",
-  description: "Explore our full range of professional waste removal services across the Midlands, including house, office, garden, and builders waste clearance.",
+
+  description:
+    "Explore our full range of professional waste removal services across the Midlands, including house, office, garden, and builders waste clearance.",
+
+  openGraph: {
+    title: "Our Waste Removal Services | Maxx Waste Removals",
+    description:
+      "Explore our full range of professional waste removal services across the Midlands, including house, office, garden, and builders waste clearance.",
+    url: "https://www.maxxwasteremovals.co.uk/services",
+    siteName: "Maxx Waste Removals",
+    locale: "en_GB",
+    type: "website",
+  },
+
+  alternates: {
+    canonical: "https://www.maxxwasteremovals.co.uk/services",
+  },
 };
 
 export default function ServicesPage() {
   return (
     <main className="bg-[#07152f]">
       <Navbar />
-      
+
       {/* HEADER SECTION */}
       <section className="pt-32 pb-16 md:pt-48 md:pb-24 border-b border-white/5">
         <Container>
@@ -53,7 +69,7 @@ export default function ServicesPage() {
                   "Fully Licensed Waste Carriers",
                   "Environment Agency Approved",
                   "Public Liability Insurance up to £5m",
-                  "Transparent, No-Obligation Pricing"
+                  "Transparent, No-Obligation Pricing",
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-3 text-white font-bold">
                     <CheckCircle2 className="text-[#f6be00]" size={20} />
@@ -62,10 +78,18 @@ export default function ServicesPage() {
                 ))}
               </ul>
             </div>
+
             <div className="bg-[#f6be00] p-12 rounded-[3rem] text-[#07152f]">
-              <h3 className="text-3xl font-black uppercase mb-4">Ready to clear your space?</h3>
-              <p className="font-bold mb-8 opacity-80">Get an instant quote for any of our services today.</p>
-              <a href="/#contact" className="inline-block bg-[#07152f] text-white px-10 py-5 rounded-2xl font-black text-xl hover:scale-105 transition shadow-xl">
+              <h3 className="text-3xl font-black uppercase mb-4">
+                Ready to clear your space?
+              </h3>
+              <p className="font-bold mb-8 opacity-80">
+                Get an instant quote for any of our services today.
+              </p>
+              <a
+                href="/#contact"
+                className="inline-block bg-[#07152f] text-white px-10 py-5 rounded-2xl font-black text-xl hover:scale-105 transition shadow-xl"
+              >
                 Get a Free Quote
               </a>
             </div>

@@ -1,7 +1,22 @@
 export const metadata = {
   title: "Contact Maxx Waste Removals | Get Free Quote",
+
   description:
     "Contact Maxx Waste Removals for fast, affordable waste removal, rubbish clearance, and house clearance services across the Midlands.",
+
+  openGraph: {
+    title: "Contact Maxx Waste Removals | Get Free Quote",
+    description:
+      "Contact Maxx Waste Removals for fast, affordable waste removal, rubbish clearance, and house clearance services across the Midlands.",
+    url: "https://www.maxxwasteremovals.co.uk/contact",
+    siteName: "Maxx Waste Removals",
+    locale: "en_GB",
+    type: "website",
+  },
+
+  alternates: {
+    canonical: "https://www.maxxwasteremovals.co.uk/contact",
+  },
 };
 
 export default function ContactPage() {

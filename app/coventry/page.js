@@ -38,25 +38,25 @@ export const metadata = {
     "responsible disposal Coventry",
     "bereavement clearance Coventry",
     "site clearance Coventry",
-    "unwanted items removal Coventry"
+    "unwanted items removal Coventry",
   ],
 
   openGraph: {
     title: "Waste Removal & House Clearance Coventry | Maxx Waste Removals",
     description:
       "Fast and affordable waste removal in Coventry including house clearance, sofa removal, and garden waste clearance services. Same-day collection available.",
-    url: "https://maxxwasteremovals.co.uk/coventry",
+    url: "https://www.maxxwasteremovals.co.uk/coventry",
     siteName: "Maxx Waste Removals",
     type: "website",
     locale: "en_GB",
   },
 
   alternates: {
-    canonical: "/coventry",
+    canonical: "https://www.maxxwasteremovals.co.uk/coventry",
   },
 };
 
-export default function CoventryPage( ) {
+export default function CoventryPage() {
   return (
     <main className="min-h-screen">
       {/* Passing the local Coventry number to all components */}

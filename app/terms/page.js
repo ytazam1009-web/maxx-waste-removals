@@ -1,9 +1,21 @@
 export const metadata = {
   title: "Terms & Conditions | Maxx Waste Removals",
+
   description:
     "Read the Terms & Conditions for using the services provided by Maxx Waste Removals.",
+
+  openGraph: {
+    title: "Terms & Conditions | Maxx Waste Removals",
+    description:
+      "Read the Terms & Conditions for using the services provided by Maxx Waste Removals.",
+    url: "https://www.maxxwasteremovals.co.uk/terms",
+    siteName: "Maxx Waste Removals",
+    locale: "en_GB",
+    type: "website",
+  },
+
   alternates: {
-    canonical: "/terms",
+    canonical: "https://www.maxxwasteremovals.co.uk/terms",
   },
 };
 
@@ -37,7 +49,10 @@ export default function TermsPage() {
       <ul className="list-disc ml-6 space-y-2">
         <li>Ensure safe access to the property.</li>
         <li>Declare any hazardous or restricted waste.</li>
-        <li>Ensure all items presented for collection belong to you or you have permission to dispose of them.</li>
+        <li>
+          Ensure all items presented for collection belong to you or you have
+          permission to dispose of them.
+        </li>
       </ul>
 
       <h2 className="text-2xl font-semibold mt-8 mb-4">Waste Disposal</h2>

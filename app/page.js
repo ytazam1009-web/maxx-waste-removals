@@ -15,8 +15,12 @@ import LocalBusinessSchema from "@/components/seo/LocalBusinessSchema";
 import BackToTop from "@/components/common/BackToTop";
 
 export const metadata = {
-  title: "Maxx Waste Removals | Licensed Waste Removal & House Clearance Leicester, Coventry & Birmingham",
-  description: "Professional, same-day rubbish clearance across Leicester, Coventry, and Birmingham. Licensed waste carrier for house, garden, and office clearance. No upfront payment—cheaper than skip hire!",
+  title:
+    "Maxx Waste Removals | Licensed Waste Removal & House Clearance Leicester, Coventry & Birmingham",
+
+  description:
+    "Professional, same-day rubbish clearance across Leicester, Coventry, and Birmingham. Licensed waste carrier for house, garden, and office clearance. No upfront payment—cheaper than skip hire!",
+
   keywords: [
     "waste removal Midlands",
     "rubbish clearance Leicester",
@@ -32,8 +36,23 @@ export const metadata = {
     "commercial site clearance",
     "furniture disposal",
     "mattress removal",
-    "cheaper than skip hire"
+    "cheaper than skip hire",
   ],
+
+  openGraph: {
+    title:
+      "Maxx Waste Removals | Licensed Waste Removal & House Clearance Leicester, Coventry & Birmingham",
+    description:
+      "Professional, same-day rubbish clearance across Leicester, Coventry, and Birmingham. Licensed waste carrier for house, garden, and office clearance.",
+    url: "https://www.maxxwasteremovals.co.uk",
+    siteName: "Maxx Waste Removals",
+    locale: "en_GB",
+    type: "website",
+  },
+
+  alternates: {
+    canonical: "https://www.maxxwasteremovals.co.uk",
+  },
 };
 
 export default function HomePage() {
@@ -75,7 +94,7 @@ export default function HomePage() {
       <FAQSchema city="Midlands" />
       <LocalBusinessSchema />
       <Footer />
-      
+
       <BackToTop />
     </main>
   );

@@ -38,25 +38,25 @@ export const metadata = {
     "responsible disposal Birmingham",
     "bereavement clearance Birmingham",
     "site clearance Birmingham",
-    "unwanted items removal Birmingham"
+    "unwanted items removal Birmingham",
   ],
 
   openGraph: {
     title: "Waste Removal & House Clearance Birmingham | Maxx Waste Removals",
     description:
       "Affordable same-day waste removal in Birmingham including house clearance, furniture removal and garden waste clearance services. No upfront payment.",
-    url: "https://maxxwasteremovals.co.uk/birmingham",
+    url: "https://www.maxxwasteremovals.co.uk/birmingham",
     siteName: "Maxx Waste Removals",
     type: "website",
     locale: "en_GB",
   },
 
   alternates: {
-    canonical: "/birmingham",
+    canonical: "https://www.maxxwasteremovals.co.uk/birmingham",
   },
 };
 
-export default function BirminghamPage( ) {
+export default function BirminghamPage() {
   return (
     <main className="min-h-screen">
       {/* Passing the local Birmingham number to all components */}
