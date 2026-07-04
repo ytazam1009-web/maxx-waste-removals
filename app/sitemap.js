@@ -1,7 +1,5 @@
 export default function sitemap() {
-  const baseUrl =
-    process.env.NEXT_PUBLIC_SITE_URL ||
-    "https://www.maxxwasteremovals.co.uk";
+  const baseUrl = "https://www.maxxwasteremovals.co.uk";
 
   const services = [
     "builders-waste",
