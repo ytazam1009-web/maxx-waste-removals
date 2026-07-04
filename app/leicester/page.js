@@ -38,25 +38,25 @@ export const metadata = {
     "responsible disposal Leicester",
     "bereavement clearance Leicester",
     "site clearance Leicester",
-    "unwanted items removal Leicester"
+    "unwanted items removal Leicester",
   ],
 
   openGraph: {
     title: "Waste Removal & House Clearance Leicester | Maxx Waste Removals",
     description:
       "Fast, affordable and licensed waste removal in Leicester including house clearance, sofa removal and garden waste clearance. No upfront payment.",
-    url: "https://maxxwasteremovals.co.uk/leicester",
+    url: "https://www.maxxwasteremovals.co.uk/leicester",
     siteName: "Maxx Waste Removals",
     type: "website",
     locale: "en_GB",
   },
 
   alternates: {
-  canonical: "https://maxxwasteremovals.co.uk/leicester",
-}
+    canonical: "https://www.maxxwasteremovals.co.uk/leicester",
+  },
 };
 
-export default function LeicesterPage( ) {
+export default function LeicesterPage() {
   return (
     <main className="min-h-screen">
       {/* Passing the local Leicester number to all components */}
