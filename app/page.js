@@ -13,6 +13,7 @@ import InternalLinks from "@/components/seo/InternalLinks";
 import FAQSchema from "@/components/seo/FAQSchema";
 import LocalBusinessSchema from "@/components/seo/LocalBusinessSchema";
 import BackToTop from "@/components/common/BackToTop";
+import RecentWork from "@/components/home/RecentWork";
 
 export const metadata = {
   title:
@@ -81,12 +82,16 @@ export default function HomePage() {
       <WhyChooseUs />
 
       <section id="reviews">
-        <Testimonials />
-      </section>
+  <Testimonials />
+</section>
 
-      <section id="contact">
-        <QuoteForm />
-      </section>
+<section id="recent-work">
+  <RecentWork />
+</section>
+
+<section id="contact">
+  <QuoteForm />
+</section>
 
       <CTASection phoneNumber={mainPhone} />
 
