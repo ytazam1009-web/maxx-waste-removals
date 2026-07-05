@@ -13,13 +13,29 @@ export default function Testimonials() {
       "script[src*='cdn.trustindex.io']"
     );
 
+    // Create widget container BEFORE script runs
+    const widget = document.getElementById("trustindex-widget");
+
     if (!existingScript) {
       const script = document.createElement("script");
       script.src =
         "https://cdn.trustindex.io/loader.js?0c58fa775a5f865efd16eb517ac";
       script.defer = true;
       script.async = true;
+
+      script.onload = () => {
+        // Try forcing Trustindex refresh after load
+        if (window.Trustindex && typeof window.Trustindex.init === "function") {
+          window.Trustindex.init();
+        }
+      };
+
       document.body.appendChild(script);
+    } else {
+      // If script already exists, try re-init
+      if (window.Trustindex && typeof window.Trustindex.init === "function") {
+        window.Trustindex.init();
+      }
     }
   }, []);
 
@@ -46,25 +62,11 @@ export default function Testimonials() {
               Customer Reviews
             </div>
 
-            <h2
-              className="
-              text-4xl
-              font-extrabold
-              text-white
-              md:text-5xl
-            "
-            >
+            <h2 className="text-4xl font-extrabold text-white md:text-5xl">
               Trusted By Local Customers
             </h2>
 
-            <p
-              className="
-              mt-6
-              text-lg
-              leading-relaxed
-              text-gray-300
-            "
-            >
+            <p className="mt-6 text-lg leading-relaxed text-gray-300">
               Reliable waste removal services trusted by homeowners and
               businesses across Leicester, Coventry, and Birmingham.
             </p>
@@ -73,7 +75,7 @@ export default function Testimonials() {
 
         {/* TRUSTINDEX REVIEWS */}
         <div className="mt-16">
-          <div className="trustindex-widget"></div>
+          <div id="trustindex-widget"></div>
         </div>
       </Container>
     </Section>
