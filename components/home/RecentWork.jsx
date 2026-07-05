@@ -26,8 +26,8 @@ const jobs = [
       "Complete house clearance completed by our licensed waste removal team.",
 
     beforeImages: [
-      "/images/gallery/house-before-1.jpg",
-      "/images/gallery/house-before-2.jpg",
+      "/images/gallery/house-before-1.jpeg",
+      "/images/gallery/house-before-2.jpeg",
     ],
     beforeVideos: [],
 
