@@ -29,7 +29,7 @@ export default function InternalLinks() {
               <li><Link href="/services/garden-waste" className="hover:text-white transition-colors">Garden Waste & Green Clearance</Link></li>
               <li><Link href="/services/office-clearance" className="hover:text-white transition-colors">Commercial Office Clearance</Link></li>
               <li><Link href="/services/builders-waste" className="hover:text-white transition-colors">Builders Waste & Site Clearance</Link></li>
-              <li><Link href="/services/mattress-removal" className="hover:text-white transition-colors">Mattress & Bed Removal</Link></li>
+              <li><Link href="/services/appliance-removal" className="hover:text-white transition-colors">Appliance-Removal</Link></li>
             </ul>
           </div>
 
