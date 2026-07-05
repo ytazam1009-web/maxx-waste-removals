@@ -52,28 +52,36 @@ export default function Navbar() {
   ];
 
   const handleLinkClick = (e, link) => {
-    const isHashLink = link.href.includes("#");
-    
-    if (isHashLink) {
-      const targetId = link.href.split("#")[1];
-      
-      if (isHome) {
-        // If on home, prevent reload and smooth scroll
-        e.preventDefault();
-        const elem = document.getElementById(targetId);
-        if (elem) {
-          elem.scrollIntoView({ behavior: "smooth" });
-        } else if (link.name === "Home") {
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        }
+  const isHashLink = link.href.includes("#");
+  const targetId = isHashLink ? link.href.split("#")[1] : null;
+
+  setIsOpen(false);
+
+  if (isHashLink) {
+    e.preventDefault();
+
+    // If already on homepage → smooth scroll
+    if (isHome) {
+      const elem = document.getElementById(targetId);
+      if (elem) {
+        elem.scrollIntoView({ behavior: "smooth" });
       }
-      // If not on home, let the default Link behavior take us to "/#id"
-    } else if (isHome && link.name === "Home") {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
     }
-    setIsOpen(false);
-  };
+
+    // If NOT on homepage → go home with hash
+    router.push(`/#${targetId}`);
+    return;
+  }
+
+  // Home button scroll to top
+  if (isHome && link.name === "Home") {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  setIsOpen(false);
+};
 
   return (
     <>
