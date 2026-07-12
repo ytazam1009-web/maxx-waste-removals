@@ -1,19 +1,43 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Container from "@/components/layout/Container";
 import Section from "@/components/layout/Section";
 import FadeUp from "@/components/ui/FadeUp";
-
-import { Star } from "lucide-react";
+import { Star, ExternalLink } from "lucide-react";
 
 export default function Testimonials() {
+  const [reviews, setReviews] = useState([]);
+  const [reviewPageUrl, setReviewPageUrl] = useState("");
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchReviews() {
+      try {
+        const res = await fetch("/api/google-reviews");
+        const data = await res.json();
+
+        setReviews(data?.reviews || []);
+        setReviewPageUrl(data?.reviewPageUrl || "");
+      } catch (err) {
+        console.error("Google reviews error:", err);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchReviews();
+  }, []);
+
   return (
     <Section id="reviews">
       <Container>
+        {/* HEADER */}
         <FadeUp>
           <div className="mx-auto max-w-3xl text-center">
-            <div className="mb-4 inline-flex rounded-full border border-yellow-400/30 bg-yellow-400/10 px-4 py-2 text-sm font-medium text-yellow-400">
-              Customer Reviews
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-yellow-400/30 bg-yellow-400/10 px-4 py-2 text-sm font-medium text-yellow-400">
+              <span className="h-2 w-2 rounded-full bg-yellow-400 animate-pulse"></span>
+              Google Reviews
             </div>
 
             <h2 className="text-4xl font-extrabold text-white md:text-5xl">
@@ -21,60 +45,87 @@ export default function Testimonials() {
             </h2>
 
             <p className="mt-6 text-lg leading-relaxed text-gray-300">
-              Reliable waste removal services trusted by homeowners and
-              businesses across Leicester, Coventry, and Birmingham.
+              Real feedback from our customers across the UK. We take pride in our 5-star waste removal service.
             </p>
           </div>
         </FadeUp>
 
-        {/* ⭐ SIMPLE STATIC REVIEWS (WORKS INSTANTLY, NO API, NO FAILURES) */}
+        {/* REVIEWS */}
         <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {[
-            {
-              name: "James R.",
-              text: "Fast and reliable service. Cleared my house waste in no time.",
-            },
-            {
-              name: "Sarah K.",
-              text: "Very professional and affordable. Highly recommended.",
-            },
-            {
-              name: "Mark T.",
-              text: "Great service in Birmingham. Will use again.",
-            },
-          ].map((review, i) => (
-            <div
-              key={i}
-              className="rounded-xl border border-white/10 bg-white/5 p-6 text-left text-white"
+          {loading ? (
+            <p className="col-span-3 text-center text-gray-400">
+              Loading reviews...
+            </p>
+          ) : reviews.length === 0 ? (
+            <p className="col-span-3 text-center text-gray-400">
+              No reviews found. Check API setup.
+            </p>
+          ) : (
+            reviews.map((r, i) => (
+              <a
+                key={i}
+                href={r.reviewUrl || reviewPageUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative flex flex-col rounded-xl border border-white/10 bg-white/5 p-6 transition-all hover:bg-white/10 hover:border-yellow-400/30"
+              >
+                {/* External Link Icon (Top Right) */}
+                <div className="absolute right-4 top-4 text-gray-500 group-hover:text-yellow-400 transition-colors">
+                  <ExternalLink size={14} />
+                </div>
+
+                {/* Stars */}
+                <div className="flex text-yellow-400 mb-4">
+                  {Array.from({ length: r.rating || 5 }).map((_, idx) => (
+                    <Star key={idx} size={16} fill="currentColor" />
+                  ))}
+                </div>
+
+                {/* Review text */}
+                <p className="flex-grow text-sm leading-relaxed text-gray-300 italic">
+                  "{r.text}"
+                </p>
+
+                {/* Author Info */}
+                <div className="mt-6 flex items-center gap-3">
+                  {r.authorPhoto ? (
+                    <img 
+                      src={r.authorPhoto} 
+                      alt={r.authorName} 
+                      className="h-10 w-10 rounded-full border border-white/20"
+                    />
+                  ) : (
+                    <div className="h-10 w-10 rounded-full bg-yellow-400/20 flex items-center justify-center text-yellow-400 font-bold text-xs">
+                      {r.authorName?.charAt(0) || "G"}
+                    </div>
+                  )}
+                  <div>
+                    <p className="text-sm font-bold text-white group-hover:text-yellow-400 transition-colors">
+                      {r.authorName}
+                    </p>
+                    <p className="text-[10px] uppercase tracking-wider text-gray-500">
+                      Verified Google Reviewer
+                    </p>
+                  </div>
+                </div>
+              </a>
+            ))
+          )}
+        </div>
+
+        {/* Call to Action */}
+        {!loading && reviews.length > 0 && (
+          <div className="mt-12 text-center">
+            <a 
+              href={reviewPageUrl} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-sm font-medium text-gray-400 hover:text-yellow-400 transition-colors underline underline-offset-4"
             >
-              <div className="mb-2 flex items-center gap-2 text-yellow-400">
-                <Star size={16} />
-                <Star size={16} />
-                <Star size={16} />
-                <Star size={16} />
-                <Star size={16} />
-              </div>
-
-              <p className="text-sm text-gray-300">{review.text}</p>
-
-              <p className="mt-4 text-sm font-semibold text-white">
-                {review.name}
-              </p>
-            </div>
-          ))}
-        </div>
-
-        {/* 📍 GOOGLE MAPS */}
-        <div className="mt-16 overflow-hidden rounded-2xl shadow-lg">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d311414.7172224537!2d-1.9843422700056363!3d52.426111724830925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x28fc86f7af550b25%3A0xb4fed2ab4418b57!2sMaxx%20waste%20removals!5e0!3m2!1sen!2s!4v1783258196360!5m2!1sen!2s"
-            className="w-full h-[350px] md:h-[450px]"
-            style={{ border: 0 }}
-            loading="lazy"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          />
-        </div>
+              View all reviews on Google Maps
+            </a>
+          </div>
+        )}
       </Container>
     </Section>
   );

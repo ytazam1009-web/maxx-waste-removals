@@ -93,7 +93,7 @@ export default function RecentWork() {
 
                     <div className="space-y-5">
 
-                                          {job.beforeImages.map((image, i) => (
+                      {job.beforeImages.map((image, i) => (
                         <div
                           key={i}
                           className="overflow-hidden rounded-2xl border border-white/10"
@@ -109,15 +109,16 @@ export default function RecentWork() {
                       ))}
 
                       {job.beforeVideos.map((video, i) => (
-                        <video
-                          key={i}
-                          controls
-                          preload="metadata"
-                          className="w-full rounded-2xl border border-white/10"
-                        >
-                          <source src={video} type="video/mp4" />
-                          Your browser does not support the video tag.
-                        </video>
+                        <div key={i} className="flex justify-center">
+                          <video
+                            controls
+                            preload="metadata"
+                            className="w-full lg:w-1/2 rounded-2xl border border-white/10"
+                          >
+                            <source src={video} type="video/mp4" />
+                            Your browser does not support the video tag.
+                          </video>
+                        </div>
                       ))}
 
                     </div>
@@ -148,15 +149,16 @@ export default function RecentWork() {
                       ))}
 
                       {job.afterVideos.map((video, i) => (
-                        <video
-                          key={i}
-                          controls
-                          preload="metadata"
-                          className="w-full rounded-2xl border border-white/10"
-                        >
-                          <source src={video} type="video/mp4" />
-                          Your browser does not support the video tag.
-                        </video>
+                        <div key={i} className="flex justify-center">
+                          <video
+                            controls
+                            preload="metadata"
+                            className="w-full lg:w-1/2 rounded-2xl border border-white/10"
+                          >
+                            <source src={video} type="video/mp4" />
+                            Your browser does not support the video tag.
+                          </video>
+                        </div>
                       ))}
 
                     </div>
@@ -167,7 +169,7 @@ export default function RecentWork() {
 
               </div>
             ))}
-                      </div>
+          </div>
 
         </FadeUp>
       </Container>
