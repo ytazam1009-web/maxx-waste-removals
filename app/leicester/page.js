@@ -11,6 +11,7 @@ import Footer from "@/components/layout/Footer";
 import InternalLinks from "@/components/seo/InternalLinks";
 import FAQSchema from "@/components/seo/FAQSchema";
 import LocalBusinessSchema from "@/components/seo/LocalBusinessSchema";
+import Script from "next/script";
 
 export const metadata = {
   title:
@@ -57,10 +58,69 @@ export const metadata = {
 };
 
 export default function LeicesterPage() {
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://www.maxxwasteremovals.co.uk/leicester#service",
+      "name": "Waste Removal in Leicester",
+      "serviceType": "Waste Removal",
+      "provider": {
+        "@id": "https://www.maxxwasteremovals.co.uk/#business"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Leicester"
+      },
+      "url": "https://www.maxxwasteremovals.co.uk/leicester",
+      "description": "Professional waste removal, rubbish clearance, house clearance, garden waste removal and office clearance in Leicester."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": "https://www.maxxwasteremovals.co.uk/leicester#webpage",
+      "url": "https://www.maxxwasteremovals.co.uk/leicester",
+      "name": "Waste Removal Leicester",
+      "isPartOf": {
+        "@id": "https://www.maxxwasteremovals.co.uk/#website"
+      },
+      "about": {
+        "@id": "https://www.maxxwasteremovals.co.uk/#business"
+      },
+      "inLanguage": "en-GB"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.maxxwasteremovals.co.uk"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Leicester",
+          "item": "https://www.maxxwasteremovals.co.uk/leicester"
+        }
+      ]
+    }
+  ];
   return (
     <main className="min-h-screen">
       {/* Passing the local Leicester number to all components */}
-      <Navbar phoneNumber="01163600853" />
+      <>
+  <Script
+    id="leicester-schema"
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{
+      __html: JSON.stringify(schema),
+    }}
+  />
+
+  <Navbar phoneNumber="01163600853" />
 
       <HeroSection
         city="Leicester"
@@ -97,6 +157,7 @@ export default function LeicesterPage() {
       <LocalBusinessSchema />
 
       <Footer />
+</>
     </main>
   );
 }

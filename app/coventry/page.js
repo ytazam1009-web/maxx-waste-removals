@@ -11,6 +11,7 @@ import Footer from "@/components/layout/Footer";
 import InternalLinks from "@/components/seo/InternalLinks";
 import FAQSchema from "@/components/seo/FAQSchema";
 import LocalBusinessSchema from "@/components/seo/LocalBusinessSchema";
+import Script from "next/script";
 
 export const metadata = {
   title:
@@ -57,10 +58,69 @@ export const metadata = {
 };
 
 export default function CoventryPage() {
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://www.maxxwasteremovals.co.uk/coventry#service",
+      "name": "Waste Removal in Coventry",
+      "serviceType": "Waste Removal",
+      "provider": {
+        "@id": "https://www.maxxwasteremovals.co.uk/#business"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Coventry"
+      },
+      "url": "https://www.maxxwasteremovals.co.uk/coventry",
+      "description": "Professional waste removal, rubbish clearance, house clearance, garden waste removal and office clearance in Coventry."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": "https://www.maxxwasteremovals.co.uk/coventry#webpage",
+      "url": "https://www.maxxwasteremovals.co.uk/coventry",
+      "name": "Waste Removal Coventry",
+      "isPartOf": {
+        "@id": "https://www.maxxwasteremovals.co.uk/#website"
+      },
+      "about": {
+        "@id": "https://www.maxxwasteremovals.co.uk/#business"
+      },
+      "inLanguage": "en-GB"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.maxxwasteremovals.co.uk"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Coventry",
+          "item": "https://www.maxxwasteremovals.co.uk/coventry"
+        }
+      ]
+    }
+  ];
   return (
     <main className="min-h-screen">
       {/* Passing the local Coventry number to all components */}
-      <Navbar phoneNumber="02475102901" />
+      <>
+  <Script
+    id="coventry-schema"
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{
+      __html: JSON.stringify(schema),
+    }}
+  />
+
+  <Navbar phoneNumber="02475102901" />
 
       <HeroSection
         city="Coventry"
@@ -97,6 +157,7 @@ export default function CoventryPage() {
       <LocalBusinessSchema />
 
       <Footer />
+</>
     </main>
   );
 }

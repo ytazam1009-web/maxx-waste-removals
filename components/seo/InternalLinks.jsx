@@ -10,9 +10,7 @@ export default function InternalLinks() {
         </h2>
 
         <p className="text-gray-400 mb-10 max-w-3xl font-medium">
-          Professional, same-day rubbish clearance and house clearance services
-          across Leicester, Coventry, Birmingham and the surrounding Midlands areas. 
-          Cheaper than skip hire and fully licensed for your peace of mind.
+          Professional waste removal, rubbish clearance, house clearance, garden clearance and office clearance across Leicester, Coventry, Birmingham and the Midlands. Same-day collection, responsible recycling and no upfront payment.
         </p>
 
         <div className="grid gap-10 md:grid-cols-3">
@@ -29,7 +27,7 @@ export default function InternalLinks() {
               <li><Link href="/services/garden-waste" className="hover:text-white transition-colors">Garden Waste & Green Clearance</Link></li>
               <li><Link href="/services/office-clearance" className="hover:text-white transition-colors">Commercial Office Clearance</Link></li>
               <li><Link href="/services/builders-waste" className="hover:text-white transition-colors">Builders Waste & Site Clearance</Link></li>
-              <li><Link href="/services/appliance-removal" className="hover:text-white transition-colors">Appliance-Removal</Link></li>
+              <li><Link href="/services/appliance-removal" className="hover:text-white transition-colors">Appliance Removal</Link></li>
             </ul>
           </div>
 
@@ -42,7 +40,7 @@ export default function InternalLinks() {
             <ul className="space-y-2 text-gray-300 font-medium">
               <li><Link href="/leicester" className="hover:text-white transition-colors">Rubbish Removal Leicester</Link></li>
               <li><Link href="/coventry" className="hover:text-white transition-colors">House Clearance Coventry</Link></li>
-              <li><Link href="/birmingham" className="hover:text-white transition-colors">Waste Collection Birmingham</Link></li>
+              <li><Link href="/birmingham" className="hover:text-white transition-colors">Waste Removal Birmingham</Link></li>
             </ul>
           </div>
 
@@ -63,9 +61,7 @@ export default function InternalLinks() {
 
         <div className="mt-12 pt-8 border-t border-white/5 text-sm text-gray-500 font-medium">
           <p>
-            Maxx Waste Removals is a leading licensed, insured, and eco-friendly waste disposal
-            provider. We specialize in rapid-response rubbish clearance across the Midlands, 
-            including Leicester, Coventry, and Birmingham. No upfront payment required.
+            Maxx Waste Removals is a licensed and insured waste carrier providing professional waste removal, house clearance, garden clearance, office clearance and rubbish collection across Coventry, Leicester, Birmingham and the Midlands. We focus on responsible recycling, competitive pricing and outstanding customer service.
           </p>
         </div>
 

@@ -30,10 +30,11 @@ export const metadata = {
 
   authors: [{ name: "Maxx Waste Removals" }],
   creator: "Maxx Waste Removals",
-
-  verification: {
-    google: "PASTE_YOUR_CODE_HERE",
-  },
+applicationName: "Maxx Waste Removals",
+publisher: "Maxx Waste Removals",
+category: "Waste Removal Service",
+classification: "Waste Removal & House Clearance",
+referrer: "origin-when-cross-origin",
 
   icons: {
     icon: [
@@ -45,8 +46,14 @@ export const metadata = {
   },
 
   alternates: {
-    canonical: "https://www.maxxwasteremovals.co.uk",
-  },
+  canonical: "https://www.maxxwasteremovals.co.uk",
+},
+
+other: {
+  "theme-color": "#07152f",
+  "color-scheme": "light",
+  "format-detection": "telephone=yes",
+},
 
   robots: {
     index: true,
@@ -79,12 +86,14 @@ export const metadata = {
   },
 
   twitter: {
-    card: "summary_large_image",
-    title: "Maxx Waste Removals",
-    description:
-      "Fast waste removal services across Coventry, Leicester & Birmingham.",
-    images: ["/og-image.jpg"],
-  },
+  card: "summary_large_image",
+  title: "Maxx Waste Removals",
+  description:
+    "Fast waste removal services across Coventry, Leicester & Birmingham.",
+  images: ["/og-image.jpg"],
+  site: "@Maxxwaster5p",
+  creator: "@Maxxwaster5p",
+},
 };
 
 export const viewport = {

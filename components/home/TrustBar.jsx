@@ -11,22 +11,22 @@ export default function TrustBar() {
   const items = [
     {
       icon: <ShieldCheck size={24} />,
-      text: "Fully Licensed",
+      text: "Licensed Waste Carrier",
     },
 
     {
       icon: <Truck size={24} />,
-      text: "Same Day Collection",
+      text: "Same-Day Waste Removal",
     },
 
     {
       icon: <Recycle size={24} />,
-      text: "Eco-Friendly Disposal",
+      text: "Responsible Recycling",
     },
 
     {
       icon: <Clock3 size={24} />,
-      text: "Fast Response Times",
+      text: "Free No-Obligation Quotes",
     },
   ];
 

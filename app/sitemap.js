@@ -2,13 +2,19 @@ export default function sitemap() {
   const baseUrl = "https://www.maxxwasteremovals.co.uk";
 
   const services = [
-    "builders-waste",
-    "garden-waste",
-    "house-clearance",
-    "appliance-removal",
-    "office-clearance",
-    "sofa-removal",
-  ];
+  "builders-waste",
+  "garden-waste",
+  "house-clearance",
+  "appliance-removal",
+  "office-clearance",
+  "sofa-removal",
+];
+
+const areas = [
+  "leicester",
+  "coventry",
+  "birmingham",
+];
 
   const mainPages = [
     {
@@ -17,25 +23,7 @@ export default function sitemap() {
       changeFrequency: "weekly",
       priority: 1.0,
     },
-    {
-      url: `${baseUrl}/leicester`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/coventry`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/birmingham`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
+        {
       url: `${baseUrl}/services`,
       lastModified: new Date(),
       changeFrequency: "weekly",
@@ -68,5 +56,12 @@ export default function sitemap() {
     priority: 0.8,
   }));
 
-  return [...mainPages, ...servicePages];
+  const areaPages = areas.map((area) => ({
+  url: `${baseUrl}/${area}`,
+  lastModified: new Date(),
+  changeFrequency: "weekly",
+  priority: 0.9,
+}));
+
+return [...mainPages, ...servicePages, ...areaPages];
 }

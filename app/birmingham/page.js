@@ -11,6 +11,7 @@ import Footer from "@/components/layout/Footer";
 import InternalLinks from "@/components/seo/InternalLinks";
 import FAQSchema from "@/components/seo/FAQSchema";
 import LocalBusinessSchema from "@/components/seo/LocalBusinessSchema";
+import Script from "next/script";
 
 export const metadata = {
   title:
@@ -57,10 +58,69 @@ export const metadata = {
 };
 
 export default function BirminghamPage() {
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://www.maxxwasteremovals.co.uk/birmingham#service",
+      "name": "Waste Removal in Birmingham",
+      "serviceType": "Waste Removal",
+      "provider": {
+        "@id": "https://www.maxxwasteremovals.co.uk/#business"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Birmingham"
+      },
+      "url": "https://www.maxxwasteremovals.co.uk/birmingham",
+      "description": "Professional waste removal, rubbish clearance, house clearance, garden waste removal and office clearance in Birmingham."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": "https://www.maxxwasteremovals.co.uk/birmingham#webpage",
+      "url": "https://www.maxxwasteremovals.co.uk/birmingham",
+      "name": "Waste Removal Birmingham",
+      "isPartOf": {
+        "@id": "https://www.maxxwasteremovals.co.uk/#website"
+      },
+      "about": {
+        "@id": "https://www.maxxwasteremovals.co.uk/#business"
+      },
+      "inLanguage": "en-GB"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.maxxwasteremovals.co.uk"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Birmingham",
+          "item": "https://www.maxxwasteremovals.co.uk/birmingham"
+        }
+      ]
+    }
+  ];
   return (
     <main className="min-h-screen">
       {/* Passing the local Birmingham number to all components */}
-      <Navbar phoneNumber="01218126425" />
+      <>
+  <Script
+    id="birmingham-schema"
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{
+      __html: JSON.stringify(schema),
+    }}
+  />
+
+  <Navbar phoneNumber="01218126425" />
 
       <HeroSection
         city="Birmingham"
@@ -97,6 +157,7 @@ export default function BirminghamPage() {
       <LocalBusinessSchema />
 
       <Footer />
+</>
     </main>
   );
 }

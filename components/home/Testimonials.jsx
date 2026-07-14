@@ -5,6 +5,7 @@ import Container from "@/components/layout/Container";
 import Section from "@/components/layout/Section";
 import FadeUp from "@/components/ui/FadeUp";
 import { Star, ExternalLink } from "lucide-react";
+import Script from "next/script";
 
 export default function Testimonials() {
   const [reviews, setReviews] = useState([]);
@@ -29,9 +30,42 @@ export default function Testimonials() {
     fetchReviews();
   }, []);
 
-  return (
+  const reviewSchema =
+  reviews.length > 0
+    ? {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        itemListElement: reviews.slice(0, 5).map((review, index) => ({
+          "@type": "Review",
+          position: index + 1,
+          author: {
+            "@type": "Person",
+            name: review.authorName,
+          },
+          reviewBody: review.text,
+          reviewRating: {
+            "@type": "Rating",
+            ratingValue: review.rating || 5,
+            bestRating: 5,
+          },
+        })),
+      }
+    : null;
+
+return (
     <Section id="reviews">
-      <Container>
+      <>
+  {reviewSchema && (
+    <Script
+      id="review-schema"
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(reviewSchema),
+      }}
+    />
+  )}
+
+  <Container>
         {/* HEADER */}
         <FadeUp>
           <div className="mx-auto max-w-3xl text-center">
@@ -128,7 +162,8 @@ export default function Testimonials() {
             </a>
           </div>
         )}
-      </Container>
-    </Section>
+        </Container>
+</>
+</Section>
   );
 }

@@ -12,6 +12,7 @@ import Navbar from "@/components/navigation/Navbar";
 import InternalLinks from "@/components/seo/InternalLinks";
 import FAQSchema from "@/components/seo/FAQSchema";
 import LocalBusinessSchema from "@/components/seo/LocalBusinessSchema";
+import WebPageSchema from "@/components/seo/WebPageSchema";
 import BackToTop from "@/components/common/BackToTop";
 import RecentWork from "@/components/home/RecentWork";
 
@@ -96,8 +97,9 @@ export default function HomePage() {
       <CTASection phoneNumber={mainPhone} />
 
       <InternalLinks />
-      <FAQSchema city="Midlands" />
-      <LocalBusinessSchema />
+      <WebPageSchema />
+<FAQSchema city="Midlands" />
+<LocalBusinessSchema />
       <Footer />
 
       <BackToTop />

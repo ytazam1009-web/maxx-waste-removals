@@ -2,6 +2,7 @@ export default function FAQSchema({ city = "Midlands" }) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+"@id": "https://www.maxxwasteremovals.co.uk/#faq",
 
     mainEntity: [
       {
@@ -29,13 +30,29 @@ export default function FAQSchema({ city = "Midlands" }) {
         },
       },
       {
-        "@type": "Question",
-        name: `What types of waste do you collect in ${city}?`,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: `We collect household waste, furniture, garden waste, electrical appliances, office waste, and construction debris in ${city}.`,
-        },
-      },
+  "@type": "Question",
+  name: `What types of waste do you collect in ${city}?`,
+  acceptedAnswer: {
+    "@type": "Answer",
+    text: `We collect household waste, furniture, garden waste, electrical appliances, office waste, construction debris, bulky waste, and general rubbish in ${city}.`,
+  },
+},
+{
+  "@type": "Question",
+  name: `Do I need a skip for waste removal in ${city}?`,
+  acceptedAnswer: {
+    "@type": "Answer",
+    text: `No. Our man-and-van waste removal service is often quicker and more cost-effective than hiring a skip, and we do all the loading for you.`,
+  },
+},
+{
+  "@type": "Question",
+  name: `How do I get a quote for waste removal in ${city}?`,
+  acceptedAnswer: {
+    "@type": "Answer",
+    text: `Call Maxx Waste Removals or send us photos of your waste. We'll provide a free, no-obligation quote with no upfront payment required.`,
+  },
+},
     ],
   };
 

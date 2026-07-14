@@ -14,30 +14,30 @@ export default function WhyChooseUs() {
   const features = [
     {
       icon: <Clock3 size={34} />,
-      title: "Same Day Service",
-      description:
-        "Fast collection and waste removal with quick response times across all service areas.",
+      title: "Same Day Waste Removal",
+description:
+  "Fast same-day waste removal, rubbish clearance and house clearance across Coventry, Leicester, Birmingham and the Midlands.",
     },
 
     {
       icon: <PoundSterling size={34} />,
-      title: "Affordable Pricing",
-      description:
-        "Competitive and transparent pricing with no hidden charges or surprise fees.",
+      title: "Affordable Fixed Pricing",
+description:
+  "Competitive, transparent pricing with free quotes, no hidden charges and no upfront payment.",
     },
 
     {
       icon: <BadgeCheck size={34} />,
-      title: "Licensed Waste Carrier",
-      description:
-        "Fully licensed and insured waste disposal services following environmental regulations.",
+      title: "Licensed & Insured Waste Carrier",
+description:
+  "Fully licensed and insured waste carrier providing responsible disposal and recycling in line with UK environmental regulations.",
     },
 
     {
       icon: <Users size={34} />,
-      title: "Professional Team",
-      description:
-        "Friendly and experienced staff delivering reliable waste collection services.",
+      title: "Trusted Local Team",
+description:
+  "Experienced, friendly professionals delivering reliable house clearance, garden clearance, office clearance and rubbish removal services.",
     },
   ];
 
@@ -64,7 +64,7 @@ export default function WhyChooseUs() {
               text-yellow-400
             ">
 
-              Why Choose Us
+              Why Choose Maxx Waste Removals
 
             </div>
 
@@ -75,7 +75,7 @@ export default function WhyChooseUs() {
               md:text-5xl
             ">
 
-              Trusted Waste Removal Experts
+              Trusted Waste Removal & House Clearance Experts
 
             </h2>
 
@@ -86,9 +86,7 @@ export default function WhyChooseUs() {
               text-gray-300
             ">
 
-              We provide reliable waste removal and rubbish
-              clearance services with professional staff,
-              affordable pricing, and fast collection times.
+              Maxx Waste Removals provides professional waste removal, rubbish clearance, house clearance, garden clearance and office clearance across Coventry, Leicester, Birmingham and the Midlands. We are committed to reliable service, responsible recycling, transparent pricing and outstanding customer satisfaction.
 
             </p>
 

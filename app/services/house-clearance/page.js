@@ -6,6 +6,7 @@ import { Phone, CheckCircle2, ArrowLeft } from "lucide-react";
 import Navbar from "@/components/navigation/Navbar";
 import Footer from "@/components/layout/Footer";
 import FadeUp from "@/components/ui/FadeUp";
+import Script from "next/script";
 
 export default function HouseClearancePage() {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -13,8 +14,58 @@ export default function HouseClearancePage() {
   const description = "Complete house clearance services for probate, moving, or decluttering. We handle everything from furniture to carpets across the Midlands with care and professionalism.";
   const phone = "+44 7718 090183";
 
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://www.maxxwasteremovals.co.uk/services/house-clearance#service",
+  name: "House Clearance",
+  description,
+  provider: {
+    "@id": "https://www.maxxwasteremovals.co.uk/#business"
+  },
+  areaServed: [
+    "Coventry",
+    "Leicester",
+    "Birmingham",
+    "Midlands"
+  ],
+  serviceType: "House Clearance",
+  url: "https://www.maxxwasteremovals.co.uk/services/house-clearance"
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://www.maxxwasteremovals.co.uk"
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Services",
+      item: "https://www.maxxwasteremovals.co.uk/services"
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "House Clearance",
+      item: "https://www.maxxwasteremovals.co.uk/services/house-clearance"
+    }
+  ]
+};
   return (
     <>
+  <Script
+    id="house-clearance-schema"
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{
+      __html: JSON.stringify([serviceSchema, breadcrumbSchema]),
+    }}
+  />
       <Navbar />
       <main className="min-h-screen bg-[#07152f] text-white pt-32 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 py-16 md:py-24">
