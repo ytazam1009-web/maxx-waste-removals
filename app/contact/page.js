@@ -331,7 +331,7 @@ export default function ContactPage() {
               <div className="mt-12 grid gap-6 md:grid-cols-3">
 
                 <a
-                  href="tel:01163600853"
+                  href="tel:01165044009"
                   className="rounded-2xl border border-white/10 bg-[#0b1f45] p-8 hover:border-yellow-400 transition"
                 >
                   <Phone className="text-yellow-400 mb-5" size={32} />
@@ -341,12 +341,12 @@ export default function ContactPage() {
                   </h3>
 
                   <p className="mt-4 text-2xl font-black text-yellow-400">
-                    01163 600853
+                    01165 044009
                   </p>
                 </a>
 
                 <a
-                  href="tel:02475102901"
+                  href="tel:02475522290"
                   className="rounded-2xl border border-white/10 bg-[#0b1f45] p-8 hover:border-yellow-400 transition"
                 >
                   <Phone className="text-yellow-400 mb-5" size={32} />
@@ -356,12 +356,12 @@ export default function ContactPage() {
                   </h3>
 
                   <p className="mt-4 text-2xl font-black text-yellow-400">
-                    02475 102901
+                    02475 522290
                   </p>
                 </a>
 
                 <a
-                  href="tel:01218126425"
+                  href="tel:01218384430"
                   className="rounded-2xl border border-white/10 bg-[#0b1f45] p-8 hover:border-yellow-400 transition"
                 >
                   <Phone className="text-yellow-400 mb-5" size={32} />
@@ -371,7 +371,7 @@ export default function ContactPage() {
                   </h3>
 
                   <p className="mt-4 text-2xl font-black text-yellow-400">
-                    01218 126425
+                    01218 384430
                   </p>
                 </a>
 

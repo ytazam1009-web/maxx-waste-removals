@@ -103,23 +103,23 @@ export default function Footer() {
                   </div>
                   <span>Direct Mobile: +44 7718 090183</span>
                 </a>
-                <a href="tel:02475102901" className="flex items-center gap-3 text-white hover:text-[#f6be00] transition-colors font-bold">
+                <a href="tel:02475522290" className="flex items-center gap-3 text-white hover:text-[#f6be00] transition-colors font-bold">
                   <div className="w-8 h-8 bg-[#f6be00]/10 rounded-lg flex items-center justify-center">
                     <Phone size={14} className="text-[#f6be00]" />
                   </div>
-                  <span>Coventry: 02475 102901</span>
+                  <span>Coventry: 02475 522290</span>
                 </a>
-                <a href="tel:01163600853" className="flex items-center gap-3 text-white hover:text-[#f6be00] transition-colors font-bold">
+                <a href="tel:01165044009" className="flex items-center gap-3 text-white hover:text-[#f6be00] transition-colors font-bold">
                   <div className="w-8 h-8 bg-[#f6be00]/10 rounded-lg flex items-center justify-center">
                     <Phone size={14} className="text-[#f6be00]" />
                   </div>
-                  <span>Leicester: 01163 600853</span>
+                  <span>Leicester: 01165 044009</span>
                 </a>
-                <a href="tel:01218126425" className="flex items-center gap-3 text-white hover:text-[#f6be00] transition-colors font-bold">
+                <a href="tel:01218384430" className="flex items-center gap-3 text-white hover:text-[#f6be00] transition-colors font-bold">
                   <div className="w-8 h-8 bg-[#f6be00]/10 rounded-lg flex items-center justify-center">
                     <Phone size={14} className="text-[#f6be00]" />
                   </div>
-                  <span>Birmingham: 01218 126425</span>
+                  <span>Birmingham: 01218 384430</span>
                 </a>
               </div>
               

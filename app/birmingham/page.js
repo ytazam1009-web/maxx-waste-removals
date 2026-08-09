@@ -120,11 +120,11 @@ export default function BirminghamPage() {
     }}
   />
 
-  <Navbar phoneNumber="01218126425" />
+  <Navbar phoneNumber="01218384430" />
 
       <HeroSection
         city="Birmingham"
-        phoneNumber="01218126425"
+        phoneNumber="01218384430"
         heroImage="/images/birmingham.webp"
       />
 
@@ -148,7 +148,7 @@ export default function BirminghamPage() {
         <QuoteForm />
       </section>
 
-      <CTASection phoneNumber="01218126425" />
+      <CTASection phoneNumber="01218384430" />
 
       <InternalLinks />
 

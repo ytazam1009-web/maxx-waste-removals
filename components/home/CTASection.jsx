@@ -4,7 +4,7 @@ import Container from "@/components/layout/Container";
 import Section from "@/components/layout/Section";
 import { Phone, Calendar } from "lucide-react";
 
-export default function CTASection({ phoneNumber = "02475102901" }) {
+export default function CTASection({ phoneNumber = "02475522290" }) {
   const telLink = `tel:${phoneNumber.replace(/\s+/g, "")}`;
 
   return (

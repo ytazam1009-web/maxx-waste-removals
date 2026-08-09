@@ -17,8 +17,8 @@ export default function Navbar() {
 
   const getPhoneNumber = () => {
     if (isHome) return "+44 7718 090183";
-    if (pathname.includes("coventry")) return "02475102901";
-    if (pathname.includes("birmingham")) return "01218126425";
+    if (pathname.includes("coventry")) return "02475522290";
+    if (pathname.includes("birmingham")) return "01218384430";
     return "+44 7718 090183";
   };
 

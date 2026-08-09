@@ -48,17 +48,17 @@ export default function LocalBusinessSchema() {
         {
           "@type": "City",
           "name": "Coventry",
-          "telephone": "02475102901"
+          "telephone": "02475522290"
         },
         {
           "@type": "City",
           "name": "Leicester",
-          "telephone": "01163600853"
+          "telephone": "01165044009"
         },
         {
           "@type": "City",
           "name": "Birmingham",
-          "telephone": "01218126425"
+          "telephone": "01218384430"
         }
       ],
 

@@ -120,11 +120,11 @@ export default function LeicesterPage() {
     }}
   />
 
-  <Navbar phoneNumber="01163600853" />
+  <Navbar phoneNumber="01165044009" />
 
       <HeroSection
         city="Leicester"
-        phoneNumber="01163600853"
+        phoneNumber="01165044009"
         heroImage="/images/leicester-waste-removal.webp"
       />
 
@@ -148,7 +148,7 @@ export default function LeicesterPage() {
         <QuoteForm />
       </section>
 
-      <CTASection phoneNumber="01163600853" />
+      <CTASection phoneNumber="01165044009" />
 
       <InternalLinks />
 

@@ -120,11 +120,11 @@ export default function CoventryPage() {
     }}
   />
 
-  <Navbar phoneNumber="02475102901" />
+  <Navbar phoneNumber="02475522290" />
 
       <HeroSection
         city="Coventry"
-        phoneNumber="02475102901"
+        phoneNumber="02475522290"
         heroImage="/images/coventry.webp"
       />
 
@@ -148,7 +148,7 @@ export default function CoventryPage() {
         <QuoteForm />
       </section>
 
-      <CTASection phoneNumber="02475102901" />
+      <CTASection phoneNumber="02475522290" />
 
       <InternalLinks />
 
