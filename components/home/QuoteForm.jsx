@@ -1,4 +1,5 @@
 "use client";
+
 import { useState } from "react";
 import Container from "@/components/layout/Container";
 import Section from "@/components/layout/Section";
@@ -10,11 +11,12 @@ export default function QuoteForm({ city = "General" }) {
     phone: "",
     email: "",
     city: city,
+    postcode: "",
     message: "",
   });
 
   const [loading, setLoading] = useState(false);
-  const [status, setStatus] = useState(null); 
+  const [status, setStatus] = useState(null);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -28,10 +30,11 @@ export default function QuoteForm({ city = "General" }) {
     setStatus(null);
 
     try {
-      // FIXED PATH: Now matches your folder name "contacts"
       const res = await fetch("/api/contacts", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify(form),
       });
 
@@ -39,42 +42,54 @@ export default function QuoteForm({ city = "General" }) {
 
       if (res.ok && data.success) {
         setStatus("success");
-        setForm({ name: "", phone: "", email: "", city: city, message: "" });
+
+        setForm({
+          name: "",
+          phone: "",
+          email: "",
+          city: city,
+          postcode: "",
+          message: "",
+        });
       } else {
         setStatus("error");
       }
     } catch (err) {
       setStatus("error");
     }
+
     setLoading(false);
   };
 
   return (
-    <Section id="contact">
+    <Section>
       <Container>
         <FadeUp>
-          <div className="mx-auto max-w-4xl rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm md:p-12">
+          <div className="mx-auto max-w-4xl">
             <div className="text-center">
-              <div className="mb-4 inline-flex rounded-full border border-yellow-400/30 bg-yellow-400/10 px-4 py-2 text-sm font-medium text-yellow-400 uppercase tracking-widest">
+              <div className="mb-4 inline-flex rounded-full border border-yellow-400/30 bg-yellow-400/10 px-5 py-2 text-sm font-bold uppercase tracking-wider text-yellow-400">
                 Free Quote
               </div>
-              <h2 className="text-4xl font-extrabold text-white md:text-5xl uppercase tracking-tighter">
+
+              <h2 className="text-4xl font-black text-white md:text-5xl">
                 Request A Free Quote
               </h2>
-              <p className="mt-6 text-lg leading-relaxed text-gray-300">
-                Get a fast, no-obligation quote for waste removal in <span className="text-yellow-400 font-bold">{city}</span>.
+
+              <p className="mt-4 text-lg text-gray-400">
+                Get a fast, no-obligation quote for waste removal in {city}.
               </p>
             </div>
 
             {status === "success" && (
-              <div className="mt-6 rounded-2xl bg-green-500/10 border border-green-500/30 p-4 text-green-300 text-center font-bold">
+              <div className="mt-6 rounded-2xl border border-green-500/30 bg-green-500/10 p-4 text-center font-bold text-green-300">
                 ✅ Message sent successfully! We’ll contact you within minutes.
               </div>
             )}
 
             {status === "error" && (
-              <div className="mt-6 rounded-2xl bg-red-500/10 border border-red-500/30 p-4 text-red-300 text-center font-bold">
-                ❌ Something went wrong. Please check your internet or try again.
+              <div className="mt-6 rounded-2xl border border-red-500/30 bg-red-500/10 p-4 text-center font-bold text-red-300">
+                ❌ Something went wrong. Please check your internet or try
+                again.
               </div>
             )}
 
@@ -86,26 +101,43 @@ export default function QuoteForm({ city = "General" }) {
                   value={form.name}
                   onChange={handleChange}
                   placeholder="Full Name"
-                  className="rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-white placeholder:text-gray-400 focus:border-yellow-400 outline-none transition-colors"
+                  autoComplete="name"
+                  className="rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-white placeholder:text-gray-400 outline-none transition-colors focus:border-yellow-400"
                 />
+
                 <input
                   required
                   name="phone"
                   value={form.phone}
                   onChange={handleChange}
                   placeholder="Phone Number"
-                  className="rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-white placeholder:text-gray-400 focus:border-yellow-400 outline-none transition-colors"
+                  autoComplete="tel"
+                  className="rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-white placeholder:text-gray-400 outline-none transition-colors focus:border-yellow-400"
+                />
+
+                <input
+                  required
+                  type="email"
+                  name="email"
+                  value={form.email}
+                  onChange={handleChange}
+                  placeholder="Email Address"
+                  autoComplete="email"
+                  className="rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-white placeholder:text-gray-400 outline-none transition-colors focus:border-yellow-400"
+                />
+
+                <input
+                  required
+                  type="text"
+                  name="postcode"
+                  value={form.postcode}
+                  onChange={handleChange}
+                  placeholder="Postcode"
+                  autoComplete="postal-code"
+                  className="rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-white placeholder:text-gray-400 outline-none transition-colors focus:border-yellow-400"
                 />
               </div>
-              <input
-                required
-                type="email"
-                name="email"
-                value={form.email}
-                onChange={handleChange}
-                placeholder="Email Address"
-                className="rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-white placeholder:text-gray-400 focus:border-yellow-400 outline-none transition-colors"
-              />
+
               <textarea
                 required
                 name="message"
@@ -113,12 +145,13 @@ export default function QuoteForm({ city = "General" }) {
                 onChange={handleChange}
                 rows="5"
                 placeholder="Tell us about your waste removal requirements..."
-                className="rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-white placeholder:text-gray-400 focus:border-yellow-400 outline-none transition-colors"
+                className="rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-white placeholder:text-gray-400 outline-none transition-colors focus:border-yellow-400"
               />
+
               <button
                 type="submit"
                 disabled={loading}
-                className="rounded-2xl bg-yellow-400 px-8 py-4 text-lg font-black text-[#07152f] uppercase tracking-wider transition hover:scale-[1.02] disabled:opacity-60 shadow-xl shadow-yellow-400/20"
+                className="rounded-2xl bg-yellow-400 px-8 py-4 text-lg font-black uppercase tracking-wider text-[#07152f] shadow-xl shadow-yellow-400/20 transition hover:scale-[1.02] disabled:opacity-60"
               >
                 {loading ? "Sending..." : "Get Free Quote Now"}
               </button>
