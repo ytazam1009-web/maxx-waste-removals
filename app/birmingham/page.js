@@ -13,12 +13,17 @@ import FAQSchema from "@/components/seo/FAQSchema";
 import LocalBusinessSchema from "@/components/seo/LocalBusinessSchema";
 import Script from "next/script";
 
+const baseUrl = "https://www.maxxwasteremovals.co.uk";
+const pageUrl = `${baseUrl}/birmingham`;
+
 export const metadata = {
+  metadataBase: new URL(baseUrl),
+
   title:
     "Waste Removal & House Clearance Birmingham | Same-Day Rubbish Collection | Maxx Waste Removals",
 
   description:
-    "Professional waste removal and house clearance in Birmingham. Same-day rubbish collection, garden waste disposal & office clearance. Licensed waste carrier, no upfront payment. Cheaper than skip hire!",
+    "Professional waste removal and house clearance in Birmingham. Same-day rubbish collection, garden waste disposal, furniture removal and office clearance. Licensed waste carrier with no upfront payment.",
 
   keywords: [
     "waste removal Birmingham",
@@ -40,20 +45,71 @@ export const metadata = {
     "bereavement clearance Birmingham",
     "site clearance Birmingham",
     "unwanted items removal Birmingham",
+    "furniture removal Birmingham",
+    "same day rubbish removal Birmingham",
+    "waste clearance Birmingham",
   ],
 
-  openGraph: {
-    title: "Waste Removal & House Clearance Birmingham | Maxx Waste Removals",
-    description:
-      "Affordable same-day waste removal in Birmingham including house clearance, furniture removal and garden waste clearance services. No upfront payment.",
-    url: "https://www.maxxwasteremovals.co.uk/birmingham",
-    siteName: "Maxx Waste Removals",
-    type: "website",
-    locale: "en_GB",
-  },
+  authors: [
+    {
+      name: "Maxx Waste Removals",
+    },
+  ],
+
+  creator: "Maxx Waste Removals",
+  publisher: "Maxx Waste Removals",
 
   alternates: {
-    canonical: "https://www.maxxwasteremovals.co.uk/birmingham",
+    canonical: pageUrl,
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
+
+  openGraph: {
+    title:
+      "Waste Removal & House Clearance Birmingham | Maxx Waste Removals",
+
+    description:
+      "Affordable same-day waste removal in Birmingham including house clearance, furniture removal, garden waste clearance and office clearance services.",
+
+    url: pageUrl,
+
+    siteName: "Maxx Waste Removals",
+
+    type: "website",
+
+    locale: "en_GB",
+
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Maxx Waste Removals Birmingham waste removal services",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+
+    title:
+      "Waste Removal & House Clearance Birmingham | Maxx Waste Removals",
+
+    description:
+      "Professional same-day waste removal, rubbish clearance and house clearance services in Birmingham.",
+
+    images: ["/og-image.jpg"],
   },
 };
 
@@ -62,65 +118,98 @@ export default function BirminghamPage() {
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      "@id": "https://www.maxxwasteremovals.co.uk/birmingham#service",
-      "name": "Waste Removal in Birmingham",
-      "serviceType": "Waste Removal",
-      "provider": {
-        "@id": "https://www.maxxwasteremovals.co.uk/#business"
+      "@id": `${pageUrl}#service`,
+
+      name: "Waste Removal in Birmingham",
+
+      serviceType: [
+        "Waste Removal",
+        "Rubbish Clearance",
+        "House Clearance",
+        "Garden Waste Removal",
+        "Furniture Removal",
+        "Office Clearance",
+      ],
+
+      provider: {
+        "@id": `${baseUrl}/#business`,
       },
-      "areaServed": {
+
+      areaServed: {
         "@type": "City",
-        "name": "Birmingham"
+        name: "Birmingham",
+        containedInPlace: {
+          "@type": "AdministrativeArea",
+          name: "West Midlands",
+        },
       },
-      "url": "https://www.maxxwasteremovals.co.uk/birmingham",
-      "description": "Professional waste removal, rubbish clearance, house clearance, garden waste removal and office clearance in Birmingham."
+
+      url: pageUrl,
+
+      description:
+        "Professional waste removal, rubbish clearance, house clearance, garden waste removal, furniture removal and office clearance services in Birmingham.",
     },
+
     {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      "@id": "https://www.maxxwasteremovals.co.uk/birmingham#webpage",
-      "url": "https://www.maxxwasteremovals.co.uk/birmingham",
-      "name": "Waste Removal Birmingham",
-      "isPartOf": {
-        "@id": "https://www.maxxwasteremovals.co.uk/#website"
+      "@id": `${pageUrl}#webpage`,
+
+      url: pageUrl,
+
+      name:
+        "Waste Removal & House Clearance Birmingham | Maxx Waste Removals",
+
+      isPartOf: {
+        "@id": `${baseUrl}/#website`,
       },
-      "about": {
-        "@id": "https://www.maxxwasteremovals.co.uk/#business"
+
+      about: {
+        "@id": `${baseUrl}/#business`,
       },
-      "inLanguage": "en-GB"
+
+      mainEntity: {
+        "@id": `${pageUrl}#service`,
+      },
+
+      inLanguage: "en-GB",
+
+      description:
+        "Professional waste removal, rubbish clearance and house clearance services in Birmingham from Maxx Waste Removals.",
     },
+
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
-      "itemListElement": [
+
+      itemListElement: [
         {
           "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.maxxwasteremovals.co.uk"
+          position: 1,
+          name: "Home",
+          item: baseUrl,
         },
         {
           "@type": "ListItem",
-          "position": 2,
-          "name": "Birmingham",
-          "item": "https://www.maxxwasteremovals.co.uk/birmingham"
-        }
-      ]
-    }
+          position: 2,
+          name: "Birmingham",
+          item: pageUrl,
+        },
+      ],
+    },
   ];
+
   return (
     <main className="min-h-screen">
-      {/* Passing the local Birmingham number to all components */}
-      <>
-  <Script
-    id="birmingham-schema"
-    type="application/ld+json"
-    dangerouslySetInnerHTML={{
-      __html: JSON.stringify(schema),
-    }}
-  />
+      <Script
+        id="birmingham-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schema),
+        }}
+      />
 
-  <Navbar phoneNumber="01218384430" />
+      <Navbar phoneNumber="01218384430" />
 
       <HeroSection
         city="Birmingham"
@@ -157,7 +246,6 @@ export default function BirminghamPage() {
       <LocalBusinessSchema />
 
       <Footer />
-</>
     </main>
   );
 }
