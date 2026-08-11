@@ -21,7 +21,7 @@ description:
 
     {
       icon: <PoundSterling size={34} />,
-      title: "Affordable Fixed Pricing",
+      title: "Affordable Pricing",
 description:
   "Competitive, transparent pricing with free quotes, no hidden charges and no upfront payment.",
     },
