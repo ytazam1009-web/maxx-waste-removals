@@ -1,4 +1,5 @@
 // THIS IS THE MAIN HOME PAGE (app/page.js)
+
 import HeroSection from "@/components/home/HeroSection";
 import TrustBar from "@/components/home/TrustBar";
 import ServicesGrid from "@/components/home/ServicesGrid";
@@ -13,47 +14,115 @@ import InternalLinks from "@/components/seo/InternalLinks";
 import FAQSchema from "@/components/seo/FAQSchema";
 import LocalBusinessSchema from "@/components/seo/LocalBusinessSchema";
 import WebPageSchema from "@/components/seo/WebPageSchema";
+import WasteCarrierTrust from "@/components/seo/WasteCarrierTrust";
 import BackToTop from "@/components/common/BackToTop";
 import RecentWork from "@/components/home/RecentWork";
 
+const baseUrl = "https://www.maxxwasteremovals.co.uk";
+
 export const metadata = {
+  metadataBase: new URL(baseUrl),
+
   title:
-    "Maxx Waste Removals | Licensed Waste Removal & House Clearance Leicester, Coventry & Birmingham",
+    "Maxx Waste Removals | Waste Removal, Rubbish Clearance & House Clearance Midlands",
 
   description:
-    "Professional, same-day rubbish clearance across Leicester, Coventry, and Birmingham. Licensed waste carrier for house, garden, and office clearance. No upfront payment—cheaper than skip hire!",
+    "Maxx Waste Removals provides professional waste removal, rubbish clearance, house clearance, garden waste, furniture and office clearance across Birmingham, Coventry, Leicester and surrounding Midlands areas. Same-day collection available.",
 
   keywords: [
     "waste removal Midlands",
-    "rubbish clearance Leicester",
-    "house clearance Coventry",
+    "rubbish removal Midlands",
+    "rubbish clearance Midlands",
     "waste removal Birmingham",
-    "licensed waste carrier",
-    "same day rubbish collection",
-    "man and van waste removal",
-    "garden waste clearance",
-    "office clearance Midlands",
-    "affordable waste disposal",
-    "bereavement house clearance",
-    "commercial site clearance",
-    "furniture disposal",
+    "rubbish removal Birmingham",
+    "house clearance Birmingham",
+    "waste removal Coventry",
+    "rubbish removal Coventry",
+    "house clearance Coventry",
+    "waste removal Leicester",
+    "rubbish removal Leicester",
+    "house clearance Leicester",
+    "same day waste removal",
+    "same day rubbish removal",
+    "house clearance",
+    "garden waste removal",
+    "garden clearance",
+    "furniture removal",
+    "sofa removal",
     "mattress removal",
-    "cheaper than skip hire",
+    "office clearance",
+    "commercial waste removal",
+    "builders waste removal",
+    "site clearance",
+    "appliance removal",
+    "junk removal",
+    "man and van waste removal",
+    "licensed waste carrier",
+    "Environment Agency waste carrier",
+    "waste collection Midlands",
   ],
+
+  authors: [
+    {
+      name: "Maxx Waste Removals",
+    },
+  ],
+
+  creator: "Maxx Waste Removals",
+  publisher: "Maxx Waste Removals",
+
+  alternates: {
+    canonical: baseUrl,
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
 
   openGraph: {
     title:
-      "Maxx Waste Removals | Licensed Waste Removal & House Clearance Leicester, Coventry & Birmingham",
+      "Maxx Waste Removals | Waste Removal & House Clearance Midlands",
+
     description:
-      "Professional, same-day rubbish clearance across Leicester, Coventry, and Birmingham. Licensed waste carrier for house, garden, and office clearance.",
-    url: "https://www.maxxwasteremovals.co.uk",
+      "Professional waste removal, rubbish clearance, house clearance, garden waste, furniture and office clearance across Birmingham, Coventry, Leicester and surrounding Midlands areas.",
+
+    url: baseUrl,
+
     siteName: "Maxx Waste Removals",
-    locale: "en_GB",
+
     type: "website",
+
+    locale: "en_GB",
+
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Maxx Waste Removals waste removal services across the Midlands",
+      },
+    ],
   },
 
-  alternates: {
-    canonical: "https://www.maxxwasteremovals.co.uk",
+  twitter: {
+    card: "summary_large_image",
+
+    title:
+      "Maxx Waste Removals | Waste Removal & House Clearance Midlands",
+
+    description:
+      "Professional waste removal, rubbish clearance and house clearance across Birmingham, Coventry, Leicester and surrounding Midlands areas.",
+
+    images: ["/og-image.jpg"],
   },
 };
 
@@ -61,7 +130,7 @@ export default function HomePage() {
   const mainPhone = "+44 7718 090183";
 
   return (
-    <main>
+    <main className="min-h-screen">
       <Navbar />
 
       <HeroSection
@@ -72,34 +141,342 @@ export default function HomePage() {
 
       <TrustBar />
 
+      {/* Main Services */}
       <section id="services">
         <ServicesGrid />
       </section>
 
+      {/* Areas */}
       <section id="areas">
         <AreasSection />
       </section>
 
+      {/* Why Choose Us */}
       <WhyChooseUs />
 
+      {/* Reviews */}
       <section id="reviews">
-  <Testimonials />
-</section>
+        <Testimonials />
+      </section>
 
-<section id="recent-work">
-  <RecentWork />
-</section>
+      {/* Recent Work */}
+      <section id="recent-work">
+        <RecentWork />
+      </section>
 
-<section id="contact">
-  <QuoteForm />
-</section>
+      {/* Contact / Quote */}
+      <section id="contact">
+        <QuoteForm />
+      </section>
+
+      {/* Waste Carrier Trust */}
+      <WasteCarrierTrust city="the Midlands" />
+
+      {/* Midlands Waste Removal Content */}
+      <section className="py-12 md:py-16">
+        <div className="mx-auto max-w-6xl px-4">
+          <div className="mx-auto max-w-4xl text-center">
+            <h1 className="text-3xl font-bold tracking-tight md:text-4xl">
+              Professional Waste Removal Across the Midlands
+            </h1>
+
+            <p className="mt-5 text-lg leading-8 text-gray-600">
+              Maxx Waste Removals provides professional waste removal and
+              rubbish clearance services across Birmingham, Coventry, Leicester
+              and surrounding Midlands areas. We help homeowners, landlords,
+              tenants, businesses and property managers remove unwanted waste
+              quickly and conveniently.
+            </p>
+
+            <p className="mt-4 leading-7 text-gray-600">
+              Our services include house clearance, garden waste removal,
+              furniture and bulky item removal, office clearance, builders
+              waste and commercial waste removal. Same-day collection is
+              available where possible, subject to availability and location.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Overview */}
+      <section className="py-12 md:py-16">
+        <div className="mx-auto max-w-6xl px-4">
+          <div className="mx-auto max-w-4xl">
+            <h2 className="text-center text-3xl font-bold tracking-tight md:text-4xl">
+              Waste Removal Services We Provide
+            </h2>
+
+            <p className="mt-5 text-center leading-7 text-gray-600">
+              From small household collections to larger property and
+              commercial clearances, we provide practical waste removal
+              solutions across the Midlands.
+            </p>
+
+            <div className="mt-10 grid gap-6 md:grid-cols-2">
+              <div className="rounded-xl border p-6">
+                <h3 className="text-xl font-semibold">
+                  House Clearance
+                </h3>
+
+                <p className="mt-3 leading-7 text-gray-600">
+                  We help clear unwanted furniture, household items and
+                  general rubbish from houses, flats and other residential
+                  properties.
+                </p>
+              </div>
+
+              <div className="rounded-xl border p-6">
+                <h3 className="text-xl font-semibold">
+                  Rubbish Removal
+                </h3>
+
+                <p className="mt-3 leading-7 text-gray-600">
+                  We collect unwanted rubbish from homes, gardens, garages,
+                  offices and other properties across Birmingham, Coventry,
+                  Leicester and surrounding areas.
+                </p>
+              </div>
+
+              <div className="rounded-xl border p-6">
+                <h3 className="text-xl font-semibold">
+                  Garden Waste Removal
+                </h3>
+
+                <p className="mt-3 leading-7 text-gray-600">
+                  We can collect garden waste, unwanted outdoor items and
+                  clearance loads from gardens, sheds and other outdoor spaces.
+                </p>
+              </div>
+
+              <div className="rounded-xl border p-6">
+                <h3 className="text-xl font-semibold">
+                  Furniture & Bulky Item Removal
+                </h3>
+
+                <p className="mt-3 leading-7 text-gray-600">
+                  We can remove unwanted sofas, mattresses, beds, wardrobes,
+                  tables and other bulky household furniture.
+                </p>
+              </div>
+
+              <div className="rounded-xl border p-6">
+                <h3 className="text-xl font-semibold">
+                  Office & Commercial Clearance
+                </h3>
+
+                <p className="mt-3 leading-7 text-gray-600">
+                  Businesses, offices, landlords and commercial property
+                  managers can contact us about office clearance and commercial
+                  waste removal.
+                </p>
+              </div>
+
+              <div className="rounded-xl border p-6">
+                <h3 className="text-xl font-semibold">
+                  Builders Waste & Site Clearance
+                </h3>
+
+                <p className="mt-3 leading-7 text-gray-600">
+                  We can assist with removal of suitable builders waste and
+                  clearance from properties, renovation projects and sites.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Same-Day Waste Removal */}
+      <section className="py-12 md:py-16">
+        <div className="mx-auto max-w-6xl px-4">
+          <div className="mx-auto max-w-4xl text-center">
+            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+              Same-Day Waste Removal Across the Midlands
+            </h2>
+
+            <p className="mt-5 leading-8 text-gray-600">
+              Need unwanted rubbish removed quickly? Maxx Waste Removals
+              provides same-day waste collection where availability allows.
+              Whether you need a few bulky items removed or a larger clearance
+              completed, contact us with details of your waste and collection
+              requirements.
+            </p>
+
+            <div className="mt-8">
+              <a
+                href={`tel:${mainPhone.replace(/\s+/g, "")}`}
+                className="inline-flex items-center justify-center rounded-lg border px-6 py-3 font-semibold shadow-sm transition hover:shadow-md"
+              >
+                Call 07718 090183
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Waste Carrier Information */}
+      <section className="py-12 md:py-16">
+        <div className="mx-auto max-w-6xl px-4">
+          <div className="mx-auto max-w-4xl text-center">
+            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+              Registered Waste Carrier
+            </h2>
+
+            <p className="mt-5 leading-8 text-gray-600">
+              Maxx Waste Removals is registered with the Environment Agency as
+              a waste carrier. Our registration gives customers an additional
+              way to verify that waste is being collected and transported by a
+              registered waste carrier.
+            </p>
+
+            <div className="mx-auto mt-8 max-w-xl rounded-xl border p-6 text-left">
+              <div className="space-y-4">
+                <div>
+                  <p className="text-sm font-medium text-gray-500">
+                    Environment Agency Waste Carrier Registration
+                  </p>
+
+                  <p className="mt-1 text-xl font-bold">
+                    MAXX WASTE REMOVALS SERVICES LTD
+                  </p>
+                </div>
+
+                <div>
+                  <p className="text-sm font-medium text-gray-500">
+                    Registration Number
+                  </p>
+
+                  <p className="mt-1 text-lg font-semibold">
+                    CBDU643399
+                  </p>
+                </div>
+
+                <div>
+                  <p className="text-sm font-medium text-gray-500">
+                    Registration Type
+                  </p>
+
+                  <p className="mt-1 text-lg font-semibold">
+                    Carrier Dealer - Upper Tier
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-6">
+                <a
+                  href="https://environment.data.gov.uk/public-register/waste-carriers-brokers/registration/CBDU643399"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex w-full items-center justify-center rounded-lg border px-6 py-3 font-semibold shadow-sm transition hover:shadow-md sm:w-auto"
+                >
+                  Verify Waste Carrier Registration
+                </a>
+              </div>
+
+              <p className="mt-4 text-sm leading-6 text-gray-500">
+                Verification opens the official Environment Agency public
+                register for our registration.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Service & Location Links */}
+      <section className="py-12 md:py-16">
+        <div className="mx-auto max-w-6xl px-4">
+          <div className="mx-auto max-w-4xl">
+            <h2 className="text-center text-3xl font-bold tracking-tight md:text-4xl">
+              Waste Removal Services & Areas We Cover
+            </h2>
+
+            <p className="mt-5 text-center leading-7 text-gray-600">
+              Explore our specialist waste removal services and local pages
+              for Birmingham, Coventry and Leicester.
+            </p>
+
+            <div className="mt-8 grid gap-4 text-center sm:grid-cols-2 md:grid-cols-3">
+              <a
+                href="/leicester"
+                className="rounded-lg border p-4 font-medium transition hover:shadow-md"
+              >
+                Waste Removal Leicester
+              </a>
+
+              <a
+                href="/coventry"
+                className="rounded-lg border p-4 font-medium transition hover:shadow-md"
+              >
+                Waste Removal Coventry
+              </a>
+
+              <a
+                href="/birmingham"
+                className="rounded-lg border p-4 font-medium transition hover:shadow-md"
+              >
+                Waste Removal Birmingham
+              </a>
+
+              <a
+                href="/services/house-clearance"
+                className="rounded-lg border p-4 font-medium transition hover:shadow-md"
+              >
+                House Clearance
+              </a>
+
+              <a
+                href="/services/sofa-removal"
+                className="rounded-lg border p-4 font-medium transition hover:shadow-md"
+              >
+                Sofa & Furniture Removal
+              </a>
+
+              <a
+                href="/services/garden-waste"
+                className="rounded-lg border p-4 font-medium transition hover:shadow-md"
+              >
+                Garden Waste Removal
+              </a>
+
+              <a
+                href="/services/office-clearance"
+                className="rounded-lg border p-4 font-medium transition hover:shadow-md"
+              >
+                Office Clearance
+              </a>
+
+              <a
+                href="/services/builders-waste"
+                className="rounded-lg border p-4 font-medium transition hover:shadow-md"
+              >
+                Builders Waste & Site Clearance
+              </a>
+
+              <a
+                href="/services/appliance-removal"
+                className="rounded-lg border p-4 font-medium transition hover:shadow-md"
+              >
+                Appliance Removal
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <CTASection phoneNumber={mainPhone} />
 
+      {/* Existing Internal Links */}
       <InternalLinks />
+
+      {/* Existing Homepage WebPage Schema */}
       <WebPageSchema />
-<FAQSchema city="Midlands" />
-<LocalBusinessSchema />
+
+      {/* Homepage FAQ Schema */}
+      <FAQSchema city="the Midlands" />
+
+      {/* Business / Website Schema */}
+      <LocalBusinessSchema />
+
       <Footer />
 
       <BackToTop />
