@@ -262,18 +262,18 @@ export default function BirminghamPage() {
       <section className="py-12 md:py-16">
         <div className="mx-auto max-w-6xl px-4">
           <div className="mx-auto max-w-4xl text-center">
-            <h1 className="text-3xl font-bold tracking-tight md:text-4xl">
+            <h1 className="text-3xl font-bold tracking-tight text-[#f6be00] md:text-4xl">
               Waste Removal in Birmingham
             </h1>
 
-            <p className="mt-5 text-lg leading-8 text-gray-600">
+            <p className="mt-5 text-lg leading-8  text-white">
               Maxx Waste Removals provides professional waste removal and
               rubbish clearance across Birmingham. Whether you need a few
               unwanted items collected, a house cleared, garden waste removed
               or a larger commercial clearance completed, our team can help.
             </p>
 
-            <p className="mt-4 leading-7 text-gray-600">
+            <p className="mt-4 leading-7  text-white">
               We serve customers throughout Birmingham and surrounding areas,
               providing convenient waste collection for homeowners, landlords,
               tenants, businesses and property managers. Where available, we
@@ -404,6 +404,12 @@ export default function BirminghamPage() {
               >
                 Call 0121 838 4430
               </a>
+              <a
+                href="#contact"
+                className="inline-flex items-center justify-center rounded-lg border px-6 py-3 font-semibold shadow-sm transition hover:shadow-md"
+              >
+                Get a Free Quote
+              </a>
             </div>
           </div>
         </div>
@@ -477,41 +483,7 @@ export default function BirminghamPage() {
 
       <CTASection phoneNumber="01218384430" />
 
-      {/* Internal Links */}
-      <section className="py-10">
-        <div className="mx-auto max-w-6xl px-4">
-          <div className="mx-auto max-w-4xl">
-            <h2 className="mb-6 text-center text-2xl font-bold">
-              More Waste Removal Services
-            </h2>
-
-            <div className="grid gap-4 text-center sm:grid-cols-2 md:grid-cols-3">
-              <a
-                href="/coventry"
-                className="rounded-lg border p-4 font-medium transition hover:shadow-md"
-              >
-                Waste Removal Coventry
-              </a>
-
-              <a
-                href="/leicester"
-                className="rounded-lg border p-4 font-medium transition hover:shadow-md"
-              >
-                Waste Removal Leicester
-              </a>
-
-              <a
-                href="/contact"
-                className="rounded-lg border p-4 font-medium transition hover:shadow-md"
-              >
-                Contact Maxx Waste Removals
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <InternalLinks />
+      
 
       {/* FAQ */}
       <section className="py-12 md:py-16">
