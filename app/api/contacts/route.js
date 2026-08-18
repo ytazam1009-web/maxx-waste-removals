@@ -9,6 +9,7 @@ export async function POST(req) {
     const name = body?.name || "";
     const phone = body?.phone || "";
     const email = body?.email || "";
+    const postcode = body?.postcode || "";
     const city = body?.city || "Midlands";
     const message = body?.message || "";
 
@@ -35,7 +36,8 @@ export async function POST(req) {
                 <p style="margin: 10px 0; color: #4b5563;"><strong style="color: #07152f; width: 100px; display: inline-block;">Name:</strong> ${name}</p>
                 <p style="margin: 10px 0; color: #4b5563;"><strong style="color: #07152f; width: 100px; display: inline-block;">Phone:</strong> ${phone}</p>
                 <p style="margin: 10px 0; color: #4b5563;"><strong style="color: #07152f; width: 100px; display: inline-block;">Email:</strong> ${email}</p>
-              </div>
+              <p style="margin: 10px 0; color: #4b5563;"><strong style="color: #07152f; width: 100px; display: inline-block;">Postcode:</strong> ${postcode}</p>
+                </div>
 
               <div style="margin-bottom: 30px;">
                 <h3 style="color: #07152f; border-bottom: 2px solid #f6be00; display: inline-block; padding-bottom: 5px; margin-bottom: 20px;">Message</h3>

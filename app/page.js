@@ -146,10 +146,250 @@ export default function HomePage() {
         <ServicesGrid />
       </section>
 
-      {/* Areas */}
-      <section id="areas">
-        <AreasSection />
-      </section>
+  
+{/* Midlands Areas We Cover */}
+<section id="areas" className="py-12 md:py-16">
+  <div className="mx-auto max-w-6xl px-4">
+    <div className="mx-auto max-w-5xl">
+      <div className="text-center">
+        <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+          Areas We Cover Across the Midlands
+        </h2>
+
+        <p className="mt-5 leading-7 text-gray-600">
+          Maxx Waste Removals provides professional waste removal and rubbish
+          clearance across Birmingham, Coventry, Leicester and surrounding
+          Midlands areas. Our team covers a wide range of cities,
+          neighbourhoods and surrounding locations.
+        </p>
+      </div>
+
+      {/* Birmingham */}
+      <div className="mt-10">
+        <h3 className="text-2xl font-bold text-gray-900">
+          Birmingham
+        </h3>
+
+        <div className="mt-5 grid grid-cols-2 gap-3 text-center sm:grid-cols-3 md:grid-cols-4">
+          {[
+            "Birmingham City Centre",
+            "Edgbaston",
+            "Harborne",
+            "Selly Oak",
+            "Erdington",
+            "Sutton Coldfield",
+            "Kings Heath",
+            "Kings Norton",
+            "Moseley",
+            "Yardley",
+            "Acocks Green",
+            "Quinton",
+            "Halesowen",
+            "Smethwick",
+            "West Bromwich",
+            "Great Barr",
+          ].map((area) => (
+            <div
+              key={area}
+              className="rounded-lg border px-3 py-3 text-sm font-medium transition hover:shadow-sm"
+            >
+              {area}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Coventry */}
+      <div className="mt-12">
+        <h3 className="text-2xl font-bold text-gray-900">
+          Coventry
+        </h3>
+
+        <div className="mt-5 grid grid-cols-2 gap-3 text-center sm:grid-cols-3 md:grid-cols-4">
+          {[
+            "Coventry City Centre",
+            "Earlsdon",
+            "Canley",
+            "Tile Hill",
+            "Allesley",
+            "Coundon",
+            "Foleshill",
+            "Radford",
+            "Stoke",
+            "Wyken",
+            "Binley",
+            "Cheylesmore",
+            "Whitley",
+            "Walsgrave",
+            "Hillfields",
+            "Green Lane",
+          ].map((area) => (
+            <div
+              key={area}
+              className="rounded-lg border px-3 py-3 text-sm font-medium transition hover:shadow-sm"
+            >
+              {area}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Leicester */}
+      <div className="mt-12">
+        <h3 className="text-2xl font-bold text-gray-900">
+          Leicester
+        </h3>
+
+        <div className="mt-5 grid grid-cols-2 gap-3 text-center sm:grid-cols-3 md:grid-cols-4">
+          {[
+            "Leicester City Centre",
+            "Clarendon Park",
+            "Stoneygate",
+            "Knighton",
+            "Evington",
+            "Highfields",
+            "Belgrave",
+            "Spinney Hills",
+            "Braunstone",
+            "Aylestone",
+            "Eyres Monsell",
+            "Humberstone",
+            "Thurnby",
+            "West End",
+            "Wigston",
+            "Oadby",
+          ].map((area) => (
+            <div
+              key={area}
+              className="rounded-lg border px-3 py-3 text-sm font-medium transition hover:shadow-sm"
+            >
+              {area}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Wolverhampton */}
+      <div className="mt-12">
+        <h3 className="text-2xl font-bold text-gray-900">
+          Wolverhampton
+        </h3>
+
+        <div className="mt-5 grid grid-cols-2 gap-3 text-center sm:grid-cols-3 md:grid-cols-4">
+          {[
+            "Wolverhampton City Centre",
+            "Tettenhall",
+            "Penn",
+            "Wednesfield",
+            "Bilston",
+            "Bushbury",
+            "Whitmore Reans",
+            "Blakenhall",
+          ].map((area) => (
+            <div
+              key={area}
+              className="rounded-lg border px-3 py-3 text-sm font-medium transition hover:shadow-sm"
+            >
+              {area}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Solihull */}
+      <div className="mt-12">
+        <h3 className="text-2xl font-bold text-gray-900">
+          Solihull
+        </h3>
+
+        <div className="mt-5 grid grid-cols-2 gap-3 text-center sm:grid-cols-3 md:grid-cols-4">
+          {[
+            "Solihull Town Centre",
+            "Shirley",
+            "Knowle",
+            "Dorridge",
+            "Olton",
+            "Lyndon",
+            "Castle Bromwich",
+            "Balsall Common",
+          ].map((area) => (
+            <div
+              key={area}
+              className="rounded-lg border px-3 py-3 text-sm font-medium transition hover:shadow-sm"
+            >
+              {area}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Dudley & Sandwell */}
+      <div className="mt-12">
+        <h3 className="text-2xl font-bold text-gray-900">
+          Dudley & Sandwell
+        </h3>
+
+        <div className="mt-5 grid grid-cols-2 gap-3 text-center sm:grid-cols-3 md:grid-cols-4">
+          {[
+            "Dudley",
+            "Dudley Town Centre",
+            "Brierley Hill",
+            "Kingswinford",
+            "Sedgley",
+            "Stourbridge",
+            "Halesowen",
+            "Oldbury",
+            "Smethwick",
+            "West Bromwich",
+            "Rowley Regis",
+            "Tipton",
+          ].map((area) => (
+            <div
+              key={area}
+              className="rounded-lg border px-3 py-3 text-sm font-medium transition hover:shadow-sm"
+            >
+              {area}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Walsall */}
+      <div className="mt-12">
+        <h3 className="text-2xl font-bold text-gray-900">
+          Walsall
+        </h3>
+
+        <div className="mt-5 grid grid-cols-2 gap-3 text-center sm:grid-cols-3 md:grid-cols-4">
+          {[
+            "Walsall Town Centre",
+            "Aldridge",
+            "Bloxwich",
+            "Willenhall",
+            "Pelsall",
+            "Streetly",
+            "Brownhills",
+            "Rushall",
+          ].map((area) => (
+            <div
+              key={area}
+              className="rounded-lg border px-3 py-3 text-sm font-medium transition hover:shadow-sm"
+            >
+              {area}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <p className="mt-10 text-center leading-7 text-gray-600">
+        If your area isn't listed above, contact Maxx Waste Removals anyway.
+        We cover many surrounding Midlands locations and can confirm whether
+        we can collect from your postcode.
+      </p>
+    </div>
+  </div>
+</section>
+
 
       {/* Why Choose Us */}
       <WhyChooseUs />
@@ -314,75 +554,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Waste Carrier Information */}
-      <section className="py-12 md:py-16">
-        <div className="mx-auto max-w-6xl px-4">
-          <div className="mx-auto max-w-4xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-              Registered Waste Carrier
-            </h2>
-
-            <p className="mt-5 leading-8 text-gray-600">
-              Maxx Waste Removals is registered with the Environment Agency as
-              a waste carrier. Our registration gives customers an additional
-              way to verify that waste is being collected and transported by a
-              registered waste carrier.
-            </p>
-
-            <div className="mx-auto mt-8 max-w-xl rounded-xl border p-6 text-left">
-              <div className="space-y-4">
-                <div>
-                  <p className="text-sm font-medium text-gray-500">
-                    Environment Agency Waste Carrier Registration
-                  </p>
-
-                  <p className="mt-1 text-xl font-bold">
-                    MAXX WASTE REMOVALS SERVICES LTD
-                  </p>
-                </div>
-
-                <div>
-                  <p className="text-sm font-medium text-gray-500">
-                    Registration Number
-                  </p>
-
-                  <p className="mt-1 text-lg font-semibold">
-                    CBDU643399
-                  </p>
-                </div>
-
-                <div>
-                  <p className="text-sm font-medium text-gray-500">
-                    Registration Type
-                  </p>
-
-                  <p className="mt-1 text-lg font-semibold">
-                    Carrier Dealer - Upper Tier
-                  </p>
-                </div>
-              </div>
-
-              <div className="mt-6">
-                <a
-                  href="https://environment.data.gov.uk/public-register/waste-carriers-brokers/registration/CBDU643399"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex w-full items-center justify-center rounded-lg border px-6 py-3 font-semibold shadow-sm transition hover:shadow-md sm:w-auto"
-                >
-                  Verify Waste Carrier Registration
-                </a>
-              </div>
-
-              <p className="mt-4 text-sm leading-6 text-gray-500">
-                Verification opens the official Environment Agency public
-                register for our registration.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Service & Location Links */}
+            {/* Service & Location Links */}
       <section className="py-12 md:py-16">
         <div className="mx-auto max-w-6xl px-4">
           <div className="mx-auto max-w-4xl">
