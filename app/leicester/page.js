@@ -253,18 +253,18 @@ export default function LeicesterPage() {
       <section className="py-12 md:py-16">
         <div className="mx-auto max-w-6xl px-4">
           <div className="mx-auto max-w-4xl text-center">
-            <h1 className="text-3xl font-bold tracking-tight md:text-4xl">
+            <h1 className="text-3xl font-bold tracking-tight text-[#f6be00] md:text-4xl">
               Waste Removal in Leicester
             </h1>
 
-            <p className="mt-5 text-lg leading-8 text-gray-600">
+            <p className="mt-5 text-lg leading-8 text-white">
               Maxx Waste Removals provides professional waste removal and
               rubbish clearance across Leicester. Whether you need unwanted
               household items collected, a property cleared, garden waste
               removed or commercial rubbish taken away, our team can help.
             </p>
 
-            <p className="mt-4 leading-7 text-gray-600">
+            <p className="mt-4 leading-7 text-white">
               We provide convenient waste collection for homeowners, landlords,
               tenants, businesses and property managers throughout Leicester.
               Same-day collection is available where possible, helping you
@@ -468,47 +468,14 @@ export default function LeicesterPage() {
       {/* CTA */}
       <CTASection phoneNumber="01165044009" />
 
-      {/* Internal City Links */}
-      <section className="py-10">
-        <div className="mx-auto max-w-6xl px-4">
-          <div className="mx-auto max-w-4xl">
-            <h2 className="mb-6 text-center text-2xl font-bold">
-              More Waste Removal Services
-            </h2>
+      
 
-            <div className="grid gap-4 text-center sm:grid-cols-2 md:grid-cols-3">
-              <a
-                href="/birmingham"
-                className="rounded-lg border p-4 font-medium transition hover:shadow-md"
-              >
-                Waste Removal Birmingham
-              </a>
-
-              <a
-                href="/coventry"
-                className="rounded-lg border p-4 font-medium transition hover:shadow-md"
-              >
-                Waste Removal Coventry
-              </a>
-
-              <a
-                href="/contact"
-                className="rounded-lg border p-4 font-medium transition hover:shadow-md"
-              >
-                Contact Maxx Waste Removals
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <InternalLinks />
-
+     
       {/* FAQs */}
       <section className="py-12 md:py-16">
         <div className="mx-auto max-w-4xl px-4">
           <h2 className="text-center text-3xl font-bold tracking-tight md:text-4xl">
-            Leicester Waste Removal FAQs
+            Maxx Waste Removal Leicester FAQs
           </h2>
 
           <div className="mt-10 space-y-6">
