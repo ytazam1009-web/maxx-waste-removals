@@ -387,6 +387,12 @@ export default function LeicesterPage() {
               >
                 Call 0116 504 4009
               </a>
+              <a
+                href="#contact"
+                className="inline-flex items-center justify-center rounded-lg border px-6 py-3 font-semibold shadow-sm transition hover:shadow-md"
+              >
+                Get a Free Quote
+                </a>
             </div>
           </div>
         </div>
