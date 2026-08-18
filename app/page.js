@@ -146,17 +146,23 @@ export default function HomePage() {
         <ServicesGrid />
       </section>
 
-  
+{/* Areas */}
+<section id="areas">
+  <AreasSection />
+</section>
+
 {/* Midlands Areas We Cover */}
 <section id="areas" className="py-12 md:py-16">
   <div className="mx-auto max-w-6xl px-4">
     <div className="mx-auto max-w-5xl">
+
+      {/* Main Heading */}
       <div className="text-center">
-        <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+        <h2 className="text-3xl font-bold tracking-tight text-[#f6be00] md:text-4xl">
           Areas We Cover Across the Midlands
         </h2>
 
-        <p className="mt-5 leading-7 text-gray-600">
+        <p className="mt-5 leading-7 text-white">
           Maxx Waste Removals provides professional waste removal and rubbish
           clearance across Birmingham, Coventry, Leicester and surrounding
           Midlands areas. Our team covers a wide range of cities,
@@ -166,11 +172,14 @@ export default function HomePage() {
 
       {/* Birmingham */}
       <div className="mt-10">
-        <h3 className="text-2xl font-bold text-gray-900">
-          Birmingham
-        </h3>
+        <div className="text-center">
+          <h3 className="text-2xl font-bold text-[#f6be00] md:text-3xl">
+            Birmingham
+          </h3>
+          <div className="mx-auto mt-3 h-1 w-16 rounded-full bg-[#f6be00]" />
+        </div>
 
-        <div className="mt-5 grid grid-cols-2 gap-3 text-center sm:grid-cols-3 md:grid-cols-4">
+        <div className="mt-6 grid grid-cols-2 gap-3 text-center sm:grid-cols-3 md:grid-cols-4">
           {[
             "Birmingham City Centre",
             "Edgbaston",
@@ -191,7 +200,7 @@ export default function HomePage() {
           ].map((area) => (
             <div
               key={area}
-              className="rounded-lg border px-3 py-3 text-sm font-medium transition hover:shadow-sm"
+              className="rounded-lg border border-white/10 bg-white/5 px-3 py-3 text-sm font-medium text-white transition hover:border-[#f6be00]/50 hover:bg-[#f6be00]/10"
             >
               {area}
             </div>
@@ -201,11 +210,14 @@ export default function HomePage() {
 
       {/* Coventry */}
       <div className="mt-12">
-        <h3 className="text-2xl font-bold text-gray-900">
-          Coventry
-        </h3>
+        <div className="text-center">
+          <h3 className="text-2xl font-bold text-[#f6be00] md:text-3xl">
+            Coventry
+          </h3>
+          <div className="mx-auto mt-3 h-1 w-16 rounded-full bg-[#f6be00]" />
+        </div>
 
-        <div className="mt-5 grid grid-cols-2 gap-3 text-center sm:grid-cols-3 md:grid-cols-4">
+        <div className="mt-6 grid grid-cols-2 gap-3 text-center sm:grid-cols-3 md:grid-cols-4">
           {[
             "Coventry City Centre",
             "Earlsdon",
@@ -226,7 +238,7 @@ export default function HomePage() {
           ].map((area) => (
             <div
               key={area}
-              className="rounded-lg border px-3 py-3 text-sm font-medium transition hover:shadow-sm"
+              className="rounded-lg border border-white/10 bg-white/5 px-3 py-3 text-sm font-medium text-white transition hover:border-[#f6be00]/50 hover:bg-[#f6be00]/10"
             >
               {area}
             </div>
@@ -236,11 +248,14 @@ export default function HomePage() {
 
       {/* Leicester */}
       <div className="mt-12">
-        <h3 className="text-2xl font-bold text-gray-900">
-          Leicester
-        </h3>
+        <div className="text-center">
+          <h3 className="text-2xl font-bold text-[#f6be00] md:text-3xl">
+            Leicester
+          </h3>
+          <div className="mx-auto mt-3 h-1 w-16 rounded-full bg-[#f6be00]" />
+        </div>
 
-        <div className="mt-5 grid grid-cols-2 gap-3 text-center sm:grid-cols-3 md:grid-cols-4">
+        <div className="mt-6 grid grid-cols-2 gap-3 text-center sm:grid-cols-3 md:grid-cols-4">
           {[
             "Leicester City Centre",
             "Clarendon Park",
@@ -261,7 +276,7 @@ export default function HomePage() {
           ].map((area) => (
             <div
               key={area}
-              className="rounded-lg border px-3 py-3 text-sm font-medium transition hover:shadow-sm"
+              className="rounded-lg border border-white/10 bg-white/5 px-3 py-3 text-sm font-medium text-white transition hover:border-[#f6be00]/50 hover:bg-[#f6be00]/10"
             >
               {area}
             </div>
@@ -271,11 +286,14 @@ export default function HomePage() {
 
       {/* Wolverhampton */}
       <div className="mt-12">
-        <h3 className="text-2xl font-bold text-gray-900">
-          Wolverhampton
-        </h3>
+        <div className="text-center">
+          <h3 className="text-2xl font-bold text-[#f6be00] md:text-3xl">
+            Wolverhampton
+          </h3>
+          <div className="mx-auto mt-3 h-1 w-16 rounded-full bg-[#f6be00]" />
+        </div>
 
-        <div className="mt-5 grid grid-cols-2 gap-3 text-center sm:grid-cols-3 md:grid-cols-4">
+        <div className="mt-6 grid grid-cols-2 gap-3 text-center sm:grid-cols-3 md:grid-cols-4">
           {[
             "Wolverhampton City Centre",
             "Tettenhall",
@@ -288,7 +306,7 @@ export default function HomePage() {
           ].map((area) => (
             <div
               key={area}
-              className="rounded-lg border px-3 py-3 text-sm font-medium transition hover:shadow-sm"
+              className="rounded-lg border border-white/10 bg-white/5 px-3 py-3 text-sm font-medium text-white transition hover:border-[#f6be00]/50 hover:bg-[#f6be00]/10"
             >
               {area}
             </div>
@@ -298,11 +316,14 @@ export default function HomePage() {
 
       {/* Solihull */}
       <div className="mt-12">
-        <h3 className="text-2xl font-bold text-gray-900">
-          Solihull
-        </h3>
+        <div className="text-center">
+          <h3 className="text-2xl font-bold text-[#f6be00] md:text-3xl">
+            Solihull
+          </h3>
+          <div className="mx-auto mt-3 h-1 w-16 rounded-full bg-[#f6be00]" />
+        </div>
 
-        <div className="mt-5 grid grid-cols-2 gap-3 text-center sm:grid-cols-3 md:grid-cols-4">
+        <div className="mt-6 grid grid-cols-2 gap-3 text-center sm:grid-cols-3 md:grid-cols-4">
           {[
             "Solihull Town Centre",
             "Shirley",
@@ -315,7 +336,7 @@ export default function HomePage() {
           ].map((area) => (
             <div
               key={area}
-              className="rounded-lg border px-3 py-3 text-sm font-medium transition hover:shadow-sm"
+              className="rounded-lg border border-white/10 bg-white/5 px-3 py-3 text-sm font-medium text-white transition hover:border-[#f6be00]/50 hover:bg-[#f6be00]/10"
             >
               {area}
             </div>
@@ -325,11 +346,14 @@ export default function HomePage() {
 
       {/* Dudley & Sandwell */}
       <div className="mt-12">
-        <h3 className="text-2xl font-bold text-gray-900">
-          Dudley & Sandwell
-        </h3>
+        <div className="text-center">
+          <h3 className="text-2xl font-bold text-[#f6be00] md:text-3xl">
+            Dudley &amp; Sandwell
+          </h3>
+          <div className="mx-auto mt-3 h-1 w-16 rounded-full bg-[#f6be00]" />
+        </div>
 
-        <div className="mt-5 grid grid-cols-2 gap-3 text-center sm:grid-cols-3 md:grid-cols-4">
+        <div className="mt-6 grid grid-cols-2 gap-3 text-center sm:grid-cols-3 md:grid-cols-4">
           {[
             "Dudley",
             "Dudley Town Centre",
@@ -346,7 +370,7 @@ export default function HomePage() {
           ].map((area) => (
             <div
               key={area}
-              className="rounded-lg border px-3 py-3 text-sm font-medium transition hover:shadow-sm"
+              className="rounded-lg border border-white/10 bg-white/5 px-3 py-3 text-sm font-medium text-white transition hover:border-[#f6be00]/50 hover:bg-[#f6be00]/10"
             >
               {area}
             </div>
@@ -356,11 +380,14 @@ export default function HomePage() {
 
       {/* Walsall */}
       <div className="mt-12">
-        <h3 className="text-2xl font-bold text-gray-900">
-          Walsall
-        </h3>
+        <div className="text-center">
+          <h3 className="text-2xl font-bold text-[#f6be00] md:text-3xl">
+            Walsall
+          </h3>
+          <div className="mx-auto mt-3 h-1 w-16 rounded-full bg-[#f6be00]" />
+        </div>
 
-        <div className="mt-5 grid grid-cols-2 gap-3 text-center sm:grid-cols-3 md:grid-cols-4">
+        <div className="mt-6 grid grid-cols-2 gap-3 text-center sm:grid-cols-3 md:grid-cols-4">
           {[
             "Walsall Town Centre",
             "Aldridge",
@@ -373,7 +400,7 @@ export default function HomePage() {
           ].map((area) => (
             <div
               key={area}
-              className="rounded-lg border px-3 py-3 text-sm font-medium transition hover:shadow-sm"
+              className="rounded-lg border border-white/10 bg-white/5 px-3 py-3 text-sm font-medium text-white transition hover:border-[#f6be00]/50 hover:bg-[#f6be00]/10"
             >
               {area}
             </div>
@@ -381,11 +408,13 @@ export default function HomePage() {
         </div>
       </div>
 
-      <p className="mt-10 text-center leading-7 text-gray-600">
+      {/* Bottom Text */}
+      <p className="mt-10 text-center leading-7 text-white">
         If your area isn't listed above, contact Maxx Waste Removals anyway.
         We cover many surrounding Midlands locations and can confirm whether
         we can collect from your postcode.
       </p>
+
     </div>
   </div>
 </section>
@@ -554,86 +583,6 @@ export default function HomePage() {
         </div>
       </section>
 
-            {/* Service & Location Links */}
-      <section className="py-12 md:py-16">
-        <div className="mx-auto max-w-6xl px-4">
-          <div className="mx-auto max-w-4xl">
-            <h2 className="text-center text-3xl font-bold tracking-tight md:text-4xl">
-              Waste Removal Services & Areas We Cover
-            </h2>
-
-            <p className="mt-5 text-center leading-7 text-gray-600">
-              Explore our specialist waste removal services and local pages
-              for Birmingham, Coventry and Leicester.
-            </p>
-
-            <div className="mt-8 grid gap-4 text-center sm:grid-cols-2 md:grid-cols-3">
-              <a
-                href="/leicester"
-                className="rounded-lg border p-4 font-medium transition hover:shadow-md"
-              >
-                Waste Removal Leicester
-              </a>
-
-              <a
-                href="/coventry"
-                className="rounded-lg border p-4 font-medium transition hover:shadow-md"
-              >
-                Waste Removal Coventry
-              </a>
-
-              <a
-                href="/birmingham"
-                className="rounded-lg border p-4 font-medium transition hover:shadow-md"
-              >
-                Waste Removal Birmingham
-              </a>
-
-              <a
-                href="/services/house-clearance"
-                className="rounded-lg border p-4 font-medium transition hover:shadow-md"
-              >
-                House Clearance
-              </a>
-
-              <a
-                href="/services/sofa-removal"
-                className="rounded-lg border p-4 font-medium transition hover:shadow-md"
-              >
-                Sofa & Furniture Removal
-              </a>
-
-              <a
-                href="/services/garden-waste"
-                className="rounded-lg border p-4 font-medium transition hover:shadow-md"
-              >
-                Garden Waste Removal
-              </a>
-
-              <a
-                href="/services/office-clearance"
-                className="rounded-lg border p-4 font-medium transition hover:shadow-md"
-              >
-                Office Clearance
-              </a>
-
-              <a
-                href="/services/builders-waste"
-                className="rounded-lg border p-4 font-medium transition hover:shadow-md"
-              >
-                Builders Waste & Site Clearance
-              </a>
-
-              <a
-                href="/services/appliance-removal"
-                className="rounded-lg border p-4 font-medium transition hover:shadow-md"
-              >
-                Appliance Removal
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <CTASection phoneNumber={mainPhone} />
 
