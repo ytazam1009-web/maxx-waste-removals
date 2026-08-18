@@ -16,7 +16,7 @@ export default function InternalLinks() {
         <div className="grid gap-10 md:grid-cols-3">
 
           {/* SERVICES */}
-          <div>
+          <div className="ml-6">
             <h3 className="text-lg font-bold text-[#f6be00] uppercase tracking-wider mb-4">
               Our Specialist Services
             </h3>
@@ -38,8 +38,8 @@ export default function InternalLinks() {
             </h3>
 
             <ul className="space-y-2 text-gray-300 font-medium">
-              <li><Link href="/leicester" className="hover:text-white transition-colors">Rubbish Removal Leicester</Link></li>
-              <li><Link href="/coventry" className="hover:text-white transition-colors">House Clearance Coventry</Link></li>
+              <li><Link href="/leicester" className="hover:text-white transition-colors">Waste Removal Leicester</Link></li>
+              <li><Link href="/coventry" className="hover:text-white transition-colors">Waste Removal Coventry</Link></li>
               <li><Link href="/birmingham" className="hover:text-white transition-colors">Waste Removal Birmingham</Link></li>
             </ul>
           </div>
