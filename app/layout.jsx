@@ -130,6 +130,11 @@ export default function RootLayout({ children }) {
                   value: 1.0,
                   phone_number: telLink.getAttribute('href')
                 });
+
+                 // Track phone call click with Meta Pixel
+  if (window.fbq) {
+    window.fbq('track', 'Lead');
+    
                 console.log('Call lead tracked:', telLink.getAttribute('href'));
               }
             });
