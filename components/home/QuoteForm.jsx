@@ -23,43 +23,48 @@ export default function QuoteForm({ city = "General" }) {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (loading) return;
+  e.preventDefault();
+  if (loading) return;
 
-    setLoading(true);
-    setStatus(null);
+  setLoading(true);
+  setStatus(null);
 
-    try {
-      const res = await fetch("/api/contacts", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(form),
-      });
+  try {
+    const res = await fetch("/api/contacts", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(form),
+    });
 
-      const data = await res.json();
+    const data = await res.json();
 
-      if (res.ok && data.success) {
-        setStatus("success");
+    if (res.ok && data.success) {
+      setStatus("success");
 
-        setForm({
-          name: "",
-          phone: "",
-          email: "",
-          city: city,
-          postcode: "",
-          message: "",
-        });
-      } else {
-        setStatus("error");
+      // Track successful quote form submission with Meta Pixel
+      if (typeof window !== "undefined" && window.fbq) {
+        window.fbq("track", "Lead");
       }
-    } catch (err) {
+
+      setForm({
+        name: "",
+        phone: "",
+        email: "",
+        city: city,
+        postcode: "",
+        message: "",
+      });
+    } else {
       setStatus("error");
     }
+  } catch (err) {
+    setStatus("error");
+  }
 
-    setLoading(false);
-  };
+  setLoading(false);
+};
 
   return (
     <Section>
