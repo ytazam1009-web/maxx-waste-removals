@@ -113,54 +113,52 @@ export default function RootLayout({ children }) {
         />
 
         {/* Google Analytics Configuration & Call Tracking */}
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-DCGNB9PB8V');
+<Script id="google-analytics" strategy="afterInteractive">
+  {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DCGNB9PB8V');
 
-            // AUTOMATIC CLICK-TO-CALL TRACKING
-            document.addEventListener('click', function(e) {
-              const telLink = e.target.closest('a[href^="tel:"]');
-              if (telLink) {
-                gtag('event', 'generate_lead', {
-                  event_category: 'Contact',
-                  event_label: 'Phone Call',
-                  value: 1.0,
-                  phone_number: telLink.getAttribute('href')
-                });
+    // AUTOMATIC CLICK-TO-CALL TRACKING
+    document.addEventListener('click', function(e) {
+      const telLink = e.target.closest('a[href^="tel:"]');
 
-                 // Track phone call click with Meta Pixel
-  if (window.fbq) {
-    window.fbq('track', 'Lead');
-    
-                console.log('Call lead tracked:', telLink.getAttribute('href'));
-              }
-            });
-          `}
-        </Script>
+      if (telLink) {
+        gtag('event', 'generate_lead', {
+          event_category: 'Contact',
+          event_label: 'Phone Call',
+          value: 1.0,
+          phone_number: telLink.getAttribute('href')
+        });
+
+        // Track phone call click with Meta Pixel
+        if (window.fbq) {
+          window.fbq('track', 'Lead');
+        }
+
+        console.log('Call lead tracked:', telLink.getAttribute('href'));
+      }
+    });
+  `}
+</Script>
         
         {/* Meta Pixel */}
-        <Script
-          id="meta-pixel"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              !function(f,b,e,v,n,t,s)
-              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-              n.queue=[];t=b.createElement(e);t.async=!0;
-              t.src=v;s=b.getElementsByTagName(e)[0];
-              s.parentNode.insertBefore(t,s)}(window, document,'script',
-              'https://connect.facebook.net/en_US/fbevents.js');
+<Script id="meta-pixel" strategy="afterInteractive">
+  {`
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
 
-              fbq('init', '934465092422525');
-              fbq('track', 'PageView');
-            `,
-          }}
-        />
+    fbq('init', '934465092422525');
+    fbq('track', 'PageView');
+  `}
+</Script>
 
 
         <LocalBusinessSchema />
