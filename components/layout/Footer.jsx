@@ -97,11 +97,11 @@ export default function Footer() {
             <div className="flex flex-col gap-6">
               <div className="flex flex-col gap-3">
                 <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Local Branch Numbers:</p>
-                <a href="tel:+447718090183" className="flex items-center gap-3 text-white hover:text-[#f6be00] transition-colors font-bold">
+                <a href="tel:02475522292" className="flex items-center gap-3 text-white hover:text-[#f6be00] transition-colors font-bold">
                   <div className="w-8 h-8 bg-[#f6be00] rounded-lg flex items-center justify-center">
                     <Phone size={14} className="text-[#07152f]" fill="currentColor" />
                   </div>
-                  <span>Direct Mobile: +44 7718 090183</span>
+                  <span>Direct Mobile: 02475 522292</span>
                 </a>
                 <a href="tel:02475522290" className="flex items-center gap-3 text-white hover:text-[#f6be00] transition-colors font-bold">
                   <div className="w-8 h-8 bg-[#f6be00]/10 rounded-lg flex items-center justify-center">

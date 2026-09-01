@@ -12,7 +12,7 @@ export default function ApplianceRemovalPage() {
   const [isExpanded, setIsExpanded] = useState(false);
   const title = "Appliance Removal";
   const description = "Professional disposal and recycling of old appliances including fridges, washing machines, and cookers across the Midlands. We handle the heavy lifting and ensure eco-friendly disposal.";
-  const phone = "+44 7718 090183";
+  const phone = "02475 522292";
 
 const serviceSchema = {
   "@context": "https://schema.org",

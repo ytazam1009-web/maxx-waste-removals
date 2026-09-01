@@ -91,10 +91,10 @@ export default function ContactPage() {
                 </p>
 
                 <a
-                  href="tel:+447718090183"
+                  href="tel:02475522292"
                   className="mt-6 block text-xl font-black text-yellow-400 hover:text-yellow-300"
                 >
-                  +44 7718 090183
+                  02475 522292
                 </a>
 
               </div>
@@ -403,11 +403,11 @@ export default function ContactPage() {
               </p>
 
               <a
-                href="tel:+447718090183"
+                href="tel:02475522292"
                 className="inline-flex items-center justify-center mt-10 rounded-2xl bg-[#07152f] px-10 py-5 text-lg font-black uppercase tracking-wider text-white hover:scale-105 transition"
               >
                 <Phone className="mr-3" size={22} />
-                Call Now - +44 7718 090183
+                Call Now - 02475 522292
               </a>
 
             </div>

@@ -12,7 +12,7 @@ export default function BuildersWastePage() {
   const [isExpanded, setIsExpanded] = useState(false);
   const title = "Builders Waste Removal";
   const description = "Professional construction and builders waste clearance for homes and sites across the Midlands. We handle rubble, timber, plasterboard, and general site debris efficiently.";
-  const phone = "+44 7718 090183";
+  const phone = "02475 522292";
 
 const serviceSchema = {
   "@context": "https://schema.org",

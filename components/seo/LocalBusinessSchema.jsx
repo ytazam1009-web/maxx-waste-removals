@@ -8,7 +8,7 @@ export default function LocalBusinessSchema() {
       "image": "https://maxxwasteremovals.co.uk/logos/logo.webp",
       "logo": "https://maxxwasteremovals.co.uk/logos/logo.webp",
       "url": "https://maxxwasteremovals.co.uk",
-      "telephone": "+44 7718 090183",
+      "telephone": "02475 522292",
       "email": "info@maxxwasteremovals.co.uk",
       "priceRange": "££",
       "description":
@@ -72,7 +72,7 @@ export default function LocalBusinessSchema() {
 
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+44 7718 090183",
+        "telephone": "02475 522292",
         "contactType": "Customer Service",
         "availableLanguage": [
           "English"
@@ -152,7 +152,7 @@ export default function LocalBusinessSchema() {
       "url": "https://maxxwasteremovals.co.uk",
       "logo": "https://maxxwasteremovals.co.uk/logos/logo.webp",
       "email": "info@maxxwasteremovals.co.uk",
-      "telephone": "+44 7718 090183",
+      "telephone": "02475 522292",
       "sameAs": [
         "https://www.facebook.com/maxxwasteremovals/",
         "https://www.instagram.com/maxxwasteremovals/",

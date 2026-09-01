@@ -12,7 +12,7 @@ export default function GardenWastePage() {
   const [isExpanded, setIsExpanded] = useState(false);
   const title = "Garden Waste Removal";
   const description = "Fast and eco-friendly garden waste removal services across the Midlands. We handle everything from green waste to old sheds and fencing, leaving your garden clear and tidy.";
-  const phone = "+44 7718 090183";
+  const phone = "02475 522292";
 
 const serviceSchema = {
   "@context": "https://schema.org",

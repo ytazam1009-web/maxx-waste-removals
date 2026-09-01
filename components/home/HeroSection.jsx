@@ -8,13 +8,13 @@ import { usePathname } from "next/navigation";
 export default function HeroSection({
   city = "Midlands",
   heroImage = "/images/hero/waste-removal-truck.webp",
-  phoneNumber = "+44 7718 090183" // Default mobile
+  phoneNumber = "02475 522292" // Default mobile
 }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const pathname = usePathname();
   
   // LOGIC: Use mobile for home, preserve local numbers for city pages
-  const displayPhone = (pathname === "/" || pathname === "") ? "+44 7718 090183" : phoneNumber;
+  const displayPhone = (pathname === "/" || pathname === "") ? "02475 522292" : phoneNumber;
   const telLink = `tel:${displayPhone.replace(/\s+/g, "")}`;
 
   return (

@@ -12,7 +12,7 @@ export default function OfficeClearancePage() {
   const [isExpanded, setIsExpanded] = useState(false);
   const title = "Office Clearance";
   const description = "Professional commercial clearance for offices, warehouses, and retail spaces across the Midlands. Fast, efficient, and eco-friendly removal of office furniture and equipment.";
-  const phone = "+44 7718 090183";
+  const phone = "02475 522292";
 
 const serviceSchema = {
   "@context": "https://schema.org",

@@ -127,7 +127,7 @@ export const metadata = {
 };
 
 export default function HomePage() {
-  const mainPhone = "+44 7718 090183";
+  const mainPhone = "02475522292";
 
   return (
     <main className="min-h-screen">

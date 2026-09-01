@@ -12,7 +12,7 @@ export default function HouseClearancePage() {
   const [isExpanded, setIsExpanded] = useState(false);
   const title = "House Clearance";
   const description = "Complete house clearance services for probate, moving, or decluttering. We handle everything from furniture to carpets across the Midlands with care and professionalism.";
-  const phone = "+44 7718 090183";
+  const phone = "02475 522292";
 
 const serviceSchema = {
   "@context": "https://schema.org",

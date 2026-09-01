@@ -12,7 +12,7 @@ export default function FurnitureRemovalsPage() {
   const [isExpanded, setIsExpanded] = useState(false);
   const title = "Furniture Removals";
   const description = "Professional, fast, and eco-friendly disposal of sofas, armchairs, and all types of household furniture across the Midlands.";
-  const phone = "+44 7718 090183";
+  const phone = "02475 522292";
 
 const serviceSchema = {
   "@context": "https://schema.org",
