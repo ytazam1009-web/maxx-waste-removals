@@ -44,9 +44,14 @@ export default function QuoteForm({ city = "General" }) {
       setStatus("success");
 
       // Track successful quote form submission with Meta Pixel
-      if (typeof window !== "undefined" && window.fbq) {
-        window.fbq("track", "Lead");
-      }
+if (typeof window !== "undefined" && window.fbq) {
+  window.fbq("track", "Lead");
+}
+
+// Track successful quote form submission with Google Ads
+if (typeof window !== "undefined" && typeof window.gtag === "function") {
+  window.gtag("event", "conversion_event_submit_lead_form");
+}
 
       setForm({
         name: "",
