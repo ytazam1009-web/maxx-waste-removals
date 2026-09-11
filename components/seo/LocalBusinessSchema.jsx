@@ -1,10 +1,16 @@
 export default function LocalBusinessSchema() {
   const schemas = [
     {
-      "@context": "https://schema.org",
-      "@type": "WasteManagementBusiness",
-      "@id": "https://maxxwasteremovals.co.uk/#business",
-      "name": "Maxx Waste Removals",
+  "@context": "https://schema.org",
+  "@type": "WasteManagementBusiness",
+  "@id": "https://maxxwasteremovals.co.uk/#business",
+  "name": "Maxx Waste Removals",
+  "legalName": "MAXX WASTE REMOVALS SERVICES LTD",
+  "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "Company Registration Number",
+    "value": "17266743"
+  },
       "image": "https://maxxwasteremovals.co.uk/logos/logo.webp",
       "logo": "https://maxxwasteremovals.co.uk/logos/logo.webp",
       "url": "https://maxxwasteremovals.co.uk",
@@ -16,17 +22,17 @@ export default function LocalBusinessSchema() {
 
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Midlands Area",
+        "streetAddress": "5 Widdecombe Close",
         "addressLocality": "Coventry",
         "addressRegion": "West Midlands",
-        "postalCode": "CV1",
+        "postalCode": "CV2 1AT",
         "addressCountry": "GB"
       },
 
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 52.4068,
-        "longitude": -1.5197
+        "latitude": 52.4303,
+        "longitude": -1.4605
       },
 
       "openingHoursSpecification": {
