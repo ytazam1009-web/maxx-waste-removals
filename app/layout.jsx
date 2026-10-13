@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import Script from "next/script";
 import LocalBusinessSchema from "@/components/seo/LocalBusinessSchema";
 
-
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
@@ -12,30 +11,17 @@ const inter = Inter({
 export const metadata = {
   metadataBase: new URL("https://www.maxxwasteremovals.co.uk"),
 
-  title:
-    "Maxx Waste Removals | Waste Removal, Rubbish Clearance & House Clearance in Coventry, Leicester & Birmingham",
+  title: {
+    default: "Maxx Waste Removals | Waste Removal Coventry, Leicester & Birmingham",
+    template: "%s | Maxx Waste Removals",
+  },
 
   description:
-    "Fast, affordable and professional waste removal, rubbish clearance and house clearance services across Coventry, Leicester, Birmingham and the Midlands. Same-day collection available.",
-
-  keywords: [
-    "waste removal UK",
-    "rubbish removal Coventry",
-    "junk removal Leicester",
-    "house clearance Birmingham",
-    "garden waste removal",
-    "waste collection Midlands",
-    "same day waste removal",
-    "Maxx Waste Removals",
-  ],
+    "Fast & affordable waste removal, rubbish clearance and house clearance in Coventry, Leicester, Birmingham and the Midlands. Same-day collection available.",
 
   authors: [{ name: "Maxx Waste Removals" }],
   creator: "Maxx Waste Removals",
-applicationName: "Maxx Waste Removals",
-publisher: "Maxx Waste Removals",
-category: "Waste Removal Service",
-classification: "Waste Removal & House Clearance",
-referrer: "origin-when-cross-origin",
+  publisher: "Maxx Waste Removals",
 
   icons: {
     icon: [
@@ -47,14 +33,8 @@ referrer: "origin-when-cross-origin",
   },
 
   alternates: {
-  canonical: "https://www.maxxwasteremovals.co.uk",
-},
-
-other: {
-  "theme-color": "#07152f",
-  "color-scheme": "light",
-  "format-detection": "telephone=yes",
-},
+    canonical: "https://www.maxxwasteremovals.co.uk",
+  },
 
   robots: {
     index: true,
@@ -81,20 +61,24 @@ other: {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Maxx Waste Removals",
+        alt: "Maxx Waste Removals - Waste Removal Services",
       },
     ],
   },
 
   twitter: {
-  card: "summary_large_image",
-  title: "Maxx Waste Removals",
-  description:
-    "Fast waste removal services across Coventry, Leicester & Birmingham.",
-  images: ["/og-image.jpg"],
-  site: "@Maxxwaster5p",
-  creator: "@Maxxwaster5p",
-},
+    card: "summary_large_image",
+    title: "Maxx Waste Removals | Waste Removal Midlands",
+    description:
+      "Fast waste removal services across Coventry, Leicester & Birmingham.",
+    images: ["/og-image.jpg"],
+    site: "@Maxxwaster5p",
+    creator: "@Maxxwaster5p",
+  },
+
+  other: {
+    "theme-color": "#07152f",
+  },
 };
 
 export const viewport = {
@@ -106,60 +90,53 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" data-scroll-behavior="smooth">
       <body className={`${inter.className} antialiased`}>
-        {/* Google Analytics Base Script */}
+        {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-DCGNB9PB8V"
           strategy="afterInteractive"
         />
 
-        {/* Google Analytics Configuration & Call Tracking */}
-<Script id="google-analytics" strategy="afterInteractive">
-  {`
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-DCGNB9PB8V');
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-DCGNB9PB8V');
 
-    // AUTOMATIC CLICK-TO-CALL TRACKING
-    document.addEventListener('click', function(e) {
-      const telLink = e.target.closest('a[href^="tel:"]');
+            // Click-to-call tracking
+            document.addEventListener('click', function(e) {
+              const telLink = e.target.closest('a[href^="tel:"]');
+              if (telLink) {
+                gtag('event', 'generate_lead', {
+                  event_category: 'Contact',
+                  event_label: 'Phone Call',
+                  value: 1.0,
+                  phone_number: telLink.getAttribute('href')
+                });
 
-      if (telLink) {
-        gtag('event', 'generate_lead', {
-          event_category: 'Contact',
-          event_label: 'Phone Call',
-          value: 1.0,
-          phone_number: telLink.getAttribute('href')
-        });
+                if (window.fbq) {
+                  window.fbq('track', 'Lead');
+                }
+              }
+            });
+          `}
+        </Script>
 
-        // Track phone call click with Meta Pixel
-        if (window.fbq) {
-          window.fbq('track', 'Lead');
-        }
-
-        console.log('Call lead tracked:', telLink.getAttribute('href'));
-      }
-    });
-  `}
-</Script>
-        
         {/* Meta Pixel */}
-<Script id="meta-pixel" strategy="afterInteractive">
-  {`
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-
-    fbq('init', '934465092422525');
-    fbq('track', 'PageView');
-  `}
-</Script>
-
+        <Script id="meta-pixel" strategy="afterInteractive">
+          {`
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '934465092422525');
+            fbq('track', 'PageView');
+          `}
+        </Script>
 
         <LocalBusinessSchema />
         {children}
