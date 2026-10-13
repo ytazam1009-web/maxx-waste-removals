@@ -1,3 +1,4 @@
+
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Script from "next/script";
@@ -90,6 +91,47 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" data-scroll-behavior="smooth">
       <body className={`${inter.className} antialiased`}>
+        {/* Microsoft Advertising UET - Site-wide tracking */}
+        <Script
+          id="microsoft-uet"
+          strategy="afterInteractive"
+        >
+          {`
+            (function(w, d, t, u, o) {
+              w[u] = w[u] || [];
+              o.ts = (new Date()).getTime();
+
+              var n = d.createElement(t);
+              n.src = "https://bat.bing.net/bat.js?ti=" + o.ti +
+                (u !== "uetq" ? "&q=" + u : "");
+              n.async = 1;
+
+              n.onload = n.onreadystatechange = function() {
+                var s = this.readyState;
+
+                if (!s || s === "loaded" || s === "complete") {
+                  o.q = w[u];
+                  w[u] = new UET(o);
+                  w[u].push("pageLoad");
+                  n.onload = n.onreadystatechange = null;
+                }
+              };
+
+              var i = d.getElementsByTagName(t)[0];
+              i.parentNode.insertBefore(n, i);
+            })(window, document, "script", "uetq", {
+              ti: "97275392",
+              enableAutoSpaTracking: true
+            });
+
+            // Default advertising-cookie consent to denied.
+            window.uetq = window.uetq || [];
+            window.uetq.push("consent", "default", {
+              ad_storage: "denied"
+            });
+          `}
+        </Script>
+
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-DCGNB9PB8V"
@@ -106,6 +148,7 @@ export default function RootLayout({ children }) {
             // Click-to-call tracking
             document.addEventListener('click', function(e) {
               const telLink = e.target.closest('a[href^="tel:"]');
+
               if (telLink) {
                 gtag('event', 'generate_lead', {
                   event_category: 'Contact',
